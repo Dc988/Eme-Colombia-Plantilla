@@ -1,0 +1,309 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
+    <title>EME COLOMBIA</title>
+
+    <!-- General CSS Files -->
+    <!-- General CSS bootstrap -->
+    <link rel="stylesheet" href="../../modules/bootstrap/css/bootstrap.min.css">
+
+    <!-- General CSS del ico -->
+    <link rel="shortcut icon" href="../../img/favicon.ico" type="image/x-icon">
+
+    <!-- General CSS sweetalert2 -->
+    
+    <!-- General CSS font-awesome -->
+    <link rel="stylesheet" href="../../modules/font-awesome/css/font-awesome.css">
+
+    <!-- General CSS datatables -->
+    <link rel="stylesheet" href="../../modules/datatables/datatables.min.css">
+    <!-- General CSS select2 -->
+    <link rel="stylesheet" href="../../modules/select2/css/select2.min.css">
+
+
+    <!-- Template CSS -->
+    <link rel="stylesheet" href="../../css/main.css">
+
+    <!-- Start GA imprime las etiquetas que contenga la variable header -->
+
+
+<body class="">
+
+
+    <!--Llama al componente menu-->
+
+
+    <div class="sidebar">
+        <div class="logo_content">
+            <div class="logo">
+                <i class="fa fa-stethoscope icon"></i>
+                <div class="logo_name">EME</div>
+            </div>
+            <i class="fa fa-bars" id="btn_menu" onclick="menu_animation()"></i>
+        </div>
+        <ul class="nav-list">
+
+            <li class="nav-item">
+                <a href="../../home.html" class="">
+                    <i class="fa fa-dashboard"></i>
+                    <span class="link_name">Dashboard</span>
+                </a>
+                <span class="tooltip">DashBoard</span>
+            </li>
+            <li class="nav-item">
+                <a href="../../pacientes.html" class="">
+                    <i class="fa fa-user "></i>
+                    <span class="link_name">Pacientes</span>
+                </a>
+                <span class="tooltip">Pacientes</span>
+            </li>
+            <li class="nav-item">
+                <a href="../../facturacion.html" class="">
+                    <i class="fa fa-money "></i>
+                    <span class="link_name">Facturación</span>
+                </a>
+                <span class="tooltip">Facturación</span>
+            </li>
+            <li class="nav-item">
+                <a href="../../configuraciones.html" class="active">
+                    <i class="fa fa-cog"></i>
+                    <span class="link_name">Configuraciones</span>
+                </a>
+                <span class="tooltip">Configuraciones</span>
+            </li>
+
+        </ul>
+        <div class="profile_content">
+            <div class="profile">
+                <div class="profile_details">
+                    <i class="fa-sharp fa fa-user-secret"></i>
+                    <div class="name_job">
+                        <h2 class="name">admin</h2>
+                    </div>
+                </div>
+                <a onclick="exit_sesion()">
+                    <i class="fa fa-power-off" id="logout"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- en la variable $content_body se encuentra el codigo html a mostrar-->
+    <div class="content-wrapper">
+        <div class="page-title">
+            <div>
+                <!--Muestra en pantalla el icono y el titulo que se le pase en las variables-->
+
+                <h1><i class="icon fa fa-cogs"></i> Configuración General</h1>
+                <p></p>
+            </div>
+            <div>
+                <ul class="breadcrumb">
+                    <!--imprime el breadcrumb que es como la navegacion, que se le pase en las variable-->
+
+                    <li><i class="fa fa-home fa-lg"></i></li>
+                    <li>Configuraciones</li>
+                    <li>General</li>
+                    <li>Tipo_Ingreso</li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="body-content">
+            <!--imprime el codigo html que se le pase en las variable-->
+            <div class="row">
+
+                <div class="list-group col-md-2">
+                    <a href="tipo_id.html" class="list-group-item list-group-item-action ">
+                        <i class="fa fa-id-card icon"></i>Tipo Id
+                    </a>
+                    <a href="municipio.html" class="list-group-item list-group-item-action ">
+                        <i class="fa fa-globe icon"></i>Municipio
+                    </a>
+
+                    <a href="tipo_ingreso.html" class="list-group-item list-group-item-action active disabled">
+                        <i class="fa fa-arrow-circle-right icon"></i>Tipo Ingreso
+                    </a>
+
+                    <a href="ocupacion.html" class="list-group-item list-group-item-action ">
+                        <i class="fa fa-shopping-bag icon"></i>Ocupación
+                    </a>
+                    <a href="condicion.html" class="list-group-item list-group-item-action ">
+                        <i class="fa fa-user-md icon"></i>Condicion Paciente
+                    </a>
+                    <a href="estado_civil.html" class="list-group-item list-group-item-action ">
+                        <i class="fa fa-user icon"></i>Estado Civil
+                    </a>
+                    <a href="estado_factura.html" class="list-group-item list-group-item-action ">
+                        <i class="fa fa-money icon"></i>Estado Facturación
+                    </a>
+                    <a href="facturador.html" class="list-group-item list-group-item-action ">
+                        <i class="fa fa-black-tie icon"></i>Facturador
+                    </a>
+                    <a href="colaborador.html" class="list-group-item list-group-item-action ">
+                        <i class="fa fa-medium icon"></i>Colaborador
+                    </a>
+                    <a href="aseguradora.html" class="list-group-item list-group-item-action ">
+                        <i class="fa fa-lock icon"></i> Seguradora
+                    </a>
+
+                </div>
+
+                <div class=" col-md-10">
+                    <div class="row d-flex justify-content-center tab-content">
+                        <div class="card col-md-12 show active tab-pane" role="tabpanel" id="Panel_Main">
+                            <div class="card-header">
+                                <h4><i class="fa fa-list-alt icon"></i> Lista Tipo Ingreso</h4>
+                                <a class="btn btn-primary btn-sm" onclick="frmTipo_Ingreso_onclick()" data-toggle="tab"
+                                    data-target="Panel_Form">
+                                    <i class="fa fa-plus"></i>
+                                </a>
+                            </div>
+                            <div class="card-body">
+                                <!--class son datos de clases css que se le pasen y su id-->
+
+                                <table class="table compact hover dataTable" id="tbl_Tipo_Ingreso"
+                                    >
+                                    
+                                    <thead>
+                                        <tr role="row">
+                                            <th scope="col" data-dt-column="0" rowspan="1" colspan="1"
+                                                class="dt-orderable-asc dt-orderable-desc dt-type-numeric dt-ordering-desc"
+                                                aria-sort="descending" aria-label="#: Activate to remove sorting"
+                                                tabindex="0">
+                                                <span class="dt-column-title" role="button">#</span><span
+                                                    class="dt-column-order"></span>
+                                            </th>
+                                            <th scope="col" data-dt-column="1" rowspan="1" colspan="1"
+                                                class="dt-orderable-asc dt-orderable-desc"
+                                                aria-label="TIPO INGRESO: Activate to sort" tabindex="0">
+                                                <span class="dt-column-title" role="button">TIPO
+                                                    INGRESO</span><span class="dt-column-order"></span>
+                                            </th>
+                                            <th scope="col" data-dt-column="2" rowspan="1" colspan="1"
+                                                class="dt-orderable-asc dt-orderable-desc"
+                                                aria-label=": Activate to sort" tabindex="0"><span
+                                                    class="dt-column-title" role="button"></span><span
+                                                    class="dt-column-order"></span></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="dt-type-numeric sorting_1">2</td>
+                                            <td>AMBULANCIA</td>
+                                            <td>
+                                                <div>
+                                                    <button class="btn btn-warning btn-sm" type="button"
+                                                        onclick="btnEditarTipo_Ingreso_onclick(2);"><i
+                                                            class="fa fa-pencil"></i></button>
+                                                    <button class="btn btn-danger btn-sm" type="button"
+                                                        onclick="btnEliminarTipo_Ingreso_onclick(2);"><i
+                                                            class="fa fa-trash"></i></button>
+                                                    <div></div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="dt-type-numeric sorting_1">1</td>
+                                            <td>ATENCION DE URGENCIA</td>
+                                            <td>
+                                                <div>
+                                                    <button class="btn btn-warning btn-sm" type="button"
+                                                        onclick="btnEditarTipo_Ingreso_onclick(1);"><i
+                                                            class="fa fa-pencil"></i></button>
+                                                    <button class="btn btn-danger btn-sm" type="button"
+                                                        onclick="btnEliminarTipo_Ingreso_onclick(1);"><i
+                                                            class="fa fa-trash"></i></button>
+                                                    <div></div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                    <tfoot></tfoot>
+                                </table>
+
+                            </div>
+                        </div>
+
+                        <div class="card col-md-5 tab-pane" role="tabpanel" id="Panel_Form">
+                            <div class="card-header line-head">
+                                <h3 id="title"> <i class="fa fa-file icon"></i> Formulario</h3>
+                                <a class="btn btn-danger" data-toggle="tab" data-target="Panel_Main">
+                                    <i class="fa fa-close"></i></a>
+                            </div>
+                            <div class="card-body ">
+                                <form method="post" id="frmTipo_Ingreso" class="needs-validation"
+                                    onsubmit="DataTipo_Ingreso_onclick(event);" novalidate="">
+                                    <input type="hidden" id="id_form" name="id_form">
+
+                                    <div class="form-floating mb-3">
+                                        <input id="TIPO" name="TIPO" class="form-control" type="text"
+                                            placeholder="Tipo Ingreso" required="">
+                                        <label for="TIPO" class="form-label">TIPO INGRESO</label>
+                                        <div class="invalid-feedback">
+                                            Campo Requerido!!.
+                                        </div>
+                                    </div>
+                                    <div class="d-grid gap-2 mt-3">
+                                        <div class="btn-group" role="group" aria-label="Basic example">
+                                            <button class="btn btn-primary" type="submit"
+                                                id="btnAccion">Registrar</button>
+                                            <a class="btn btn-danger" data-toggle="tab" data-target="Panel_Main"
+                                                id="btnCancel">Cancelar</a>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!--Llama al componente footer-->
+
+    <!--codigo html de mensaje de carga-->
+    <div class="modal fade " id="loading-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-sm">
+            <div class="modal-content">
+
+                <div class="modal-body">
+                    <div class="d-flex align-items-center text-primary">
+                        <strong role="status">Loading...</strong>
+                        <div class="spinner-border ms-auto" aria-hidden="true"></div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    <!-- General JS Scripts -->
+
+    <script>
+        const base_url = "";
+    </script>
+    <!-- JS Libraies -->
+    <script src="../../modules/jquery.min.js"></script>
+    <script src="../../modules/nicescroll/jquery.nicescroll.min.js"></script>
+    <script src="../../modules/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../../modules/sweetalert/sweetalert2.all.min.js"></script>
+    <script src="../../modules/select2/js/select2.full.min.js"></script>
+    <script src="../../modules/datatables/datatables.min.js"></script>
+    <script src="../../modules/pdfmake/pdfmake.min.js"></script>
+
+    <!-- Page Specific JS File -->
+    <script src="../../js/Archivo.js"></script>
+
+    <!-- Template JS File añade las etiquetas js que pasen en la variable $footer-->
+    <script src="../../js/page/Config.js"></script>
+
+
+
+</body>
+
+</html>

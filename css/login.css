@@ -1,0 +1,130 @@
+.material-half-bg {
+    height: 100vh;
+    background-color: #ffffff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+.material-half-bg .cover {
+    background-color: var(--primary);
+    height: 50vh
+}
+
+.login-content {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    min-height: 90vh;
+}
+
+.login-content .logo {
+    margin-bottom: 40px;
+    font-family: 'Niconne';
+    color: #fff
+}
+
+.login-content .logo h1 {
+    font-size: 52px
+}
+
+
+
+.login-content .login-box {
+    position: relative;
+    min-width: 350px;
+    min-height: 400px;
+    background-color: #fff;
+    box-shadow: 0px 29px 147.5px 102.5px rgba(0, 0, 0, 0.05), 0px 29px 95px 0px rgba(0, 0, 0, 0.16);
+    perspective: 800px;
+    transition: all 0.5s ease-in-out;
+    border-radius: 10px;
+    
+}
+
+.login-content .login-box .login-head {
+    margin-top: 0;
+    margin-bottom: 20px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+}
+
+.login-content .login-box label {
+    color: #666
+}
+
+.login-content .login-box .utility {
+    display: -ms-flexbox;
+    display: flex;
+    padding: 1px;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -ms-flex-align: center;
+    align-items: center
+}
+
+.login-content .login-box .btn-container {
+    margin-bottom: 0
+}
+
+.login-content .login-box .login-form,
+.login-content .login-box .forget-form {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 30px;
+    backface-visibility: hidden;
+    transition: all 0.5s ease-in-out
+}
+
+.login-content .login-box .forget-form {
+    opacity: 0;
+    transform: rotateY(180deg)
+}
+
+.login-content .login-box.flipped {
+    min-height: 300px
+}
+
+
+
+.login-content .login-box.flipped .login-form {
+    opacity: 0;
+    transform: rotateY(-180deg)
+}
+
+.login-content .login-box.flipped .forget-form {
+    opacity: 1;
+    transform: rotateY(0deg)
+}
+
+@media (max-width: 351px) {
+    .login-content .login-box {
+        min-width: 100%
+    }
+
+    .login-content .login-box .login-form,
+    .login-content .login-box .forget-form {
+        width: 100%
+    }
+}
+
+#output-status{
+    position: absolute;
+    right: auto;
+    top: 5px;
+    
+    min-width: 350px;
+
+}

@@ -1,0 +1,368 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
+    <title>EME COLOMBIA</title>
+
+    <!-- General CSS Files -->
+    <!-- General CSS bootstrap -->
+    <link rel="stylesheet" href="modules/bootstrap/css/bootstrap.min.css">
+
+    <!-- General CSS del ico -->
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+
+    <!-- General CSS font-awesome -->
+    <link rel="stylesheet" href="modules/font-awesome/css/font-awesome.css">
+
+    <!-- General CSS datatables -->
+    <link rel="stylesheet" href="modules/datatables/datatables.min.css">
+    <!-- General CSS select2 -->
+    <link rel="stylesheet" href="modules/select2/css/select2.min.css">
+
+
+    <!-- Template CSS -->
+    <link rel="stylesheet" href="css/main.css">
+
+
+</head>
+
+<body class="">
+
+
+    <!--Llama al componente menu-->
+
+
+    <div class="sidebar">
+        <div class="logo_content">
+            <div class="logo">
+                <i class="fa fa-stethoscope icon"></i>
+                <div class="logo_name">EME</div>
+            </div>
+            <i class="fa fa-bars" id="btn_menu" onclick="menu_animation()"></i>
+        </div>
+        <ul class="nav-list">
+
+            <li class="nav-item">
+                <a href="home.html" class="">
+                    <i class="fa fa-dashboard"></i>
+                    <span class="link_name">Dashboard</span>
+                </a>
+                <span class="tooltip">DashBoard</span>
+            </li>
+            <li class="nav-item">
+                <a href="pacientes.html" class="">
+                    <i class="fa fa-user "></i>
+                    <span class="link_name">Pacientes</span>
+                </a>
+                <span class="tooltip">Pacientes</span>
+            </li>
+            <li class="nav-item">
+                <a href="facturacion.html" class="active">
+                    <i class="fa fa-money "></i>
+                    <span class="link_name">Facturación</span>
+                </a>
+                <span class="tooltip">Facturación</span>
+            </li>
+            <li class="nav-item">
+                <a href="configuraciones.html" class="">
+                    <i class="fa fa-cog"></i>
+                    <span class="link_name">Configuraciones</span>
+                </a>
+                <span class="tooltip">Configuraciones</span>
+            </li>
+
+        </ul>
+        <div class="profile_content">
+            <div class="profile">
+                <div class="profile_details">
+                    <i class="fa-sharp fa fa-user-secret"></i>
+                    <div class="name_job">
+                        <h2 class="name">admin</h2>
+                    </div>
+                </div>
+                <a onclick="exit_sesion()">
+                    <i class="fa fa-power-off" id="logout"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- en la variable $content_body se encuentra el codigo html a mostrar-->
+    <div class="content-wrapper">
+        <div class="page-title">
+            <div>
+                <!--Muestra en pantalla el icono y el titulo que se le pase en las variables-->
+
+                <h1><i class="icon fa fa-money"></i> Facturación</h1>
+                <p></p>
+            </div>
+            <div>
+                <ul class="breadcrumb">
+                    <!--imprime el breadcrumb que es como la navegacion, que se le pase en las variable-->
+
+                    <li><i class="fa fa-home fa-lg"></i></li>
+                    <li>Facturación</li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="body-content">
+            <!--imprime el codigo html que se le pase en las variable-->
+
+            <div class="tab-content">
+
+
+                <div class="card tab-pane active show" role="tabpanel" id="Panel_Main">
+                    <div class="card-header">
+                        <h4><i class="fa fa-list-alt icon"></i> Lista de Facturas</h4>
+                        <div class="card-header-action">
+
+                        </div>
+                    </div>
+
+                    <div class="card-body">
+
+                        <table class="table compact hover dataTable" id="tbl_Facturacion">
+
+                            <thead>
+                                <tr role="row">
+                                    <th scope="col" data-dt-column="0" rowspan="1" colspan="1"
+                                        class="dt-orderable-asc dt-orderable-desc dt-type-numeric dt-ordering-desc"
+                                        aria-sort="descending" aria-label="#: Activate to remove sorting" tabindex="0">
+                                        <span class="dt-column-title" role="button">#</span><span
+                                            class="dt-column-order"></span></th>
+                                    <th scope="col" data-dt-column="1" rowspan="1" colspan="1"
+                                        class="dt-orderable-asc dt-orderable-desc"
+                                        aria-label="FACTURA: Activate to sort" tabindex="0"><span
+                                            class="dt-column-title" role="button">FACTURA</span><span
+                                            class="dt-column-order"></span></th>
+                                    <th scope="col" data-dt-column="2" rowspan="1" colspan="1"
+                                        class="dt-orderable-asc dt-orderable-desc dt-type-date"
+                                        aria-label="FECHA INGRESO: Activate to sort" tabindex="0"><span
+                                            class="dt-column-title" role="button">FECHA INGRESO</span><span
+                                            class="dt-column-order"></span></th>
+                                    <th scope="col" data-dt-column="3" rowspan="1" colspan="1"
+                                        class="dt-orderable-asc dt-orderable-desc" aria-label="ESTADO: Activate to sort"
+                                        tabindex="0"><span class="dt-column-title" role="button">ESTADO</span><span
+                                            class="dt-column-order"></span></th>
+                                    <th scope="col" data-dt-column="4" rowspan="1" colspan="1"
+                                        class="dt-orderable-asc dt-orderable-desc" aria-label=": Activate to sort"
+                                        tabindex="0"><span class="dt-column-title" role="button"></span><span
+                                            class="dt-column-order"></span></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="dt-type-numeric sorting_1">4</td>
+                                    <td>EM4</td>
+                                    <td class="dt-type-date">0001-11-11</td>
+                                    <td>RADICADA</td>
+                                    <td>
+                                        <div>
+                                            <button class="btn btn-success btn-sm" type="button"
+                                                onclick="btnEditarFact_onclick(4);"><i class="fa fa-eye"></i></button>
+                                            <div></div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="dt-type-numeric sorting_1">3</td>
+                                    <td>EM3</td>
+                                    <td class="dt-type-date">2333-01-01</td>
+                                    <td>GLOSA TOTAL</td>
+                                    <td>
+                                        <div>
+                                            <button class="btn btn-success btn-sm" type="button"
+                                                onclick="btnEditarFact_onclick(3);"><i class="fa fa-eye"></i></button>
+                                            <div></div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="dt-type-numeric sorting_1">2</td>
+                                    <td>EM2</td>
+                                    <td class="dt-type-date">2025-02-25</td>
+                                    <td>POR FACTURAR</td>
+                                    <td>
+                                        <div>
+                                            <button class="btn btn-success btn-sm" type="button"
+                                                onclick="btnEditarFact_onclick(2);"><i class="fa fa-eye"></i></button>
+                                            <div></div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="dt-type-numeric sorting_1">1</td>
+                                    <td>EM1</td>
+                                    <td class="dt-type-date">2025-02-25</td>
+                                    <td>PAGADO</td>
+                                    <td>
+                                        <div>
+                                            <button class="btn btn-success btn-sm" type="button"
+                                                onclick="btnEditarFact_onclick(1);"><i class="fa fa-eye"></i></button>
+                                            <div></div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tfoot></tfoot>
+                        </table>
+
+                    </div>
+                </div>
+                <div class="tab-pane " role="tabpanel" id="Panel_Form">
+
+                    <form method="post" id="frmFactura" onsubmit="" class="needs-validation" novalidate="">
+                        <div class="tab-content">
+                            <input type="hidden" id="id_form" name="id_form" value="">
+                            <div class="card tab-pane active show" id="Panel_1" role="tabpanel">
+                                <div class="card-header">
+                                    <h5 class="title text-center" id="title">1. DATOS DE LA FACTURA</h5>
+                                    <a class="btn btn-danger " data-toggle="tab" data-target="Panel_Main">
+                                        <i class="fa fa-close"></i>
+                                    </a>
+                                </div>
+
+                                <div class="row card-body ms-md-5">
+
+
+                                    <div class="row">
+                                        <div class="form-floating mb-3 col-md-5">
+                                            <input required name="FACTURA" id="FACTURA" class="form-control"
+                                                type="text">
+                                            <label class="form-label" for="FACTURA"> CÓDIGO FACTURA </label>
+                                            <div class="invalid-feedback">
+                                                Campo Requerido!!.
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="form-floating mb-3 col-md-5">
+                                        <input required name="IDENTIFICACION" id="IDENTIFICACION"
+                                            class="form-control" type="text">
+                                        <label class="form-label" for="IDENTIFICACION"> IDENTIFICACION DEL PACIENTE
+                                        </label>
+                                        <div class="invalid-feedback">
+                                            Campo Requerido!!.
+                                        </div>
+                                    </div>
+                                    <div class="form-floating mb-3 col-md-5 ms-md-5">
+
+                                        <select id="FACTURADOR_FK" name="FACTURADOR_FK" class="form-control"
+                                            required>
+                                            <option selected value="">-- Seleccione --</option>
+                                            <option value="2">B. JASSIR C. MAURY</option>
+                                            <option value="1">J. PEREZ MERCADO</option>
+                                        </select>
+                                        <label class="form-label" for="FACTURADOR_FK">QUIEN FACTURÓ</label>
+
+                                        <div class="invalid-feedback">
+                                            Campo Requerido!!.
+                                        </div>
+                                    </div>
+                                    <div class="form-floating mb-3 col-md-5">
+
+                                        <select id="ESTADO_fk" name="ESTADO_fk" class="form-control " required>
+                                            <option selected value="">-- Seleccione --</option>
+                                            <option value="6">FACTURADA</option>
+                                            <option value="1">GLOSA TOTAL</option>
+                                            <option value="3">PAGADO</option>
+                                            <option value="2">PAGADO PARCIAL</option>
+                                            <option value="5">POR FACTURAR</option>
+                                            <option value="4">RADICADA</option>
+                                        </select>
+                                        <label class="form-label" for="ESTADO_fk">ESTADO</label>
+
+                                        <div class="invalid-feedback">
+                                            Campo Requerido!!.
+                                        </div>
+                                    </div>
+                                    <div class="form-floating mb-3 col-md-5 ms-md-5">
+                                        <input required name="VALOR" id="VALOR" onchange="calcValorT()"
+                                            class="form-control " type="number">
+                                        <label class="form-label" for="VALOR"> VALOR </label>
+                                        <div class="invalid-feedback">
+                                            Campo Requerido!!.
+                                        </div>
+                                    </div>
+                                    <div class="form-floating mb-3 col-md-5">
+                                        <input required name="GLOSA" id="GLOSA" onchange="calcValorT()"
+                                            class="form-control " type="number">
+                                        <label class="form-label" for="GLOSA"> GLOSA </label>
+                                        <div class="invalid-feedback">
+                                            Campo Requerido!!.
+                                        </div>
+                                    </div>
+                                    <div class="form-floating mb-3 col-md-5 ms-md-5">
+                                        <input required name="VALOR_PAGADO" id="VALOR_PAGADO"
+                                            class="form-control" type="number">
+                                        <label class="form-label" for="VALOR_PAGADO"> VALOR PAGADO </label>
+                                        <div class="invalid-feedback">
+                                            Campo Requerido!!.
+                                        </div>
+                                    </div>
+
+                                    <div class="card-footer d-flex justify-content-end">
+
+                                        <button class="btn btn-primary" type="submit" onclick="DataFactura_onclick();"
+                                            id="btnAccion">ACEPTAR</button>
+                                        <!--<button class="mx-3 btn btn-danger" type="button" onclick="deleteFactura_onclick();" id="btnAccion">ELIMINAR</button>-->
+
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+
+        <!--Llama al componente footer-->
+
+        <!--codigo html de mensaje de carga-->
+        <div class="modal fade " id="loading-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-sm">
+                <div class="modal-content">
+
+                    <div class="modal-body">
+                        <div class="d-flex align-items-center text-primary">
+                            <strong role="status">Loading...</strong>
+                            <div class="spinner-border ms-auto" aria-hidden="true"></div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+        <!-- General JS Scripts -->
+
+        <script>
+            const base_url = "";
+        </script>
+        <!-- JS Libraies -->
+        <script src="modules/jquery.min.js"></script>
+        <script src="modules/nicescroll/jquery.nicescroll.min.js"></script>
+        <script src="modules/bootstrap/js/bootstrap.min.js"></script>
+        <script src="modules/sweetalert/sweetalert2.all.min.js"></script>
+        <script src="modules/select2/js/select2.full.min.js"></script>
+        <script src="modules/datatables/datatables.min.js"></script>
+        <script src="modules/pdfmake/pdfmake.min.js"></script>
+
+        <!-- Page Specific JS File -->
+        <script src="js/Archivo.js"></script>
+
+        <!-- Template JS File añade las etiquetas js que pasen en la variable $footer-->
+        <script src="js/page/Factura.js"></script>
+
+
+
+    </div>
+</body>
+
+</html>
