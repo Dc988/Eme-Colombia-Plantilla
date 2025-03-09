@@ -284,3 +284,22 @@ function setDataCombobox(table, combobox) {
         });
 }
 
+function habilitar_input(){
+    var input =document.querySelectorAll(".input_Disabled");
+    for (let i = 0; i < input.length; i++) {
+        input [i].removeAttribute("disabled");
+        console.log(input[i]);
+    }
+    document.querySelector(".btn_guardar").classList.remove("none");
+    document.querySelector(".btn_modificar").classList.add("none");
+}
+
+function deshabilitar_input(){ 
+    var input =document.querySelectorAll(".input_Disabled");
+    for (let i = 0; i < input.length; i++) {
+        input [i].setAttribute("disabled","true");
+        console.log(input[i]);
+    }
+    document.querySelector(".btn_modificar").classList.remove("none");
+    document.querySelector(".btn_guardar").classList.add("none");
+}
