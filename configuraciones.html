@@ -1,178 +1,187 @@
-<html lang="en"><head>
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
     <title>EME COLOMBIA</title>
-  
+
     <!-- General CSS Files -->
     <!-- General CSS bootstrap -->
     <link rel="stylesheet" href="modules/bootstrap/css/bootstrap.min.css">
-    
+
     <!-- General CSS del ico -->
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
-   
+
     <!-- General CSS font-awesome -->
     <link rel="stylesheet" href="modules/font-awesome/css/font-awesome.css">
-  
+
     <!-- General CSS datatables -->
     <link rel="stylesheet" href="modules/datatables/datatables.min.css">
     <!-- General CSS select2 -->
     <link rel="stylesheet" href="modules/select2/css/select2.min.css">
-    
-    
+
+
     <!-- Template CSS -->
     <link rel="stylesheet" href="css/main.css">
-    
-  <!-- Start GA imprime las etiquetas que contenga la variable header -->
-  
-  
-  <body class="">
-  
-  
-  <!--Llama al componente menu-->
-  
-  
-  <div class="sidebar">
-    <div class="logo_content">
-        <div class="logo">
-            <i class="fa fa-stethoscope icon"></i>
-            <div class="logo_name">EME</div>
-        </div>
-        <i class="fa fa-bars" id="btn_menu" onclick="menu_animation()"></i>
-    </div>
-    <ul class="nav-list">
 
-        <li class="nav-item">
-            <a href="home.html" class="">
-                <i class="fa fa-dashboard"></i>
-                <span class="link_name">Dashboard</span>
-            </a>
-            <span class="tooltip">DashBoard</span>
-        </li>
-        <li class="nav-item">
-            <a href="pacientes.html" class="">
-                <i class="fa fa-user "></i>
-                <span class="link_name">Pacientes</span>
-            </a>
-            <span class="tooltip">Pacientes</span>
-        </li>
-        <li class="nav-item">
-            <a href="facturacion.html" class="">
-                <i class="fa fa-money "></i>
-                <span class="link_name">Facturación</span>
-            </a>
-            <span class="tooltip">Facturación</span>
-        </li>
-        <li class="nav-item">
-            <a href="configuraciones.html" class="active">
-                <i class="fa fa-cog"></i>
-                <span class="link_name">Configuraciones</span>
-            </a>
-            <span class="tooltip">Configuraciones</span>
-        </li>
+    <!-- Start GA imprime las etiquetas que contenga la variable header -->
 
-    </ul>
-    <div class="profile_content">
-        <div class="profile">
-            <div class="profile_details">
-                <i class="fa-sharp fa fa-user-secret"></i>
-                <div class="name_job">
-                    <h2 class="name">admin</h2>
-                </div>
+
+<body class="">
+
+
+    <!--Llama al componente menu-->
+
+
+    <div class="sidebar">
+        <div class="logo_content">
+            <div class="logo">
+                <i class="fa fa-stethoscope icon"></i>
+                <div class="logo_name">EME</div>
             </div>
-            <a onclick="exit_sesion()">
-                <i class="fa fa-power-off" id="logout"></i>
-            </a>
+            <i class="fa fa-bars" id="btn_menu" onclick="menu_animation()"></i>
+        </div>
+        <ul class="nav-list">
+
+            <li class="nav-item">
+                <a href="home.html" class="">
+                    <i class="fa fa-dashboard"></i>
+                    <span class="link_name">Dashboard</span>
+                </a>
+                <span class="tooltip">DashBoard</span>
+            </li>
+            <li class="nav-item">
+                <a href="pacientes.html" class="">
+                    <i class="fa fa-user "></i>
+                    <span class="link_name">Pacientes</span>
+                </a>
+                <span class="tooltip">Pacientes</span>
+            </li>
+            <li class="nav-item">
+                <a href="facturacion.html" class="">
+                    <i class="fa fa-money "></i>
+                    <span class="link_name">Facturación</span>
+                </a>
+                <span class="tooltip">Facturación</span>
+            </li>
+            <li class="nav-item">
+                <a href="configuraciones.html" class="active">
+                    <i class="fa fa-cog"></i>
+                    <span class="link_name">Configuraciones</span>
+                </a>
+                <span class="tooltip">Configuraciones</span>
+            </li>
+
+        </ul>
+        <div class="profile_content">
+            <div class="profile">
+                <div class="profile_details">
+                    <i class="fa-sharp fa fa-user-secret"></i>
+                    <div class="name_job">
+                        <h2 class="name">admin</h2>
+                    </div>
+                </div>
+                <a onclick="exit_sesion()">
+                    <i class="fa fa-power-off" id="logout"></i>
+                </a>
+            </div>
         </div>
     </div>
-</div>
-  <!-- en la variable $content_body se encuentra el codigo html a mostrar-->
-  <div class="content-wrapper">
-      <div class="page-title">
-      <div>
-          <!--Muestra en pantalla el icono y el titulo que se le pase en las variables-->
-  
-          <h1><i class="icon fa fa-cogs"></i> Configuraciones</h1>
-          <p></p>
-      </div>
-      <div>
-          <ul class="breadcrumb">
-              <!--imprime el breadcrumb que es como la navegacion, que se le pase en las variable-->
-              
-              <li><i class="fa fa-home fa-lg"></i></li>
-                          <li>Configuraciones</li>
-                      </ul>
-      </div>
-  
-  </div>
-  <div class="body-content">
-      <!--imprime el codigo html que se le pase en las variable-->
-      
-  <div class="row">
-      <div class="col-lg-6">
-          <div class="widget-small primary coloured-icon">
-              <i class="icon fa fa-cogs fa-3x"></i>
-              <div class="info">
-                  <h4>General</h4>
-                  <p>Configuracion general</p>
-                  <a href="configuracion/general/tipo_id.html" class="btn btn-light">Cambiar Configuraciones <i class="fa fa-chevron-right"></i></a>
-              </div>
-          </div>
-      </div>
-  
-      <div class="col-lg-6">
-          <div class="widget-small primary coloured-icon">
-  
-              <i class="icon fa fa-user fa-3x"></i>
-  
-              <div class="info">
-                  <h4>Usuarios</h4>
-                  <p>Configuracion de usuarios</p>
-                  <a href="configuracion/usuarios.html" class="btn btn-light">Cambiar Configuraciones <i class="fa fa-chevron-right"></i></a>
-              </div>
-          </div>
-      </div>
-     
-  </div>
-  </div></div>
-  
-  <!--Llama al componente footer-->
-  
-  <!--codigo html de mensaje de carga-->
-  <div class="modal fade " id="loading-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-sm">
-      <div class="modal-content">
-  
-        <div class="modal-body">
-          <div class="d-flex align-items-center text-primary">
-            <strong role="status">Loading...</strong>
-            <div class="spinner-border ms-auto" aria-hidden="true"></div>
-          </div>
+    <!-- en la variable $content_body se encuentra el codigo html a mostrar-->
+    <div class="content-wrapper">
+        <div class="page-title">
+            <div>
+                <!--Muestra en pantalla el icono y el titulo que se le pase en las variables-->
+
+                <h1><i class="icon fa fa-cogs"></i> Configuraciones</h1>
+                <p></p>
+            </div>
+            <div>
+                <ul class="breadcrumb">
+                    <!--imprime el breadcrumb que es como la navegacion, que se le pase en las variable-->
+
+                    <li><i class="fa fa-home fa-lg"></i></li>
+                    <li>Configuraciones</li>
+                </ul>
+            </div>
+
         </div>
-  
-  
-      </div>
+        <div class="body-content">
+            <!--imprime el codigo html que se le pase en las variable-->
+
+            <div class="row item">
+                <div class="col-lg-6">
+                    <div class="widget-small primary coloured-icon">
+                        <i class="icon fa fa-cogs fa-3x"></i>
+                        <div class="info">
+                            <h4>General</h4>
+                            <p>Configuracion general</p>
+                            <a href="configuracion/general/tipo_id.html" class="btn btn-light">Cambiar Configuraciones
+                                <i class="fa fa-chevron-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="widget-small primary coloured-icon">
+
+                        <i class="icon fa fa-user fa-3x"></i>
+
+                        <div class="info">
+                            <h4>Usuarios</h4>
+                            <p>Configuracion de usuarios</p>
+                            <a href="configuracion/usuarios.html" class="btn btn-light">Cambiar Configuraciones <i
+                                    class="fa fa-chevron-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
     </div>
-  </div>
-  <!-- General JS Scripts -->
-  
-  <script>
-    const base_url = "";
-  </script>
-  <!-- JS Libraies -->
-  <script src="modules/jquery.min.js"></script>
-  <script src="modules/nicescroll/jquery.nicescroll.min.js"></script>
-  <script src="modules/bootstrap/js/bootstrap.min.js"></script>
-  <script src="modules/sweetalert/sweetalert2.all.min.js"></script>
-  <script src="modules/select2/js/select2.full.min.js"></script>
-  <script src="modules/datatables/datatables.min.js"></script>
-  <script src="modules/pdfmake/pdfmake.min.js"></script>
-  
-  <!-- Page Specific JS File -->
-  <script src="js/Archivo.js"></script>
-  
-  <!-- Template JS File añade las etiquetas js que pasen en la variable $footer-->
-      <script src="js/page/Config.js"></script>
-  
-  
-  
-  </body></html>
+
+    <!--Llama al componente footer-->
+
+    <!--codigo html de mensaje de carga-->
+    <div class="modal fade " id="loading-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-sm">
+            <div class="modal-content">
+
+                <div class="modal-body">
+                    <div class="d-flex align-items-center text-primary">
+                        <strong role="status">Loading...</strong>
+                        <div class="spinner-border ms-auto" aria-hidden="true"></div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    <!-- General JS Scripts -->
+
+    <script>
+        const base_url = "";
+    </script>
+    <!-- JS Libraies -->
+    <script src="modules/jquery.min.js"></script>
+    <script src="modules/nicescroll/jquery.nicescroll.min.js"></script>
+    <script src="modules/bootstrap/js/bootstrap.min.js"></script>
+    <script src="modules/sweetalert/sweetalert2.all.min.js"></script>
+    <script src="modules/select2/js/select2.full.min.js"></script>
+    <script src="modules/datatables/datatables.min.js"></script>
+    <script src="modules/pdfmake/pdfmake.min.js"></script>
+
+    <!-- Page Specific JS File -->
+    <script src="js/Archivo.js"></script>
+
+    <!-- Template JS File añade las etiquetas js que pasen en la variable $footer-->
+    <script src="js/page/Config.js"></script>
+
+
+
+</body>
+
+</html>

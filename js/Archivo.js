@@ -45,6 +45,16 @@ class httpRequest {
     }
 }
 
+let sidebar_nicescroll_opts = {
+    cursorcolor: "var(--default)",  // Rojo
+    cursorwidth: "5px",
+    cursorborder: "none",
+    background: "none",   // Fondo de la barra de scroll
+    cursorborderradius: "5px", // Bordes redondeados
+    scrollspeed: 60,         // Velocidad de desplazamiento
+    mousescrollstep: 40,     // Sensibilidad del scroll del mouse
+};
+
 const sidebar = document.querySelector(".sidebar"),
     title_form = document.getElementById("title"),
     btn_submit_form = document.getElementById("btnAccion"),
@@ -284,3 +294,6 @@ function setDataCombobox(table, combobox) {
         });
 }
 
+$(function() {
+    $(".body-content").niceScroll(sidebar_nicescroll_opts);
+});

@@ -332,12 +332,6 @@ body {
     overflow-y: auto; /* Agrega desplazamiento vertical solo a este div si es necesario */
     overflow-x: hidden;
     box-sizing: border-box; /* Asegura que el padding no afecte el tamaño total del div */
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-top: 10px;
-}
-.content-body{
-    background-color: red;
 }
 
 .sidebar.active~.content-wrapper {
@@ -914,7 +908,7 @@ body {
     padding: 20px;
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease-in-out;
-    min-height: 85vh;
+    
 }
 
 .card.small {
@@ -992,7 +986,15 @@ body {
     pointer-events: none
 }
 
+.item{
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+}
 
+.fix-card-size{
+    min-height: 88vh;   
+}
 
 
 

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
+    <title>EME COLOMBIA</title>
+
+    <!-- General CSS Files -->
+    <!-- General CSS bootstrap -->
+    <link rel="stylesheet" href="modules/bootstrap/css/bootstrap.min.css">
+
+    <!-- General CSS del ico -->
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+
+    <!-- General CSS font-awesome -->
+    <link rel="stylesheet" href="modules/font-awesome/css/font-awesome.css">
+    <!-- General CSS factura -->
+    <link rel="stylesheet" href="css/factura.css">
+
+<body>
+
+   
+    <!-- en la variable $content_body se encuentra el codigo html a mostrar-->
+    <div class="facturacion">
+        <a class="btn btn-danger btn-sm" href="javascript:window.history.back();">
+            <i class="fa fa-close"></i>
+        </a>
+        <img src="img/factura.jpg" alt="factura de paciente">
+    </div>
+
+    <!--Llama al componente footer-->
+
+    <!--codigo html de mensaje de carga-->
+    <div class="modal fade " id="loading-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-sm">
+            <div class="modal-content">
+
+                <div class="modal-body">
+                    <div class="d-flex align-items-center text-primary">
+                        <strong role="status">Loading...</strong>
+                        <div class="spinner-border ms-auto" aria-hidden="true"></div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    <!-- General JS Scripts -->
+
+    
+    <!-- JS Libraies -->
+    <script src="modules/jquery.min.js"></script>
+    <script src="modules/nicescroll/jquery.nicescroll.min.js"></script>
+    <script src="modules/sweetalert/sweetalert2.all.min.js"></script>
+ 
+    <!-- Page Specific JS File -->
+    <script src="js/Archivo.js"></script>
+    <!-- Page Specific JS File -->
+    <script src="js/page/Factura.js"></script>
+
+</body>
+
+</html>
