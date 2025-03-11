@@ -1,0 +1,229 @@
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
+        <title>EME COLOMBIA</title>
+
+        <!-- General CSS Files -->
+        <!-- General CSS bootstrap -->
+        <link rel="stylesheet" href="../../modules/bootstrap/css/bootstrap.min.css">
+
+        <!-- General CSS del ico -->
+        <link rel="shortcut icon" href="../../img/favicon.ico" type="image/x-icon">
+
+        <!-- General CSS font-awesome -->
+        <link rel="stylesheet" href="../../modules/font-awesome/css/font-awesome.css">
+
+        <!-- General CSS datatables -->
+        <link rel="stylesheet" href="../../modules/datatables/datatables.min.css">
+        <!-- General CSS select2 -->
+        <link rel="stylesheet" href="../../modules/select2/css/select2.min.css">
+
+
+        <!-- Template CSS -->
+        <link rel="stylesheet" href="../../css/main.css">
+
+        <!-- Start GA imprime las etiquetas que contenga la variable header -->
+        <link rel="stylesheet" href="../../css/paciente.css">
+
+    </head>
+    <body>
+
+        <!--Llama al componente menu (SIDEBAR)-->
+
+
+        <div class="sidebar">
+            <div class="logo_content">
+                <div class="logo">
+                    <i class="fa fa-stethoscope icon"></i>
+                    <div class="logo_name">EME</div>
+                </div>
+                <i class="fa fa-bars" id="btn_menu" onclick="menu_animation()"></i>
+            </div>
+            <ul class="nav-list">
+
+                <li class="nav-item">
+                    <a href="../Home/home.html">
+                        <i class="fa fa-dashboard"></i>
+                        <span class="link_name">Dashboard</span>
+                    </a>
+                    <span class="tooltip">DashBoard</span>
+                </li>
+                <li class="nav-item">
+                    <a href="../Paciente/pacientes.html" class="active">
+                        <i class="fa fa-user "></i>
+                        <span class="link_name">Pacientes</span>
+                    </a>
+                    <span class="tooltip">Pacientes</span>
+                </li>
+                <li class="nav-item">
+                    <a href="../Facturacion/facturacion.html" >
+                        <i class="fa fa-money "></i>
+                        <span class="link_name">Facturación</span>
+                    </a>
+                    <span class="tooltip">Facturación</span>
+                </li>
+                <li class="nav-item">
+                    <a href="configuraciones.html">
+                        <i class="fa fa-cog"></i>
+                        <span class="link_name">Configuraciones</span>
+                    </a>
+                    <span class="tooltip">Configuraciones</span>
+                </li>
+
+            </ul>
+            <div class="profile_content">
+                <div class="profile">
+                    <div class="profile_details">
+                        <i class="fa-sharp fa fa-user-secret"></i>
+                        <div class="name_job">
+                            <h2 class="name">admin</h2>
+                        </div>
+                    </div>
+                    <a onclick="exit_sesion()">
+                        <i class="fa fa-power-off" id="logout"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-wrapper">
+            <!--------------------  Header    -------------------->
+
+            <div class="page-title">
+                <div>
+                    <!--Muestra en pantalla el icono y el titulo que se le pase en las variables-->
+
+                    <h1><i class="icon fa fa-user"></i> Pacientes</h1>
+                    <p></p>
+                </div>
+                <div>
+                    <ul class="breadcrumb">
+                        <!--imprime el breadcrumb que es como la navegacion, que se le pase en las variable-->
+
+                        <li><i class="fa fa-home fa-lg"></i></li>
+                        <li>Pacientes</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!--------------------  Contenido de la pagina   -------------------->
+            <div class="body-content">
+                                <!---------------   Ventana de informacion de paciente   --------------->
+                                <div class="card tab-pane " role="tabpanel" id="Panel_Paciente_Data_View">
+                                    <div class="card-header">
+                
+                                        <div class="info-paciente ">
+                
+                                            <h5>1. DATOS DE LA VICTIMA DEL ACCIDENTE DE TRANSITO</h5>
+                                        </div>
+                                        <div class="opcines">
+                                            <button class="btn btn-primary btn_modificar" onclick="habilitar_input()" >Modificar</button>
+                                            <button class="btn btn-primary btn_guardar none" onclick="deshabilitar_input()" >Guardar</button>
+                                            <a class="btn btn-danger btn-sm" data-toggle="tab" data-target="Panel_Main">
+                                                <i class="fa fa-close"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="tab-content" >
+                                        <div class="card-body list_Info">
+                                            <div class="containers_Info">
+                                                <span>TIPO DE IDENTIFICACION</span>
+                                                <Input class="input_Disabled" id="input_Disabled" placeholder="Hola" disabled></Input>
+                                            </div>
+                                            <div class="containers_Info">
+                                                <span>NUMERO DE IDENTIFICACION</span>
+                                                <Input class="input_Disabled" id="input_Disabled" placeholder="Hola" disabled></Input>
+                                            </div>
+                                            <div class="containers_Info">
+                                                <span>PRIMER APELLIDO</span>
+                                                <Input class="input_Disabled" id="input_Disabled" placeholder="Hola" disabled></Input>
+                                            </div>
+                                            <div class="containers_Info">
+                                                <span>SEGUNDO APELLIDO</span>
+                                                <Input class="input_Disabled" id="input_Disabled" placeholder="Hola" disabled></Input>
+                                            </div>
+                                            <div class="containers_Info">
+                                                <span>PRIMER NOMBRE</span>
+                                                <Input class="input_Disabled" id="input_Disabled" placeholder="Hola" disabled></Input>
+                                            </div>
+                                            <div class="containers_Info">
+                                                <span>SEGUNDO NOMBRE</span>
+                                                <Input class="input_Disabled" id="input_Disabled" placeholder="Hola" disabled></Input>
+                                            </div>
+                                            <div class="containers_Info">
+                                                <span>FECHA DE NACIMIENTO</span>
+                                                <Input class="input_Normal" id="input_Normal" placeholder="Hola" disabled></Input>
+                                            </div>
+                                            <div class="containers_Info">
+                                                <span>EDAD</span>
+                                                <Input class="input_Normal" id="input_Normal" placeholder="Hola" disabled></Input>
+                                            </div>
+                                            <div class="containers_Info">
+                                                <span>CONDICION DE VICTIMA</span>
+                                                <Input class="input_Disabled" id="input_Disabled" placeholder="Hola" disabled></Input>
+                                            </div>
+                                            <div class="containers_Info">
+                                                <span>SEXO AL MOMENTO DE NACER</span>
+                                                <Input class="input_Disabled" id="input_Disabled" placeholder="Hola" disabled></Input>
+                                            </div>
+                                            <div class="containers_Info">
+                                                <span>DIRECCION</span>
+                                                <Input class="input_Disabled" id="input_Disabled" placeholder="Hola" disabled></Input>
+                                            </div>
+                                            <div class="containers_Info">
+                                                <span>BARRIO</span>
+                                                <Input class="input_Disabled" id="input_Disabled" placeholder="Hola" disabled></Input>
+                                            </div>
+                                            <div class="containers_Info">
+                                                <span>TELEFONO</span>
+                                                <Input class="input_Disabled" id="input_Disabled" placeholder="Hola" disabled></Input>
+                                            </div>
+                                            <div class="containers_Info">
+                                                <span>CELULAR</span>
+                                                <Input class="input_Disabled" id="input_Disabled" placeholder="Hola" disabled></Input>
+                                            </div>
+                                            <div class="containers_Info">
+                                                <span>ESTADO CIVIL</span>
+                                                <Input class="input_Disabled" id="input_Disabled" placeholder="Hola" disabled></Input>
+                                            </div>
+                                            <div class="containers_Info">
+                                                <span>PROFESION U OCUPACION</span>
+                                                <Input class="input_Disabled" placeholder="Hola" disabled></Input>
+                                            </div>
+                                            <div class="card-footer d-flex justify-content-between">
+                                                <button class="btn btn-primary" type="submit" onclick="DataPaciente_onclick()"
+                                                id="btnAccion">Registros</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>    
+
+            </div> 
+        </div>
+    </div>
+    <!-- General JS Scripts -->
+
+    <script>
+        const base_url = "";
+    </script>
+    <!-- JS Libraies -->
+    <script src="../../modules/jquery.min.js"></script>
+    <script src="../../modules/nicescroll/jquery.nicescroll.min.js"></script>
+    <script src="../../modules/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../../modules/sweetalert/sweetalert2.all.min.js"></script>
+    <script src="../../modules/select2/js/select2.full.min.js"></script>
+    <script src="../../modules/datatables/datatables.min.js"></script>
+    <script src="../../modules/pdfmake/pdfmake.min.js"></script>
+
+    <!-- Page Specific JS File -->
+    <script src="../../js/Archivo.js"></script>
+
+    <!-- Template JS File añade las etiquetas js que pasen en la variable $footer-->
+    <script src="../../js/page/Pacientes.js"></script>
+
+
+    </body>
+</html>
