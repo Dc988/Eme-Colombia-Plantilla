@@ -5,16 +5,16 @@ let data = {
         "id_form": "1",
         "Tipo_ID_FK": "4",
         "IDENTIFICACION": "123456789",
-        "Apellido_1": "Gómez",
-        "Apellido_2": "Pérez",
-        "Nombre_1": "Carlos",
-        "Nombre_2": "Andrés",
+        "Apellido_1": "GÓMEZ",
+        "Apellido_2": "PÉREZ",
+        "Nombre_1": "CARLOS",
+        "Nombre_2": "ANDRÉS",
         "Fecha_Na": "1990-05-15",
         "Edad": "34",
         "tipo_pac_FK": "2",
         "Sexo": "M",
-        "Direccion": "Calle 45 #12-34",
-        "Barrio": "Centro",
+        "Direccion": "CALLE 45 #12-34",
+        "Barrio": "CENTRO",
         "Telefono": "3001234567",
         "Celular": "3209876543",
         "Estado_Civil_FK": "1",
@@ -28,29 +28,29 @@ let data = {
         "Hora_Ingreso": "14:30",
         "Fecha_evento": "2025-03-07",
         "Hora_evento": "13:15",
-        "Departamento": "Atlántico",
+        "Departamento": "ATLÁNTICO",
         "Municipio_fk": "1",
-        "Direccion_evento": "Avenida 80 #10-20",
-        "Marca": "Toyota",
-        "Tipo_Vehiculo": "Carro",
+        "Direccion_evento": "AVENIDA 80 #10-20",
+        "Marca": "TOYOTA",
+        "Tipo_Vehiculo": "CARRO",
         "Placa": "ABC123",
-        "apellido_prop_vehiculo": "Martínez",
-        "Nombre_prop_vehiculo": "Luis",
+        "apellido_prop_vehiculo": "MARTÍNEZ",
+        "Nombre_prop_vehiculo": "LUIS",
         "Poliza": "POL12345",
         "Identificacion_prop_vehiculo": "987654321",
         "Id_2": "2",
         "Tipo_ID_FK_2": "2",
         "IDENTIFICACION_2": "1122334455",
-        "Apellido_1_2": "Ramírez",
-        "Apellido_2_2": "López",
-        "Nombre_1_2": "Ana",
-        "Nombre_2_2": "María",
+        "Apellido_1_2": "RAMÍREZ",
+        "Apellido_2_2": "LÓPEZ",
+        "Nombre_1_2": "ANA",
+        "Nombre_2_2": "MARÍA",
         "Fecha_Na_2": "1985-08-22",
         "Edad_2": "39",
         "tipo_pac_FK_2": "1",
         "Sexo_2": "F",
-        "Direccion_2": "Carrera 50 #23-45",
-        "Barrio_2": "Poblado",
+        "Direccion_2": "CARRERA 50 #23-45",
+        "Barrio_2": "POBLADO",
         "Telefono_2": "3104567890",
         "Celular_2": "3159876543"
     },
@@ -58,16 +58,16 @@ let data = {
         "id_form": "2",
         "Tipo_ID_FK": "4",
         "IDENTIFICACION": "987654321",
-        "Apellido_1": "Fernández",
-        "Apellido_2": "Torres",
-        "Nombre_1": "Juan",
-        "Nombre_2": "Pablo",
+        "Apellido_1": "FERNÁNDEZ",
+        "Apellido_2": "TORRES",
+        "Nombre_1": "JUAN",
+        "Nombre_2": "PABLO",
         "Fecha_Na": "1987-12-10",
         "Edad": "37",
         "tipo_pac_FK": "1",
         "Sexo": "M",
-        "Direccion": "Calle 12 #5-67",
-        "Barrio": "San Javier",
+        "Direccion": "CALLE 12 #5-67",
+        "Barrio": "SAN JAVIER",
         "Telefono": "3012233445",
         "Celular": "3119988776",
         "Estado_Civil_FK": "2",
@@ -81,29 +81,29 @@ let data = {
         "Hora_Ingreso": "08:45",
         "Fecha_evento": "2025-03-05",
         "Hora_evento": "19:30",
-        "Departamento": "Atlántico",
+        "Departamento": "ATLÁNTICO",
         "Municipio_fk": "3",
-        "Direccion_evento": "Calle 26 #15-30",
-        "Marca": "Honda",
-        "Tipo_Vehiculo": "Moto",
+        "Direccion_evento": "CALLE 26 #15-30",
+        "Marca": "HONDA",
+        "Tipo_Vehiculo": "MOTO",
         "Placa": "XYZ987",
-        "apellido_prop_vehiculo": "Gutiérrez",
-        "Nombre_prop_vehiculo": "Laura",
+        "apellido_prop_vehiculo": "GUTIÉRREZ",
+        "Nombre_prop_vehiculo": "LAURA",
         "Poliza": "POL67890",
         "Identificacion_prop_vehiculo": "2233445566",
         "Id_2": "3",
         "Tipo_ID_FK_2": "1",
         "IDENTIFICACION_2": "5566778899",
-        "Apellido_1_2": "Mendoza",
-        "Apellido_2_2": "Vargas",
-        "Nombre_1_2": "Sofía",
-        "Nombre_2_2": "Elena",
+        "Apellido_1_2": "MENDOZA",
+        "Apellido_2_2": "VARGAS",
+        "Nombre_1_2": "SOFÍA",
+        "Nombre_2_2": "ELENA",
         "Fecha_Na_2": "1992-04-05",
         "Edad_2": "33",
         "tipo_pac_FK_2": "2",
         "Sexo_2": "F",
-        "Direccion_2": "Carrera 8 #17-89",
-        "Barrio_2": "Chapinero",
+        "Direccion_2": "CARRERA 8 #17-89",
+        "Barrio_2": "CHAPINERO",
         "Telefono_2": "3123344556",
         "Celular_2": "3174455667"
     },
@@ -111,10 +111,10 @@ let data = {
         "id_form": "3",
         "Tipo_ID_FK": "4",
         "IDENTIFICACION": "555111222",
-        "Apellido_1": "López",
-        "Apellido_2": "García",
-        "Nombre_1": "Mariana",
-        "Nombre_2": "Isabel",
+        "Apellido_1": "LOPEZ",
+        "Apellido_2": "GARCIA",
+        "Nombre_1": "MARIANA",
+        "Nombre_2": "ISABEL",
         "Fecha_Na": "1995-06-30",
         "Edad": "29",
         "tipo_pac_FK": "2",
@@ -372,8 +372,35 @@ sexo_paciente.innerHTML = "F";
 direccion_paciente.innerHTML = "CALLE 2 SUR 1 256";
 barrio_paciente.innerHTML = "LAS FLORES";
 
+function on_keydown_searck(e) {
+    if (e.keyCode === 13 && !e.shiftKey) {
+        e.preventDefault();
+        setData();
+    }
+}
 
 
+function setData() {
+    if (fecha_ingreso_search.value != "") {
+        animation_load();
+        //do something
+
+        setTimeout(function () {
+            remove_animation_load();
+        }, 500);
+    }
+}
+
+
+function goto_facturaFormat() {
+
+
+    if (fecha_ingreso_search.value != "" && id_ingreso.value != "-1") {
+        window.location = "../factura.html";
+    } else {
+        alertas("SIN REISTRO SELECCIONADO", "warning");
+    }
+}
 
 
 

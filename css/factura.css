@@ -1,0 +1,122 @@
+.data {
+    width: 787px;
+    height: 815px;
+    position: absolute;
+    top: 300px;
+    left: 433px;
+}
+
+.data .seccion-data {
+    width: 100%;
+    min-height: 45px;
+    position: relative;
+}
+
+
+.data .seccion-data .col-left {
+    position: absolute;
+    left: 3px;
+    width: 213px;
+    min-height: 45px;
+}
+
+.data .seccion-data .col-right {
+    position: absolute;
+    right: -3px;
+    width: 218px;
+    min-height: 45px;
+}
+
+.data .seccion-data div h6 {
+    font-size: 14px;
+    padding: 0;
+    margin: 0;
+    padding-bottom: 6px;
+}
+
+.btn-opcions {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+.factura img {
+    width: 1100 px;
+}
+
+.factura img {
+    width: 100%;
+}
+
+/*codigo de secciones*/
+
+/*SECCION 1*/
+
+/*SECCION 2*/
+#seccion_2 {
+    position: relative;
+    top: 253px;
+}
+
+/*SECCION 3*/
+#seccion_3 {
+    position: relative;
+    top: 343px;
+}
+
+/*SECCION 4*/
+#seccion_4 {
+    position: relative;
+    top: 526px;
+}
+
+@media print {
+
+    /* Se aplicará la siguiente regla CSS */
+    .btn-opcions {
+        display: none;
+    }
+
+    .data {
+        width: 420px;
+        height: 815px;
+        position: absolute;
+        top: 160px;
+        left: 230px;
+    }
+
+    .data .seccion-data .col-left {
+        width: 110px;
+    }
+    
+    .data .seccion-data .col-right {
+        width: 116px;
+    }
+
+    .data .seccion-data div h6 {
+        font-size: 8px;
+        padding: 0;
+        margin: 0;
+        padding-bottom: 2.5px;
+    }
+
+    #seccion_2 {
+        position: relative;
+        top: 112px;
+    }
+    
+    /*SECCION 3*/
+    #seccion_3 {
+        position: relative;
+        top: 141px;
+    }
+    
+    /*SECCION 4*/
+    #seccion_4 {
+        position: relative;
+        top: 216px;
+    }
+
+    
+
+}

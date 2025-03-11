@@ -1,11 +1,17 @@
-const tbl_factura = createDataTable('#tbl_Facturacion'
-    , "/Facturacion/list_fact",
-    [{ 'data': 'ID' },
-    { 'data': 'FACTURA' },
-    { 'data': 'FECHA_INGRESO' },
-    { 'data': 'ESTADO' },
-    { 'data': 'acciones' }]
-);
+if(!(typeof tbl_Facturacion === 'undefined')){
+    const tbl_factura = createDataTable('#tbl_Facturacion'
+        , "/Facturacion/list_fact",
+        [{ 'data': 'ID' },
+        { 'data': 'FACTURA' },
+        { 'data': 'FECHA_INGRESO' },
+        { 'data': 'ESTADO' },
+        { 'data': 'acciones' }]
+    );
+}
+
+
+
+
 
 function btnEditarFact_onclick(id) {
     show_tap_panel("Panel_Form");
@@ -52,3 +58,5 @@ function DataFactura_onclick() {
     }
 
 }
+
+

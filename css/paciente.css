@@ -28,7 +28,10 @@
     background-color: var(--text-primary);
     color: var(--primary-2);
     font-size: small;
-    
+}
+
+.header .opcines .btn-option:hover{
+    background-color: var(--default);
 }
 
 .opcion_search{
@@ -77,11 +80,11 @@
 }
 
 .data_paciente .panel-body{
+    overflow-y: auto;
     position: absolute;
     bottom: 0px;
     right: 0px;
     width: 100%;
-    top: 310px;
-    overflow-y: scroll;
+    top: 325px;
     padding: 10px;    
 }

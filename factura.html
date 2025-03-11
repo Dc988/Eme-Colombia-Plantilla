@@ -3,7 +3,6 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
     <title>EME COLOMBIA</title>
 
     <!-- General CSS Files -->
@@ -23,10 +22,96 @@
    
     <!-- en la variable $content_body se encuentra el codigo html a mostrar-->
     <div class="facturacion">
-        <a class="btn btn-danger btn-sm" href="javascript:window.history.back();">
-            <i class="fa fa-close"></i>
-        </a>
-        <img src="img/factura.jpg" alt="factura de paciente">
+        <div class="btn-opcions">
+            <a class="btn btn-danger btn-sm" href="javascript:window.history.back();">
+                <i class="fa fa-close"></i>
+            </a>
+            <a class="btn btn-success btn-sm" onclick="printFormato()">
+                <i class="fa fa-print"></i>
+            </a>
+        </div>
+        <div class="data">
+            <div class="seccion-data" id="seccion_1">
+                <div class="col-left">
+                    <h6>LOPEZ</h6>
+                    <h6>MARIANA</h6>
+                    <h6>CC</h6>
+                    <h6>29/1/1964</h6>
+                    <h6>CONDUCTOR</h6>
+                    <h6>CALLE 23 SUR 3 - 562</h6>
+                    <h6>N/A</h6>
+                    <h6>SOLTERA</h6>
+                    <h6>ASEGURADORA SOLIDARIA DE COLOMBIA</h6>
+                </div>
+                
+                <div class="col-right">
+                    <h6>HERNANDEZ</h6>
+                    <h6>LUISA</h6>
+                    <h6>1022365988</h6>
+                    <h6>61</h6>
+                    <h6>M</h6>
+                    <h6>VILLA ROSA</h6>
+                    <h6>3002566988</h6>
+                    <h6>AMA DE CASE</h6>
+                    <h6>AMBULANCIA</h6>
+                </div>
+            </div>
+            <div class="seccion-data" id="seccion_2">
+                <div class="col-left">
+                    <h6>ATENCION DE URGENCIA</h6>
+                    <h6>11/1/2025</h6>
+                </div>
+
+                <div class="col-right">
+                    <h6>I</h6>
+                    <h6>16:00:00</h6>
+                </div>
+            </div>
+            <div class="seccion-data" id="seccion_3">
+                <div class="col-left">
+                    <h6>11/1/2025</h6>
+                    <h6>ATLANTICO</h6>
+                    <h6>CARRERA 2 SUR 1225</h6>
+                    <h6>CARRO</h6>
+                    <h6>GOMEZ RODRIGUEZ</h6>
+                    <h6>15888555565656</h6>
+                </div>
+
+                <div class="col-right">
+                    <h6>10:00:00</h6>
+                    <h6>BARANOA</h6>
+                    <h6>TOYOTA</h6>
+                    <h6>SH 2565</h6>
+                    <h6>ALEJANDRA</h6>
+                    <h6>569855635</h6>
+                </div>
+            </div>
+            <div class="seccion-data" id="seccion_4">
+                <div class="col-left">
+                    <h6>LOPEZ</h6>
+                    <h6>MARIANA</h6>
+                    <h6>CC</h6>
+                    <h6>29/1/1964</h6>
+                    <h6>CONDUCTOR</h6>
+                    <h6>CALLE 23 SUR 3 - 562</h6>
+                    <h6>N/A</h6>
+                </div>
+                
+                <div class="col-right">
+                    <h6>HERNANDEZ</h6>
+                    <h6>LUISA</h6>
+                    <h6>1022365988</h6>
+                    <h6>61</h6>
+                    <h6>M</h6>
+                    <h6>VILLA ROSA</h6>
+                    <h6>3002566988</h6>
+                </div>
+            </div>
+        </div>
+
+        <div class="factura">
+            <img class="img_facura" src="img/factura.jpg" alt="factura de paciente">
+        </div>
     </div>
 
     <!--Llama al componente footer-->
@@ -59,7 +144,7 @@
     <!-- Page Specific JS File -->
     <script src="js/Archivo.js"></script>
     <!-- Page Specific JS File -->
-    <script src="js/page/Factura.js"></script>
+    <script src="js/page/Factura_formato.js"></script>
 
 </body>
 

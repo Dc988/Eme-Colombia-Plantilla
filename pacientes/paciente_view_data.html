@@ -144,7 +144,7 @@
                                 <a class="btn btn-primary btn-sm">
                                     <i class="fa fa-save"></i>
                                 </a>
-                                <a class="btn btn-success btn-sm" href="../factura.html">
+                                <a class="btn btn-success btn-sm" onclick="goto_facturaFormat()">
                                     <i class="fa fa-print"></i>
                                 </a>
                                 <a class="btn btn-warning btn-sm">
@@ -156,7 +156,7 @@
                         <div class="opcines">
                             <div class="opcion_search">
                                 <input class="btn btn-option " type="date" name="fecha_ingreso_search"
-                                    id="fecha_ingreso_search">
+                                    id="fecha_ingreso_search" onkeypress="on_keydown_searck(event)" >  
                             </div>
                             <a class="btn btn-option" href="#Panel_1">1. DATOS DE LA VICTIMA DEL ACCIDENTE DE
                                 TRANSITO</a>
@@ -248,6 +248,7 @@
                             </div>
                             <div class="row card-body d-flex justify-content-center">
                                 <input type="hidden" id="MES_ACCIDENTE" name="MES_ACCIDENTE" value="1">
+                                <input type="hidden" id="id_ingreso" name="id_ingreso" value="1">
 
                                 <div class="form-floating col-md-5 mb-3">
 
