@@ -26,8 +26,9 @@
 
     <!-- Template CSS -->
     <link rel="stylesheet" href="../../css/main.css">
-
+    
     <!-- Start GA imprime las etiquetas que contenga la variable header -->
+    <link rel="stylesheet" href="../../css/user.css">
 
 
 </head>
@@ -49,28 +50,28 @@
         <ul class="nav-list">
 
             <li class="nav-item">
-                <a href="../home.html" class="">
+                <a href="../Home/home.html" class="">
                     <i class="fa fa-dashboard"></i>
                     <span class="link_name">Dashboard</span>
                 </a>
                 <span class="tooltip">DashBoard</span>
             </li>
             <li class="nav-item">
-                <a href="../pacientes.html" class="">
+                <a href="../Paciente/pacientes.html" class="">
                     <i class="fa fa-user "></i>
                     <span class="link_name">Pacientes</span>
                 </a>
                 <span class="tooltip">Pacientes</span>
             </li>
             <li class="nav-item">
-                <a href="../facturacion.html" class="">
+                <a href="../Facturacion/facturacion.html" class="">
                     <i class="fa fa-money "></i>
                     <span class="link_name">Facturación</span>
                 </a>
                 <span class="tooltip">Facturación</span>
             </li>
             <li class="nav-item">
-                <a href="../configuraciones.html" class="active">
+                <a href="../Configuracion_vista/configuraciones.html" class="active">
                     <i class="fa fa-cog"></i>
                     <span class="link_name">Configuraciones</span>
                 </a>
@@ -234,7 +235,7 @@
                     </div>
                 </div>
 
-                <div class="fix-card-size card tab-pane" id="Panel_Form" role="tabpanel">
+                <div class="fix-card-size card tab-pane " id="Panel_Form" role="tabpanel">
                     <div class="card-header line-head">
                         <h3 class="title" id="title">Nuevo Usuario</h3>
 
@@ -243,7 +244,7 @@
                     </div>
                     <div class="card-body row">
                         <div class="col-md-6">
-                            <form method="post" id="frmUsuario" class="needs-validation"
+                            <form method="post" id="frmUsuario" class="needs-validation form_user"
                                 onsubmit="DataUser_onclick(event)" novalidate="">
                                 <input type="hidden" id="id_form" name="id" value="-1">
                                 <div class="form-floating mb-3">
@@ -288,7 +289,7 @@
                                         </label>
                                     </div>
                                 </div>
-                                <div class="d-grid gap-2 mt-3">
+                                <div class="d-grid gap-2 mt-3 btn-actions">
                                     <div class="btn-group btn-group-justified ">
                                         <button class="btn btn-primary" type="submit" id="btnAccion">Registrar</button>
                                         <a class="btn btn-danger" data-toggle="tab" data-target="Panel_Main"

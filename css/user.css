@@ -1,0 +1,12 @@
+.form_user{
+    overflow-y: hidden;
+    min-height: 320px;
+    height: 100%;
+    position: relative;
+}
+
+.btn-actions{
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}

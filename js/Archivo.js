@@ -71,7 +71,7 @@ const sidebar = document.querySelector(".sidebar"),
         'lengthMenu': 'Mostrar  _MENU_  Entradas',
         'loadingRecords': 'Cargando...',
         'processing': 'Procesando...',
-        'search': 'Buscar: ',
+        'search': '<i class="fa fa-search fa-lg me-2"></i>',
         'zeroRecords': 'Sin resultados encontrados',
         'paginate': {
             'first': '<i class="fa fa-angle-double-left"></i>',
@@ -126,7 +126,7 @@ function animation_load() {
 function remove_animation_load() {
     setTimeout(function () {
         $("#loading-modal").modal("hide");
-    }, 450);
+    }, 500);
 }
 
 function form_validated(form) {
@@ -194,7 +194,7 @@ function createDataTable(table, url, columns) {
         pagingType: 'simple_numbers',
 
         language,
-        dom: "<'d-flex justify-content-between'<'mb-2'l><'d-none'B><'mb-2'f>>" +
+        dom: "<'d-flex justify-content-end'<'d-none mb-2'l><'d-none'B><'mb-2'f>>" +
             "<'row'<'text-start col-sm-12'tr>>" +
             "<'d-flex justify-content-between'<'mt-3'i><'mt-2'p>>",
         buttons
@@ -294,6 +294,10 @@ function setDataCombobox(table, combobox) {
         });
 }
 
-$(function() {
+
+$(document).ready(function() {
     $(".body-content").niceScroll(sidebar_nicescroll_opts);
 });
+
+
+

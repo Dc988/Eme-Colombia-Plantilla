@@ -1,6 +1,7 @@
 const
     //TBL TIPO ID
-
+    lateral_bar=document.querySelector(".lateral_menu"),
+    icon_menu=lateral_bar.querySelector(".lateral_menu .action_btn a i"),
     tbl_tipo_id = createDataTable('#tbl_tipo_id',
         "/Configuraciones/General/Tipo_id/list",
         [{ 'data': 'id' },
@@ -1270,6 +1271,20 @@ function DataSeguradora_onclick(e) {
                 break;
             default:
                 alertas('Error en el componente submit', 'warning');
+        }
+    }
+}
+
+//menu
+
+function lateral_menu_animation(){
+    if(lateral_bar!=null){
+
+        lateral_bar.classList.toggle("active");
+        if(lateral_bar.classList.contains("active")){
+            icon_menu.classList.replace("fa-angle-right","fa-angle-left")
+        }else{
+            icon_menu.classList.replace("fa-angle-left","fa-angle-right")
         }
     }
 }

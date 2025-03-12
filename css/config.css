@@ -1,0 +1,25 @@
+.lateral_menu{
+    position: absolute;
+    top: 150px;
+    left: -250px;
+    width: 250px;
+    z-index: 500;
+    transition: all 0.2s ease;
+}
+
+.lateral_menu.active{
+    position: absolute;
+    left: 0px;
+}   
+
+
+.lateral_menu .action_btn{
+    position: absolute;
+    left: 225px; 
+}
+
+.lateral_menu .action_btn a{
+    width: 50px;
+    height: 42px;
+    padding: 2.5px 0 0 20px;
+}

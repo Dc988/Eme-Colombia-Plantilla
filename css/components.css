@@ -70,11 +70,11 @@
     content: attr(data-toggle-on);
     background-color: var(--primary);
     color: var(--text-primary);
-    transform: rotateX(-180deg)
+    transform: rotateY(-180deg)
 }
 
 .toggle-flip input[type="checkbox"]:checked+.flip-indecator:before {
-    transform: rotateX(180deg)
+    transform: rotateY(180deg)
 }
 
 .toggle-flip input[type="checkbox"]:checked+.flip-indecator:after {

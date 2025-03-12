@@ -14,7 +14,7 @@
     <link rel="shortcut icon" href="../../../img/favicon.ico" type="image/x-icon">
 
     <!-- General CSS sweetalert2 -->
-    
+
     <!-- General CSS font-awesome -->
     <link rel="stylesheet" href="../../../modules/font-awesome/css/font-awesome.css">
 
@@ -26,6 +26,9 @@
 
     <!-- Template CSS -->
     <link rel="stylesheet" href="../../../css/main.css">
+
+    <!-- Start GA imprime las etiquetas que contenga la variable header -->
+    <link rel="stylesheet" href="../../../css/config.css">
 
     <!-- Start GA imprime las etiquetas que contenga la variable header -->
 
@@ -113,9 +116,13 @@
         </div>
         <div class="body-content">
             <!--imprime el codigo html que se le pase en las variable-->
-            <div class="row">
-
-                <div class="list-group col-md-2">
+            <div class="lateral_menu" onclick="lateral_menu_animation()">
+                <div class="action_btn">
+                    <a class="rounded-circle btn btn-primary">
+                        <i class="fa fa-angle-right fa-2x"></i>
+                    </a>
+                </div>
+                <div class="list-group">
                     <a href="tipo_id.html" class="list-group-item list-group-item-action ">
                         <i class="fa fa-id-card icon"></i>Tipo Id
                     </a>
@@ -148,162 +155,159 @@
                     <a href="aseguradora.html" class="list-group-item list-group-item-action ">
                         <i class="fa fa-lock icon"></i> Seguradora
                     </a>
-
                 </div>
 
-                <div class=" col-md-10">
-                    <div class="row d-flex justify-content-center tab-content">
-                        <div class="fix-card-size card col-md-12 tab-pane active show" role="tabpanel" id="Panel_Main">
-                            <div class="card-header">
-                                <h4><i class="fa fa-list-alt icon"></i> Lista Condición Paciente</h4>
-                                <a class="btn btn-primary btn-sm" onclick="frmCondicion_Paciente_onclick()"
-                                    data-toggle="tab" data-target="Panel_Form">
-                                    <i class="fa fa-plus"></i>
-                                </a>
-                            </div>
-                            <div class="card-body">
-                                <!--class son datos de clases css que se le pasen y su id-->
+            </div>
+            
 
-                                <div id="tbl_Condicion_Paciente_wrapper" class="dt-container dt-empty-footer">
+            <div class="d-flex justify-content-center tab-content">
+                <div class="fix-card-size card col-md-12 tab-pane active show" role="tabpanel" id="Panel_Main">
+                    <div class="card-header">
+                        <h4><i class="fa fa-list-alt icon"></i> Lista Condición Paciente</h4>
+                        <a class="btn btn-primary btn-sm" onclick="frmCondicion_Paciente_onclick()" data-toggle="tab"
+                            data-target="Panel_Form">
+                            <i class="fa fa-plus"></i>
+                        </a>
+                    </div>
+                    <div class="card-body">
+                        <!--class son datos de clases css que se le pasen y su id-->
 
-                                    <table class="table compact hover dataTable" id="tbl_Condicion_Paciente">
-                                        
-                                        <thead>
-                                            <tr role="row">
-                                                <th scope="col" data-dt-column="0" rowspan="1" colspan="1"
-                                                    class="dt-orderable-asc dt-orderable-desc dt-type-numeric dt-ordering-desc"
-                                                    aria-sort="descending" aria-label="#: Activate to remove sorting"
-                                                    tabindex="0">
-                                                    <span class="dt-column-title" role="button">#</span><span
-                                                        class="dt-column-order"></span>
-                                                </th>
-                                                <th scope="col" data-dt-column="1" rowspan="1" colspan="1"
-                                                    class="dt-orderable-asc dt-orderable-desc"
-                                                    aria-label="CONDICIÓN PACIENTE: Activate to sort" tabindex="0"><span
-                                                        class="dt-column-title" role="button">CONDICIÓN
-                                                        PACIENTE</span><span class="dt-column-order"></span></th>
-                                                <th scope="col" data-dt-column="2" rowspan="1" colspan="1"
-                                                    class="dt-orderable-asc dt-orderable-desc"
-                                                    aria-label=": Activate to sort" tabindex="0"><span
-                                                        class="dt-column-title" role="button"></span><span
-                                                        class="dt-column-order"></span></th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td class="dt-type-numeric sorting_1">6</td>
-                                                <td>OTROS</td>
-                                                <td>
-                                                    <div>
-                                                        <button class="btn btn-warning btn-sm" type="button"
-                                                            onclick="btnEditarCondicion_Paciente_onclick(6);"><i
-                                                                class="fa fa-pencil"></i></button>
-                                                        <button class="btn btn-danger btn-sm" type="button"
-                                                            onclick="btnEliminarCondicion_Paciente_onclick(6);"><i
-                                                                class="fa fa-trash"></i></button>
-                                                        <div></div>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="dt-type-numeric sorting_1">5</td>
-                                                <td>USUARIO MOTOCICLETA</td>
-                                                <td>
-                                                    <div>
-                                                        <button class="btn btn-warning btn-sm" type="button"
-                                                            onclick="btnEditarCondicion_Paciente_onclick(5);"><i
-                                                                class="fa fa-pencil"></i></button>
-                                                        <button class="btn btn-danger btn-sm" type="button"
-                                                            onclick="btnEliminarCondicion_Paciente_onclick(5);"><i
-                                                                class="fa fa-trash"></i></button>
-                                                        <div></div>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="dt-type-numeric sorting_1">4</td>
-                                                <td>CICLISTA</td>
-                                                <td>
-                                                    <div>
-                                                        <button class="btn btn-warning btn-sm" type="button"
-                                                            onclick="btnEditarCondicion_Paciente_onclick(4);"><i
-                                                                class="fa fa-pencil"></i></button>
-                                                        <button class="btn btn-danger btn-sm" type="button"
-                                                            onclick="btnEliminarCondicion_Paciente_onclick(4);"><i
-                                                                class="fa fa-trash"></i></button>
-                                                        <div></div>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="dt-type-numeric sorting_1">3</td>
-                                                <td>PEATÓN</td>
-                                                <td>
-                                                    <div>
-                                                        <button class="btn btn-warning btn-sm" type="button"
-                                                            onclick="btnEditarCondicion_Paciente_onclick(3);"><i
-                                                                class="fa fa-pencil"></i></button>
-                                                        <button class="btn btn-danger btn-sm" type="button"
-                                                            onclick="btnEliminarCondicion_Paciente_onclick(3);"><i
-                                                                class="fa fa-trash"></i></button>
-                                                        <div></div>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="dt-type-numeric sorting_1">2</td>
-                                                <td>OCUPANTE</td>
-                                                <td>
-                                                    <div>
-                                                        <button class="btn btn-warning btn-sm" type="button"
-                                                            onclick="btnEditarCondicion_Paciente_onclick(2);"><i
-                                                                class="fa fa-pencil"></i></button>
-                                                        <button class="btn btn-danger btn-sm" type="button"
-                                                            onclick="btnEliminarCondicion_Paciente_onclick(2);"><i
-                                                                class="fa fa-trash"></i></button>
-                                                        <div></div>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                        <tfoot></tfoot>
-                                    </table>
+                        <div id="tbl_Condicion_Paciente_wrapper" class="dt-container dt-empty-footer">
 
-                                </div>
-                            </div>
-                        </div>
+                            <table class="table compact hover dataTable" id="tbl_Condicion_Paciente">
 
-                        <div class="card col-md-5 tab-pane" role="tabpanel" id="Panel_Form">
-                            <div class="card-header line-head">
-                                <h3 id="title"> <i class="fa fa-file icon"></i> Formulario</h3>
-                                <a class="btn btn-danger" data-toggle="tab" data-target="Panel_Main">
-                                    <i class="fa fa-close"></i></a>
-                            </div>
-                            <div class="card-body ">
-                                <form method="post" onsubmit="DataCondicion_Paciente_onclick(event);"
-                                    id="frmCondicion_Paciente" class="needs-validation" novalidate="">
-                                    <input type="hidden" id="id_form" name="id_form">
-                                    <div class="form-floating mb-3">
-                                        <input required="" id="CONDICION_PACIENTE" name="CONDICION_PACIENTE"
-                                            class="form-control" type="text" placeholder="Condición del Paciente">
-                                        <label class="form-label" for="CONDICION_PACIENTE">CONDICIÓN PACIENTE</label>
-                                        <div class="invalid-feedback">
-                                            Campo Requerido!!.
-                                        </div>
-                                    </div>
-                                    <div class="d-grid gap-2 mt-3">
-                                        <div class="btn-group" role="group" aria-label="Basic example">
-                                            <button class="btn btn-primary" type="submit"
-                                                id="btnAccion">Registrar</button>
-                                            <a class="btn btn-danger" data-toggle="tab" data-target="Panel_Main"
-                                                id="btnCancel">Cancelar</a>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
+                                <thead>
+                                    <tr role="row">
+                                        <th scope="col" data-dt-column="0" rowspan="1" colspan="1"
+                                            class="dt-orderable-asc dt-orderable-desc dt-type-numeric dt-ordering-desc"
+                                            aria-sort="descending" aria-label="#: Activate to remove sorting"
+                                            tabindex="0">
+                                            <span class="dt-column-title" role="button">#</span><span
+                                                class="dt-column-order"></span>
+                                        </th>
+                                        <th scope="col" data-dt-column="1" rowspan="1" colspan="1"
+                                            class="dt-orderable-asc dt-orderable-desc"
+                                            aria-label="CONDICIÓN PACIENTE: Activate to sort" tabindex="0"><span
+                                                class="dt-column-title" role="button">CONDICIÓN
+                                                PACIENTE</span><span class="dt-column-order"></span></th>
+                                        <th scope="col" data-dt-column="2" rowspan="1" colspan="1"
+                                            class="dt-orderable-asc dt-orderable-desc" aria-label=": Activate to sort"
+                                            tabindex="0"><span class="dt-column-title" role="button"></span><span
+                                                class="dt-column-order"></span></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="dt-type-numeric sorting_1">6</td>
+                                        <td>OTROS</td>
+                                        <td>
+                                            <div>
+                                                <button class="btn btn-warning btn-sm" type="button"
+                                                    onclick="btnEditarCondicion_Paciente_onclick(6);"><i
+                                                        class="fa fa-pencil"></i></button>
+                                                <button class="btn btn-danger btn-sm" type="button"
+                                                    onclick="btnEliminarCondicion_Paciente_onclick(6);"><i
+                                                        class="fa fa-trash"></i></button>
+                                                <div></div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="dt-type-numeric sorting_1">5</td>
+                                        <td>USUARIO MOTOCICLETA</td>
+                                        <td>
+                                            <div>
+                                                <button class="btn btn-warning btn-sm" type="button"
+                                                    onclick="btnEditarCondicion_Paciente_onclick(5);"><i
+                                                        class="fa fa-pencil"></i></button>
+                                                <button class="btn btn-danger btn-sm" type="button"
+                                                    onclick="btnEliminarCondicion_Paciente_onclick(5);"><i
+                                                        class="fa fa-trash"></i></button>
+                                                <div></div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="dt-type-numeric sorting_1">4</td>
+                                        <td>CICLISTA</td>
+                                        <td>
+                                            <div>
+                                                <button class="btn btn-warning btn-sm" type="button"
+                                                    onclick="btnEditarCondicion_Paciente_onclick(4);"><i
+                                                        class="fa fa-pencil"></i></button>
+                                                <button class="btn btn-danger btn-sm" type="button"
+                                                    onclick="btnEliminarCondicion_Paciente_onclick(4);"><i
+                                                        class="fa fa-trash"></i></button>
+                                                <div></div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="dt-type-numeric sorting_1">3</td>
+                                        <td>PEATÓN</td>
+                                        <td>
+                                            <div>
+                                                <button class="btn btn-warning btn-sm" type="button"
+                                                    onclick="btnEditarCondicion_Paciente_onclick(3);"><i
+                                                        class="fa fa-pencil"></i></button>
+                                                <button class="btn btn-danger btn-sm" type="button"
+                                                    onclick="btnEliminarCondicion_Paciente_onclick(3);"><i
+                                                        class="fa fa-trash"></i></button>
+                                                <div></div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="dt-type-numeric sorting_1">2</td>
+                                        <td>OCUPANTE</td>
+                                        <td>
+                                            <div>
+                                                <button class="btn btn-warning btn-sm" type="button"
+                                                    onclick="btnEditarCondicion_Paciente_onclick(2);"><i
+                                                        class="fa fa-pencil"></i></button>
+                                                <button class="btn btn-danger btn-sm" type="button"
+                                                    onclick="btnEliminarCondicion_Paciente_onclick(2);"><i
+                                                        class="fa fa-trash"></i></button>
+                                                <div></div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                                <tfoot></tfoot>
+                            </table>
 
                         </div>
                     </div>
+                </div>
+
+                <div class="fix-card-size card collapse multi-collapse fade tab-pane row" role="tabpanel" id="Panel_Form">
+                    <div class="card-header line-head">
+                        <h3 id="title"> <i class="fa fa-file icon"></i> Formulario</h3>
+                        <a class="btn btn-danger" data-toggle="tab" data-target="Panel_Main">
+                            <i class="fa fa-close"></i></a>
+                    </div>
+                    <div class="card-body d-flex justify-content-center">
+                        <form method="post" onsubmit="DataCondicion_Paciente_onclick(event);" id="frmCondicion_Paciente"
+                            class="needs-validation col-md-9" novalidate="">
+                            <input type="hidden" id="id_form" name="id_form">
+                            <div class="form-floating mb-3">
+                                <input required="" id="CONDICION_PACIENTE" name="CONDICION_PACIENTE"
+                                    class="form-control" type="text" placeholder="Condición del Paciente">
+                                <label class="form-label" for="CONDICION_PACIENTE">CONDICIÓN PACIENTE</label>
+                                <div class="invalid-feedback">
+                                    Campo Requerido!!.
+                                </div>
+                            </div>
+                            <div class="d-grid gap-2 mt-3">
+                                <div class="btn-group" role="group" aria-label="Basic example">
+                                    <button class="btn btn-primary" type="submit" id="btnAccion">Registrar</button>
+                                    <a class="btn btn-danger" data-toggle="tab" data-target="Panel_Main"
+                                        id="btnCancel">Cancelar</a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
                 </div>
             </div>
 

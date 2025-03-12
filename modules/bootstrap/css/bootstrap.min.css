@@ -4773,7 +4773,7 @@ fieldset:disabled .btn {
 }
 
 .card {
-    --bs-card-spacer-y: 1rem;
+    --bs-card-spacer-y: 0;
     --bs-card-spacer-x: 1rem;
     --bs-card-title-spacer-y: 0.5rem;
     --bs-card-title-color: ;
@@ -4836,6 +4836,7 @@ fieldset:disabled .btn {
     flex: 1 1 auto;
     padding: var(--bs-card-spacer-y) var(--bs-card-spacer-x);
     color: var(--bs-card-color);
+    
 }
 
 .card-title {

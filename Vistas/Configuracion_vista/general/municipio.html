@@ -14,7 +14,7 @@
     <link rel="shortcut icon" href="../../../img/favicon.ico" type="image/x-icon">
 
     <!-- General CSS sweetalert2 -->
-    
+
     <!-- General CSS font-awesome -->
     <link rel="stylesheet" href="../../../modules/font-awesome/css/font-awesome.css">
 
@@ -26,6 +26,9 @@
 
     <!-- Template CSS -->
     <link rel="stylesheet" href="../../../css/main.css">
+
+    <!-- Start GA imprime las etiquetas que contenga la variable header -->
+    <link rel="stylesheet" href="../../../css/config.css">
 
     <!-- Start GA imprime las etiquetas que contenga la variable header -->
 
@@ -114,13 +117,18 @@
         </div>
         <div class="body-content">
             <!--imprime el codigo html que se le pase en las variable-->
-            <div class="row">
 
-                <div class="list-group col-md-2">
-                    <a href="tipo_id.html" class="list-group-item list-group-item-action">
+            <div class="lateral_menu" onclick="lateral_menu_animation()">
+                <div class="action_btn">
+                    <a class="rounded-circle btn btn-primary">
+                        <i class="fa fa-angle-right fa-2x"></i>
+                    </a>
+                </div>
+                <div class="list-group">
+                    <a href="tipo_id.html" class="list-group-item list-group-item-action ">
                         <i class="fa fa-id-card icon"></i>Tipo Id
                     </a>
-                    <a href="municipio.html" class="list-group-item list-group-item-action  active disabled">
+                    <a href="municipio.html" class="list-group-item list-group-item-action active disabled">
                         <i class="fa fa-globe icon"></i>Municipio
                     </a>
 
@@ -149,158 +157,152 @@
                     <a href="aseguradora.html" class="list-group-item list-group-item-action ">
                         <i class="fa fa-lock icon"></i> Seguradora
                     </a>
-
                 </div>
 
-                <div class=" col-md-10">
-                    <div class="row d-flex justify-content-center tab-content">
-                        <div class="fix-card-size card col-md-12 show active tab-pane" role="tabpanel" id="Panel_Main">
-                            <div class="card-header">
-                                <h4><i class="fa fa-list-alt icon"></i> Lista Municipio</h4>
-                                <a class="btn btn-primary btn-sm" onclick="frmMunicipio_onclick()" data-toggle="tab"
-                                    data-target="Panel_Form">
-                                    <i class="fa fa-plus"></i>
-                                </a>
-                            </div>
-                            <div class="card-body">
-                                <!--class son datos de clases css que se le pasen y su id-->
+            </div>
 
-                                <table class="table compact hover dataTable" id="tbl_Municipio"
-                                    >
-                                    
-                                    <thead>
-                                        <tr role="row">
-                                            <th scope="col" data-dt-column="0" rowspan="1" colspan="1"
-                                                class="dt-orderable-asc dt-orderable-desc dt-type-numeric dt-ordering-desc"
-                                                aria-sort="descending" aria-label="#: Activate to remove sorting"
-                                                tabindex="0">
-                                                <span class="dt-column-title" role="button">#</span><span
-                                                    class="dt-column-order"></span>
-                                            </th>
-                                            <th scope="col" data-dt-column="1" rowspan="1" colspan="1"
-                                                class="dt-orderable-asc dt-orderable-desc"
-                                                aria-label="Municipio: Activate to sort" tabindex="0"><span
-                                                    class="dt-column-title" role="button">Municipio</span><span
-                                                    class="dt-column-order"></span></th>
-                                            <th scope="col" data-dt-column="2" rowspan="1" colspan="1"
-                                                class="dt-orderable-asc dt-orderable-desc"
-                                                aria-label=": Activate to sort" tabindex="0"><span
-                                                    class="dt-column-title" role="button"></span><span
-                                                    class="dt-column-order"></span></th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td class="dt-type-numeric sorting_1">23</td>
-                                            <td>USIACURÍ</td>
-                                            <td>
-                                                <div>
-                                                    <button class="btn btn-warning btn-sm" type="button"
-                                                        onclick="btnEditarMunicipio_onclick(23);"><i
-                                                            class="fa fa-pencil"></i></button>
-                                                    <button class="btn btn-danger btn-sm" type="button"
-                                                        onclick="btnEliminarMunicipio_onclick(23);"><i
-                                                            class="fa fa-trash"></i></button>
-                                                    <div></div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="dt-type-numeric sorting_1">22</td>
-                                            <td>MANATÍ</td>
-                                            <td>
-                                                <div>
-                                                    <button class="btn btn-warning btn-sm" type="button"
-                                                        onclick="btnEditarMunicipio_onclick(22);"><i
-                                                            class="fa fa-pencil"></i></button>
-                                                    <button class="btn btn-danger btn-sm" type="button"
-                                                        onclick="btnEliminarMunicipio_onclick(22);"><i
-                                                            class="fa fa-trash"></i></button>
-                                                    <div></div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="dt-type-numeric sorting_1">21</td>
-                                            <td>POLONUEVO</td>
-                                            <td>
-                                                <div>
-                                                    <button class="btn btn-warning btn-sm" type="button"
-                                                        onclick="btnEditarMunicipio_onclick(21);"><i
-                                                            class="fa fa-pencil"></i></button>
-                                                    <button class="btn btn-danger btn-sm" type="button"
-                                                        onclick="btnEliminarMunicipio_onclick(21);"><i
-                                                            class="fa fa-trash"></i></button>
-                                                    <div></div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="dt-type-numeric sorting_1">20</td>
-                                            <td>PIOJÓ</td>
-                                            <td>
-                                                <div>
-                                                    <button class="btn btn-warning btn-sm" type="button"
-                                                        onclick="btnEditarMunicipio_onclick(20);"><i
-                                                            class="fa fa-pencil"></i></button>
-                                                    <button class="btn btn-danger btn-sm" type="button"
-                                                        onclick="btnEliminarMunicipio_onclick(20);"><i
-                                                            class="fa fa-trash"></i></button>
-                                                    <div></div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="dt-type-numeric sorting_1">19</td>
-                                            <td>SUÁN</td>
-                                            <td>
-                                                <div>
-                                                    <button class="btn btn-warning btn-sm" type="button"
-                                                        onclick="btnEditarMunicipio_onclick(19);"><i
-                                                            class="fa fa-pencil"></i></button>
-                                                    <button class="btn btn-danger btn-sm" type="button"
-                                                        onclick="btnEliminarMunicipio_onclick(19);"><i
-                                                            class="fa fa-trash"></i></button>
-                                                    <div></div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                    <tfoot></tfoot>
-                                </table>
+            <div class="d-flex justify-content-center tab-content">
+                <div class="fix-card-size card collapse multi-collapse fade  show active tab-pane" role="tabpanel" id="Panel_Main">
+                    <div class="card-header">
+                        <h4><i class="fa fa-list-alt icon"></i> Lista Municipio</h4>
+                        <a class="btn btn-primary btn-sm" onclick="frmMunicipio_onclick()" data-toggle="tab"
+                            data-target="Panel_Form">
+                            <i class="fa fa-plus"></i>
+                        </a>
+                    </div>
+                    <div class="card-body">
+                        <!--class son datos de clases css que se le pasen y su id-->
 
-                            </div>
-                        </div>
+                        <table class="table compact hover dataTable" id="tbl_Municipio">
 
-                        <div class="card col-md-5 tab-pane" role="tabpanel" id="Panel_Form">
-                            <div class="card-header line-head">
-                                <h3 id="title"> <i class="fa fa-file icon"></i> Formulario</h3>
-                                <a class="btn btn-danger" data-toggle="tab" data-target="Panel_Main">
-                                    <i class="fa fa-close"></i></a>
-                            </div>
-                            <div class="card-body ">
-                                <form method="post" id="frmMunicipio" class="needs-validation"
-                                    onsubmit="DataMunicipio_onclick(event);" novalidate="">
-                                    <input type="hidden" id="id_form" name="id_form">
-                                    <div class="form-floating mb-3">
-                                        <input required="" id="MUNICIPIO" name="MUNICIPIO" class="form-control"
-                                            type="text" placeholder="Municipio">
-                                        <label class="form-label" for="MUNICIPIO">MUNICIPIO</label>
-                                        <div class="invalid-feedback">
-                                            Campo Requerido!!.
+                            <thead>
+                                <tr role="row">
+                                    <th scope="col" data-dt-column="0" rowspan="1" colspan="1"
+                                        class="dt-orderable-asc dt-orderable-desc dt-type-numeric dt-ordering-desc"
+                                        aria-sort="descending" aria-label="#: Activate to remove sorting" tabindex="0">
+                                        <span class="dt-column-title" role="button">#</span><span
+                                            class="dt-column-order"></span>
+                                    </th>
+                                    <th scope="col" data-dt-column="1" rowspan="1" colspan="1"
+                                        class="dt-orderable-asc dt-orderable-desc"
+                                        aria-label="Municipio: Activate to sort" tabindex="0"><span
+                                            class="dt-column-title" role="button">Municipio</span><span
+                                            class="dt-column-order"></span></th>
+                                    <th scope="col" data-dt-column="2" rowspan="1" colspan="1"
+                                        class="dt-orderable-asc dt-orderable-desc" aria-label=": Activate to sort"
+                                        tabindex="0"><span class="dt-column-title" role="button"></span><span
+                                            class="dt-column-order"></span></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="dt-type-numeric sorting_1">23</td>
+                                    <td>USIACURÍ</td>
+                                    <td>
+                                        <div>
+                                            <button class="btn btn-warning btn-sm" type="button"
+                                                onclick="btnEditarMunicipio_onclick(23);"><i
+                                                    class="fa fa-pencil"></i></button>
+                                            <button class="btn btn-danger btn-sm" type="button"
+                                                onclick="btnEliminarMunicipio_onclick(23);"><i
+                                                    class="fa fa-trash"></i></button>
+                                            <div></div>
                                         </div>
-                                    </div>
-                                    <div class="d-grid gap-2 mt-3">
-                                        <div class="btn-group" role="group" aria-label="Basic example">
-                                            <button class="btn btn-primary" type="submit"
-                                                id="btnAccion">Registrar</button>
-                                            <a class="btn btn-danger" data-toggle="tab" data-target="Panel_Main"
-                                                id="btnCancel">Cancelar</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="dt-type-numeric sorting_1">22</td>
+                                    <td>MANATÍ</td>
+                                    <td>
+                                        <div>
+                                            <button class="btn btn-warning btn-sm" type="button"
+                                                onclick="btnEditarMunicipio_onclick(22);"><i
+                                                    class="fa fa-pencil"></i></button>
+                                            <button class="btn btn-danger btn-sm" type="button"
+                                                onclick="btnEliminarMunicipio_onclick(22);"><i
+                                                    class="fa fa-trash"></i></button>
+                                            <div></div>
                                         </div>
-                                    </div>
-                                </form>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="dt-type-numeric sorting_1">21</td>
+                                    <td>POLONUEVO</td>
+                                    <td>
+                                        <div>
+                                            <button class="btn btn-warning btn-sm" type="button"
+                                                onclick="btnEditarMunicipio_onclick(21);"><i
+                                                    class="fa fa-pencil"></i></button>
+                                            <button class="btn btn-danger btn-sm" type="button"
+                                                onclick="btnEliminarMunicipio_onclick(21);"><i
+                                                    class="fa fa-trash"></i></button>
+                                            <div></div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="dt-type-numeric sorting_1">20</td>
+                                    <td>PIOJÓ</td>
+                                    <td>
+                                        <div>
+                                            <button class="btn btn-warning btn-sm" type="button"
+                                                onclick="btnEditarMunicipio_onclick(20);"><i
+                                                    class="fa fa-pencil"></i></button>
+                                            <button class="btn btn-danger btn-sm" type="button"
+                                                onclick="btnEliminarMunicipio_onclick(20);"><i
+                                                    class="fa fa-trash"></i></button>
+                                            <div></div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="dt-type-numeric sorting_1">19</td>
+                                    <td>SUÁN</td>
+                                    <td>
+                                        <div>
+                                            <button class="btn btn-warning btn-sm" type="button"
+                                                onclick="btnEditarMunicipio_onclick(19);"><i
+                                                    class="fa fa-pencil"></i></button>
+                                            <button class="btn btn-danger btn-sm" type="button"
+                                                onclick="btnEliminarMunicipio_onclick(19);"><i
+                                                    class="fa fa-trash"></i></button>
+                                            <div></div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tfoot></tfoot>
+                        </table>
+
+                    </div>
+                </div>
+
+                <div class="fix-card-size card collapse multi-collapse fade tab-pane row" role="tabpanel" id="Panel_Form">
+                    <div class="card-header line-head">
+                        <h3 id="title"> <i class="fa fa-file icon"></i> Formulario</h3>
+                        <a class="btn btn-danger" data-toggle="tab" data-target="Panel_Main">
+                            <i class="fa fa-close"></i></a>
+                    </div>
+                    <div class="card-body d-flex justify-content-center">
+                        <form method="post" id="frmMunicipio" class="needs-validation col-md-9"
+                            onsubmit="DataMunicipio_onclick(event);" novalidate="">
+                            <input type="hidden" id="id_form" name="id_form">
+                            <div class="form-floating mb-3">
+                                <input required="" id="MUNICIPIO" name="MUNICIPIO" class="form-control" type="text"
+                                    placeholder="Municipio">
+                                <label class="form-label" for="MUNICIPIO">MUNICIPIO</label>
+                                <div class="invalid-feedback">
+                                    Campo Requerido!!.
+                                </div>
                             </div>
-                        </div>
+                            <div class="d-grid gap-2 mt-3">
+                                <div class="btn-group" role="group" aria-label="Basic example">
+                                    <button class="btn btn-primary" type="submit" id="btnAccion">Registrar</button>
+                                    <a class="btn btn-danger" data-toggle="tab" data-target="Panel_Main"
+                                        id="btnCancel">Cancelar</a>
+                                </div>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>

@@ -106,7 +106,8 @@ let data = {
         "Barrio_2": "CHAPINERO",
         "Telefono_2": "3123344556",
         "Celular_2": "3174455667"
-    },
+    }
+    ,
     "3": {
         "id_form": "3",
         "Tipo_ID_FK": "4",
@@ -159,9 +160,9 @@ let data = {
         "Barrio_2": "Versalles",
         "Telefono_2": "3142233445",
         "Celular_2": "3183344556"
-    }
+    },
+    
 }
-
 
 tbl_pacientes = createDataTable('#tbl_Pacientes',
     "/Paciente/list",
