@@ -1,3 +1,9 @@
+body{
+    box-sizing: border-box;
+    height: 100vh;
+    overflow-y: scroll;
+
+}
 .data {
     width: 787px;
     height: 815px;
@@ -40,7 +46,7 @@
     left: 20px;
 }
 
-.factura img {
+.factura {
     width: 1100 px;
 }
 

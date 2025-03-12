@@ -8,26 +8,28 @@
 
     <!-- General CSS Files -->
     <!-- General CSS bootstrap -->
-    <link rel="stylesheet" href="../../modules/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../modules/bootstrap/css/bootstrap.min.css">
 
     <!-- General CSS del ico -->
-    <link rel="shortcut icon" href="../../img/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../../../img/favicon.ico" type="image/x-icon">
 
     <!-- General CSS sweetalert2 -->
     
     <!-- General CSS font-awesome -->
-    <link rel="stylesheet" href="../../modules/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="../../../modules/font-awesome/css/font-awesome.css">
 
     <!-- General CSS datatables -->
-    <link rel="stylesheet" href="../../modules/datatables/datatables.min.css">
+    <link rel="stylesheet" href="../../../modules/datatables/datatables.min.css">
     <!-- General CSS select2 -->
-    <link rel="stylesheet" href="../../modules/select2/css/select2.min.css">
+    <link rel="stylesheet" href="../../../modules/select2/css/select2.min.css">
 
 
     <!-- Template CSS -->
-    <link rel="stylesheet" href="../../css/main.css">
+    <link rel="stylesheet" href="../../../css/main.css">
 
     <!-- Start GA imprime las etiquetas que contenga la variable header -->
+
+</head>
 
 <body class="">
 
@@ -46,21 +48,21 @@
         <ul class="nav-list">
 
             <li class="nav-item">
-                <a href="../../home.html" class="">
+                <a href="../../Home/home.html" class="">
                     <i class="fa fa-dashboard"></i>
                     <span class="link_name">Dashboard</span>
                 </a>
                 <span class="tooltip">DashBoard</span>
             </li>
             <li class="nav-item">
-                <a href="../../pacientes.html" class="">
+                <a href="../../Paciente/pacientes.html" class="">
                     <i class="fa fa-user "></i>
                     <span class="link_name">Pacientes</span>
                 </a>
                 <span class="tooltip">Pacientes</span>
             </li>
             <li class="nav-item">
-                <a href="../../facturacion.html" class="">
+                <a href="../../Facturacion/facturacion.html" class="">
                     <i class="fa fa-money "></i>
                     <span class="link_name">Facturación</span>
                 </a>
@@ -105,7 +107,7 @@
                     <li><i class="fa fa-home fa-lg"></i></li>
                     <li>Configuraciones</li>
                     <li>General</li>
-                    <li>Facturador</li>
+                    <li>Ocupacion</li>
                 </ul>
             </div>
 
@@ -126,7 +128,7 @@
                         <i class="fa fa-arrow-circle-right icon"></i>Tipo Ingreso
                     </a>
 
-                    <a href="ocupacion.html" class="list-group-item list-group-item-action ">
+                    <a href="ocupacion.html" class="list-group-item list-group-item-action active disabled">
                         <i class="fa fa-shopping-bag icon"></i>Ocupación
                     </a>
                     <a href="condicion.html" class="list-group-item list-group-item-action ">
@@ -138,7 +140,7 @@
                     <a href="estado_factura.html" class="list-group-item list-group-item-action ">
                         <i class="fa fa-money icon"></i>Estado Facturación
                     </a>
-                    <a href="facturador.html" class="list-group-item list-group-item-action active disabled">
+                    <a href="facturador.html" class="list-group-item list-group-item-action ">
                         <i class="fa fa-black-tie icon"></i>Facturador
                     </a>
                     <a href="colaborador.html" class="list-group-item list-group-item-action ">
@@ -154,15 +156,16 @@
                     <div class="row d-flex justify-content-center tab-content">
                         <div class="fix-card-size card col-md-12 show active tab-pane" role="tabpanel" id="Panel_Main">
                             <div class="card-header">
-                                <h4><i class="fa fa-list-alt icon"></i> Lista Facturador</h4>
-                                <a class="btn btn-primary btn-sm" onclick="frmFacturador_onclick()" data-toggle="tab"
+                                <h4><i class="fa fa-list-alt icon"></i> Lista Ocupacion</h4>
+                                <a class="btn btn-primary btn-sm" onclick="frmOcupacion_onclick()" data-toggle="tab"
                                     data-target="Panel_Form">
                                     <i class="fa fa-plus"></i>
                                 </a>
                             </div>
                             <div class="card-body">
                                 <!--class son datos de clases css que se le pasen y su id-->
-                                <table class="table compact hover dataTable" id="tbl_Facturador">
+
+                                <table class="table compact hover dataTable" id="tbl_Ocupacion">
                                     
                                     <thead>
                                         <tr role="row">
@@ -175,8 +178,8 @@
                                             </th>
                                             <th scope="col" data-dt-column="1" rowspan="1" colspan="1"
                                                 class="dt-orderable-asc dt-orderable-desc"
-                                                aria-label="FACTURADOR: Activate to sort" tabindex="0"><span
-                                                    class="dt-column-title" role="button">FACTURADOR</span><span
+                                                aria-label="OCUPACIÓN: Activate to sort" tabindex="0"><span
+                                                    class="dt-column-title" role="button">OCUPACIÓN</span><span
                                                     class="dt-column-order"></span></th>
                                             <th scope="col" data-dt-column="2" rowspan="1" colspan="1"
                                                 class="dt-orderable-asc dt-orderable-desc"
@@ -187,15 +190,60 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td class="dt-type-numeric sorting_1">2</td>
-                                            <td>B. JASSIR C. MAURY</td>
+                                            <td class="dt-type-numeric sorting_1">5</td>
+                                            <td>MOTOTAXISTA</td>
                                             <td>
                                                 <div>
                                                     <button class="btn btn-warning btn-sm" type="button"
-                                                        onclick="btnEditarFacturador_onclick(2);"><i
+                                                        onclick="btnEditarOcupacion_onclick(5);"><i
                                                             class="fa fa-pencil"></i></button>
                                                     <button class="btn btn-danger btn-sm" type="button"
-                                                        onclick="btnEliminarFacturador_onclick(2);"><i
+                                                        onclick="btnEliminarOcupacion_onclick(5);"><i
+                                                            class="fa fa-trash"></i></button>
+                                                    <div></div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="dt-type-numeric sorting_1">4</td>
+                                            <td>TAXISTA</td>
+                                            <td>
+                                                <div>
+                                                    <button class="btn btn-warning btn-sm" type="button"
+                                                        onclick="btnEditarOcupacion_onclick(4);"><i
+                                                            class="fa fa-pencil"></i></button>
+                                                    <button class="btn btn-danger btn-sm" type="button"
+                                                        onclick="btnEliminarOcupacion_onclick(4);"><i
+                                                            class="fa fa-trash"></i></button>
+                                                    <div></div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="dt-type-numeric sorting_1">3</td>
+                                            <td>AMA DE CASA</td>
+                                            <td>
+                                                <div>
+                                                    <button class="btn btn-warning btn-sm" type="button"
+                                                        onclick="btnEditarOcupacion_onclick(3);"><i
+                                                            class="fa fa-pencil"></i></button>
+                                                    <button class="btn btn-danger btn-sm" type="button"
+                                                        onclick="btnEliminarOcupacion_onclick(3);"><i
+                                                            class="fa fa-trash"></i></button>
+                                                    <div></div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="dt-type-numeric sorting_1">2</td>
+                                            <td>INDEPENDIENTE</td>
+                                            <td>
+                                                <div>
+                                                    <button class="btn btn-warning btn-sm" type="button"
+                                                        onclick="btnEditarOcupacion_onclick(2);"><i
+                                                            class="fa fa-pencil"></i></button>
+                                                    <button class="btn btn-danger btn-sm" type="button"
+                                                        onclick="btnEliminarOcupacion_onclick(2);"><i
                                                             class="fa fa-trash"></i></button>
                                                     <div></div>
                                                 </div>
@@ -203,14 +251,14 @@
                                         </tr>
                                         <tr>
                                             <td class="dt-type-numeric sorting_1">1</td>
-                                            <td>J. PEREZ MERCADO</td>
+                                            <td>ESTUDIANTE</td>
                                             <td>
                                                 <div>
                                                     <button class="btn btn-warning btn-sm" type="button"
-                                                        onclick="btnEditarFacturador_onclick(1);"><i
+                                                        onclick="btnEditarOcupacion_onclick(1);"><i
                                                             class="fa fa-pencil"></i></button>
                                                     <button class="btn btn-danger btn-sm" type="button"
-                                                        onclick="btnEliminarFacturador_onclick(1);"><i
+                                                        onclick="btnEliminarOcupacion_onclick(1);"><i
                                                             class="fa fa-trash"></i></button>
                                                     <div></div>
                                                 </div>
@@ -219,6 +267,7 @@
                                     </tbody>
                                     <tfoot></tfoot>
                                 </table>
+
 
                             </div>
                         </div>
@@ -230,13 +279,13 @@
                                     <i class="fa fa-close"></i></a>
                             </div>
                             <div class="card-body ">
-                                <form method="post" id="frmFacturador" class="needs-validation"
-                                    onsubmit="DataFacturador_onclick(event);" novalidate="">
+                                <form method="post" id="frmOcupacion" class="needs-validation"
+                                    onsubmit="DataOcupacion_onclick(event);" novalidate="">
                                     <input type="hidden" id="id_form" name="id_form">
                                     <div class="form-floating mb-3">
-                                        <input required="" id="FACTURADOR" name="FACTURADOR" class="form-control"
-                                            type="text" placeholder="Nombre Facturador">
-                                        <label class="form-label" for="FACTURADOR">FACTURADOR</label>
+                                        <input required="" id="OCUPACION" name="OCUPACION" class="form-control"
+                                            type="text" placeholder="Ocupación">
+                                        <label class="form-label" for="OCUPACION">OCUPACIÓN</label>
                                         <div class="invalid-feedback">
                                             Campo Requerido!!.
                                         </div>
@@ -284,19 +333,19 @@
         const base_url = "";
     </script>
     <!-- JS Libraies -->
-    <script src="../../modules/jquery.min.js"></script>
-    <script src="../../modules/nicescroll/jquery.nicescroll.min.js"></script>
-    <script src="../../modules/bootstrap/js/bootstrap.min.js"></script>
-    <script src="../../modules/sweetalert/sweetalert2.all.min.js"></script>
-    <script src="../../modules/select2/js/select2.full.min.js"></script>
-    <script src="../../modules/datatables/datatables.min.js"></script>
-    <script src="../../modules/pdfmake/pdfmake.min.js"></script>
+    <script src="../../../modules/jquery.min.js"></script>
+    <script src="../../../modules/nicescroll/jquery.nicescroll.min.js"></script>
+    <script src="../../../modules/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../../../modules/sweetalert/sweetalert2.all.min.js"></script>
+    <script src="../../../modules/select2/js/select2.full.min.js"></script>
+    <script src="../../../modules/datatables/datatables.min.js"></script>
+    <script src="../../../modules/pdfmake/pdfmake.min.js"></script>
 
     <!-- Page Specific JS File -->
-    <script src="../../js/Archivo.js"></script>
+    <script src="../../../js/Archivo.js"></script>
 
     <!-- Template JS File añade las etiquetas js que pasen en la variable $footer-->
-    <script src="../../js/page/Config.js"></script>
+    <script src="../../../js/page/Config.js"></script>
 
 
 

@@ -8,28 +8,26 @@
 
     <!-- General CSS Files -->
     <!-- General CSS bootstrap -->
-    <link rel="stylesheet" href="../../modules/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../modules/bootstrap/css/bootstrap.min.css">
 
     <!-- General CSS del ico -->
-    <link rel="shortcut icon" href="../../img/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../../../img/favicon.ico" type="image/x-icon">
 
     <!-- General CSS sweetalert2 -->
     
     <!-- General CSS font-awesome -->
-    <link rel="stylesheet" href="../../modules/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="../../../modules/font-awesome/css/font-awesome.css">
 
     <!-- General CSS datatables -->
-    <link rel="stylesheet" href="../../modules/datatables/datatables.min.css">
+    <link rel="stylesheet" href="../../../modules/datatables/datatables.min.css">
     <!-- General CSS select2 -->
-    <link rel="stylesheet" href="../../modules/select2/css/select2.min.css">
+    <link rel="stylesheet" href="../../../modules/select2/css/select2.min.css">
 
 
     <!-- Template CSS -->
-    <link rel="stylesheet" href="../../css/main.css">
+    <link rel="stylesheet" href="../../../css/main.css">
 
     <!-- Start GA imprime las etiquetas que contenga la variable header -->
-
-</head>
 
 <body class="">
 
@@ -48,21 +46,21 @@
         <ul class="nav-list">
 
             <li class="nav-item">
-                <a href="../../home.html" class="">
+                <a href="../../Home/home.html" class="">
                     <i class="fa fa-dashboard"></i>
                     <span class="link_name">Dashboard</span>
                 </a>
                 <span class="tooltip">DashBoard</span>
             </li>
             <li class="nav-item">
-                <a href="../../pacientes.html" class="">
+                <a href="../../Paciente/pacientes.html" class="">
                     <i class="fa fa-user "></i>
                     <span class="link_name">Pacientes</span>
                 </a>
                 <span class="tooltip">Pacientes</span>
             </li>
             <li class="nav-item">
-                <a href="../../facturacion.html" class="">
+                <a href="../../Facturacion/facturacion.html" class="">
                     <i class="fa fa-money "></i>
                     <span class="link_name">Facturación</span>
                 </a>
@@ -107,7 +105,7 @@
                     <li><i class="fa fa-home fa-lg"></i></li>
                     <li>Configuraciones</li>
                     <li>General</li>
-                    <li>Municipio</li>
+                    <li>Tipo_Id</li>
                 </ul>
             </div>
 
@@ -117,10 +115,10 @@
             <div class="row">
 
                 <div class="list-group col-md-2">
-                    <a href="tipo_id.html" class="list-group-item list-group-item-action">
+                    <a href="tipo_id.html" class="list-group-item list-group-item-action active disabled">
                         <i class="fa fa-id-card icon"></i>Tipo Id
                     </a>
-                    <a href="municipio.html" class="list-group-item list-group-item-action  active disabled">
+                    <a href="municipio.html" class="list-group-item list-group-item-action ">
                         <i class="fa fa-globe icon"></i>Municipio
                     </a>
 
@@ -154,10 +152,12 @@
 
                 <div class=" col-md-10">
                     <div class="row d-flex justify-content-center tab-content">
-                        <div class="fix-card-size card col-md-12 show active tab-pane" role="tabpanel" id="Panel_Main">
+
+                        <div class="fix-card-size card col-md-12collapse multi-collapse fade  show active tab-pane" role="tabpanel"
+                            id="Panel_Main">
                             <div class="card-header">
-                                <h4><i class="fa fa-list-alt icon"></i> Lista Municipio</h4>
-                                <a class="btn btn-primary btn-sm" onclick="frmMunicipio_onclick()" data-toggle="tab"
+                                <h4><i class="fa fa-list-alt icon"></i> Lista Tipo Identificación</h4>
+                                <a class="btn btn-primary btn-sm" onclick="frmTipo_Id_onclick()" data-toggle="tab"
                                     data-target="Panel_Form">
                                     <i class="fa fa-plus"></i>
                                 </a>
@@ -165,7 +165,7 @@
                             <div class="card-body">
                                 <!--class son datos de clases css que se le pasen y su id-->
 
-                                <table class="table compact hover dataTable" id="tbl_Municipio"
+                                <table class="table compact hover dataTable" id="tbl_tipo_id"
                                     >
                                     
                                     <thead>
@@ -179,9 +179,9 @@
                                             </th>
                                             <th scope="col" data-dt-column="1" rowspan="1" colspan="1"
                                                 class="dt-orderable-asc dt-orderable-desc"
-                                                aria-label="Municipio: Activate to sort" tabindex="0"><span
-                                                    class="dt-column-title" role="button">Municipio</span><span
-                                                    class="dt-column-order"></span></th>
+                                                aria-label="Tipo Id: Activate to sort" tabindex="0"><span
+                                                    class="dt-column-title" role="button">Tipo
+                                                    Id</span><span class="dt-column-order"></span></th>
                                             <th scope="col" data-dt-column="2" rowspan="1" colspan="1"
                                                 class="dt-orderable-asc dt-orderable-desc"
                                                 aria-label=": Activate to sort" tabindex="0"><span
@@ -190,76 +190,62 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        
                                         <tr>
-                                            <td class="dt-type-numeric sorting_1">23</td>
-                                            <td>USIACURÍ</td>
+                                            <td class="dt-type-numeric sorting_1">15</td>
+                                            <td>PERMISO TEMPORAL DE PERMANENCIA</td>
                                             <td>
                                                 <div>
                                                     <button class="btn btn-warning btn-sm" type="button"
-                                                        onclick="btnEditarMunicipio_onclick(23);"><i
+                                                        onclick="btnEditarTipo_Id_onclick(15);"><i
                                                             class="fa fa-pencil"></i></button>
                                                     <button class="btn btn-danger btn-sm" type="button"
-                                                        onclick="btnEliminarMunicipio_onclick(23);"><i
+                                                        onclick="btnEliminarTipo_Id_onclick(15);"><i
                                                             class="fa fa-trash"></i></button>
                                                     <div></div>
                                                 </div>
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td class="dt-type-numeric sorting_1">22</td>
-                                            <td>MANATÍ</td>
+                                            <td class="dt-type-numeric sorting_1">14</td>
+                                            <td>TARJETA DE IDENTIDAD</td>
                                             <td>
                                                 <div>
                                                     <button class="btn btn-warning btn-sm" type="button"
-                                                        onclick="btnEditarMunicipio_onclick(22);"><i
+                                                        onclick="btnEditarTipo_Id_onclick(14);"><i
                                                             class="fa fa-pencil"></i></button>
                                                     <button class="btn btn-danger btn-sm" type="button"
-                                                        onclick="btnEliminarMunicipio_onclick(22);"><i
+                                                        onclick="btnEliminarTipo_Id_onclick(14);"><i
                                                             class="fa fa-trash"></i></button>
                                                     <div></div>
                                                 </div>
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td class="dt-type-numeric sorting_1">21</td>
-                                            <td>POLONUEVO</td>
+                                            <td class="dt-type-numeric sorting_1">13</td>
+                                            <td>SALVOCONDUCTO</td>
                                             <td>
                                                 <div>
                                                     <button class="btn btn-warning btn-sm" type="button"
-                                                        onclick="btnEditarMunicipio_onclick(21);"><i
+                                                        onclick="btnEditarTipo_Id_onclick(13);"><i
                                                             class="fa fa-pencil"></i></button>
                                                     <button class="btn btn-danger btn-sm" type="button"
-                                                        onclick="btnEliminarMunicipio_onclick(21);"><i
+                                                        onclick="btnEliminarTipo_Id_onclick(13);"><i
                                                             class="fa fa-trash"></i></button>
                                                     <div></div>
                                                 </div>
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td class="dt-type-numeric sorting_1">20</td>
-                                            <td>PIOJÓ</td>
+                                            <td class="dt-type-numeric sorting_1">12</td>
+                                            <td>REGISTRO CIVIL</td>
                                             <td>
                                                 <div>
                                                     <button class="btn btn-warning btn-sm" type="button"
-                                                        onclick="btnEditarMunicipio_onclick(20);"><i
+                                                        onclick="btnEditarTipo_Id_onclick(12);"><i
                                                             class="fa fa-pencil"></i></button>
                                                     <button class="btn btn-danger btn-sm" type="button"
-                                                        onclick="btnEliminarMunicipio_onclick(20);"><i
-                                                            class="fa fa-trash"></i></button>
-                                                    <div></div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="dt-type-numeric sorting_1">19</td>
-                                            <td>SUÁN</td>
-                                            <td>
-                                                <div>
-                                                    <button class="btn btn-warning btn-sm" type="button"
-                                                        onclick="btnEditarMunicipio_onclick(19);"><i
-                                                            class="fa fa-pencil"></i></button>
-                                                    <button class="btn btn-danger btn-sm" type="button"
-                                                        onclick="btnEliminarMunicipio_onclick(19);"><i
+                                                        onclick="btnEliminarTipo_Id_onclick(12);"><i
                                                             class="fa fa-trash"></i></button>
                                                     <div></div>
                                                 </div>
@@ -272,31 +258,44 @@
                             </div>
                         </div>
 
-                        <div class="card col-md-5 tab-pane" role="tabpanel" id="Panel_Form">
+                        <div class="card col-md-5 collapse multi-collapse fade  tab-pane" role="tabpanel"
+                            id="Panel_Form">
                             <div class="card-header line-head">
                                 <h3 id="title"> <i class="fa fa-file icon"></i> Formulario</h3>
                                 <a class="btn btn-danger" data-toggle="tab" data-target="Panel_Main">
                                     <i class="fa fa-close"></i></a>
                             </div>
-                            <div class="card-body ">
-                                <form method="post" id="frmMunicipio" class="needs-validation"
-                                    onsubmit="DataMunicipio_onclick(event);" novalidate="">
+
+                            <div class="card-body">
+                                <form method="post" id="frmTipo_Id" class="needs-validation"
+                                    onsubmit="DataTipo_id_onclick(event);" novalidate="">
                                     <input type="hidden" id="id_form" name="id_form">
                                     <div class="form-floating mb-3">
-                                        <input required="" id="MUNICIPIO" name="MUNICIPIO" class="form-control"
-                                            type="text" placeholder="Municipio">
-                                        <label class="form-label" for="MUNICIPIO">MUNICIPIO</label>
+                                        <input id="TIPO_ID" name="TIPO_ID" class="form-control" type="text"
+                                            placeholder="Tipo Identificación" required="">
+                                        <label class="form-label" for="TIPO_ID">TIPO IDENTIFICACION</label>
+                                        <div class="invalid-feedback">
+                                            Campo Requerido!!.
+                                        </div>
+                                    </div>
+
+                                    <div class="form-floating">
+                                        <input id="ABREVIACION" name="ABREVIACION" class="form-control" type="text"
+                                            placeholder="Abreviación" required="">
+                                        <label for="ABREVIACION" class="form-label">ABREVIACION</label>
                                         <div class="invalid-feedback">
                                             Campo Requerido!!.
                                         </div>
                                     </div>
                                     <div class="d-grid gap-2 mt-3">
+
                                         <div class="btn-group" role="group" aria-label="Basic example">
                                             <button class="btn btn-primary" type="submit"
                                                 id="btnAccion">Registrar</button>
                                             <a class="btn btn-danger" data-toggle="tab" data-target="Panel_Main"
                                                 id="btnCancel">Cancelar</a>
                                         </div>
+
                                     </div>
                                 </form>
                             </div>
@@ -330,22 +329,21 @@
     <!-- General JS Scripts -->
 
     <script>
-        const base_url = "";
     </script>
     <!-- JS Libraies -->
-    <script src="../../modules/jquery.min.js"></script>
-    <script src="../../modules/nicescroll/jquery.nicescroll.min.js"></script>
-    <script src="../../modules/bootstrap/js/bootstrap.min.js"></script>
-    <script src="../../modules/sweetalert/sweetalert2.all.min.js"></script>
-    <script src="../../modules/select2/js/select2.full.min.js"></script>
-    <script src="../../modules/datatables/datatables.min.js"></script>
-    <script src="../../modules/pdfmake/pdfmake.min.js"></script>
+    <script src="../../../modules/jquery.min.js"></script>
+    <script src="../../../modules/nicescroll/jquery.nicescroll.min.js"></script>
+    <script src="../../../modules/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../../../modules/sweetalert/sweetalert2.all.min.js"></script>
+    <script src="../../../modules/select2/js/select2.full.min.js"></script>
+    <script src="../../../modules/datatables/datatables.min.js"></script>
+    <script src="../../../modules/pdfmake/pdfmake.min.js"></script>
 
     <!-- Page Specific JS File -->
-    <script src="../../js/Archivo.js"></script>
+    <script src="../../../js/Archivo.js"></script>
 
     <!-- Template JS File añade las etiquetas js que pasen en la variable $footer-->
-    <script src="../../js/page/Config.js"></script>
+    <script src="../../../js/page/Config.js"></script>
 
 
 

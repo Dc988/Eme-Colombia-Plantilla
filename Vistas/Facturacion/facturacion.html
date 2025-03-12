@@ -8,22 +8,22 @@
 
     <!-- General CSS Files -->
     <!-- General CSS bootstrap -->
-    <link rel="stylesheet" href="modules/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../modules/bootstrap/css/bootstrap.min.css">
 
     <!-- General CSS del ico -->
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
 
     <!-- General CSS font-awesome -->
-    <link rel="stylesheet" href="modules/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="../../modules/font-awesome/css/font-awesome.css">
 
     <!-- General CSS datatables -->
-    <link rel="stylesheet" href="modules/datatables/datatables.min.css">
+    <link rel="stylesheet" href="../../modules/datatables/datatables.min.css">
     <!-- General CSS select2 -->
-    <link rel="stylesheet" href="modules/select2/css/select2.min.css">
+    <link rel="stylesheet" href="../../modules/select2/css/select2.min.css">
 
 
     <!-- Template CSS -->
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="../../css/main.css">
 
 
 </head>
@@ -45,28 +45,28 @@
         <ul class="nav-list">
 
             <li class="nav-item">
-                <a href="home.html" class="">
+                <a href="../Home/home.html" class="">
                     <i class="fa fa-dashboard"></i>
                     <span class="link_name">Dashboard</span>
                 </a>
                 <span class="tooltip">DashBoard</span>
             </li>
             <li class="nav-item">
-                <a href="pacientes.html" class="">
+                <a href="../Paciente/pacientes.html" class="">
                     <i class="fa fa-user "></i>
                     <span class="link_name">Pacientes</span>
                 </a>
                 <span class="tooltip">Pacientes</span>
             </li>
             <li class="nav-item">
-                <a href="facturacion.html" class="active">
+                <a href="../Facturacion/facturacion.html" class="active">
                     <i class="fa fa-money "></i>
                     <span class="link_name">Facturación</span>
                 </a>
                 <span class="tooltip">Facturación</span>
             </li>
             <li class="nav-item">
-                <a href="configuraciones.html" class="">
+                <a href="../Configuracion_vista/configuraciones.html" class="">
                     <i class="fa fa-cog"></i>
                     <span class="link_name">Configuraciones</span>
                 </a>
@@ -156,7 +156,7 @@
                                 <tr>
                                     <td class="dt-type-numeric sorting_1">4</td>
                                     <td>EM4</td>
-                                    <td class="dt-type-date">0001-11-11</td>
+                                    <td class="dt-type-date">2024-12-25</td>
                                     <td>RADICADA</td>
                                     <td>
                                         <div>
@@ -169,7 +169,7 @@
                                 <tr>
                                     <td class="dt-type-numeric sorting_1">3</td>
                                     <td>EM3</td>
-                                    <td class="dt-type-date">2333-01-01</td>
+                                    <td class="dt-type-date">2025-01-16</td>
                                     <td>GLOSA TOTAL</td>
                                     <td>
                                         <div>
@@ -230,7 +230,7 @@
                                     <div class="row">
                                         <div class="form-floating mb-3 col-md-5">
                                             <input required name="FACTURA" id="FACTURA" class="form-control"
-                                                type="text">
+                                                type="text" value="EM001">
                                             <label class="form-label" for="FACTURA"> CÓDIGO FACTURA </label>
                                             <div class="invalid-feedback">
                                                 Campo Requerido!!.
@@ -241,7 +241,7 @@
 
                                     <div class="form-floating mb-3 col-md-5">
                                         <input required name="IDENTIFICACION" id="IDENTIFICACION"
-                                            class="form-control" type="text">
+                                            class="form-control" type="text" value="555111222"> 
                                         <label class="form-label" for="IDENTIFICACION"> IDENTIFICACION DEL PACIENTE
                                         </label>
                                         <div class="invalid-feedback">
@@ -252,8 +252,8 @@
 
                                         <select id="FACTURADOR_FK" name="FACTURADOR_FK" class="form-control"
                                             required>
-                                            <option selected value="">-- Seleccione --</option>
-                                            <option value="2">B. JASSIR C. MAURY</option>
+                                            <option value="">-- Seleccione --</option>
+                                            <option selected value="2">B. JASSIR C. MAURY</option>
                                             <option value="1">J. PEREZ MERCADO</option>
                                         </select>
                                         <label class="form-label" for="FACTURADOR_FK">QUIEN FACTURÓ</label>
@@ -265,13 +265,13 @@
                                     <div class="form-floating mb-3 col-md-5">
 
                                         <select id="ESTADO_fk" name="ESTADO_fk" class="form-control " required>
-                                            <option selected value="">-- Seleccione --</option>
+                                            <option value="">-- Seleccione --</option>
                                             <option value="6">FACTURADA</option>
                                             <option value="1">GLOSA TOTAL</option>
                                             <option value="3">PAGADO</option>
                                             <option value="2">PAGADO PARCIAL</option>
                                             <option value="5">POR FACTURAR</option>
-                                            <option value="4">RADICADA</option>
+                                            <option selected value="4">RADICADA</option>
                                         </select>
                                         <label class="form-label" for="ESTADO_fk">ESTADO</label>
 
@@ -281,7 +281,7 @@
                                     </div>
                                     <div class="form-floating mb-3 col-md-5 ms-md-5">
                                         <input required name="VALOR" id="VALOR" onchange="calcValorT()"
-                                            class="form-control " type="number">
+                                            class="form-control " type="number" value="850000">
                                         <label class="form-label" for="VALOR"> VALOR </label>
                                         <div class="invalid-feedback">
                                             Campo Requerido!!.
@@ -289,7 +289,7 @@
                                     </div>
                                     <div class="form-floating mb-3 col-md-5">
                                         <input required name="GLOSA" id="GLOSA" onchange="calcValorT()"
-                                            class="form-control " type="number">
+                                            class="form-control " type="number" value="0">
                                         <label class="form-label" for="GLOSA"> GLOSA </label>
                                         <div class="invalid-feedback">
                                             Campo Requerido!!.
@@ -297,7 +297,7 @@
                                     </div>
                                     <div class="form-floating mb-3 col-md-5 ms-md-5">
                                         <input required name="VALOR_PAGADO" id="VALOR_PAGADO"
-                                            class="form-control" type="number">
+                                            class="form-control" type="number" value="850000">
                                         <label class="form-label" for="VALOR_PAGADO"> VALOR PAGADO </label>
                                         <div class="invalid-feedback">
                                             Campo Requerido!!.
@@ -347,19 +347,19 @@
             const base_url = "";
         </script>
         <!-- JS Libraies -->
-        <script src="modules/jquery.min.js"></script>
-        <script src="modules/nicescroll/jquery.nicescroll.min.js"></script>
-        <script src="modules/bootstrap/js/bootstrap.min.js"></script>
-        <script src="modules/sweetalert/sweetalert2.all.min.js"></script>
-        <script src="modules/select2/js/select2.full.min.js"></script>
-        <script src="modules/datatables/datatables.min.js"></script>
-        <script src="modules/pdfmake/pdfmake.min.js"></script>
+        <script src="../../modules/jquery.min.js"></script>
+        <script src="../../modules/nicescroll/jquery.nicescroll.min.js"></script>
+        <script src="../../modules/bootstrap/js/bootstrap.min.js"></script>
+        <script src="../../modules/sweetalert/sweetalert2.all.min.js"></script>
+        <script src="../../modules/select2/js/select2.full.min.js"></script>
+        <script src="../../modules/datatables/datatables.min.js"></script>
+        <script src="../../modules/pdfmake/pdfmake.min.js"></script>
 
         <!-- Page Specific JS File -->
-        <script src="js/Archivo.js"></script>
+        <script src="../../js/Archivo.js"></script>
 
         <!-- Template JS File añade las etiquetas js que pasen en la variable $footer-->
-        <script src="js/page/Factura.js"></script>
+        <script src="../../js/page/Factura.js"></script>
 
 
 

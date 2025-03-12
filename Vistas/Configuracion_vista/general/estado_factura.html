@@ -8,24 +8,24 @@
 
     <!-- General CSS Files -->
     <!-- General CSS bootstrap -->
-    <link rel="stylesheet" href="../../modules/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../modules/bootstrap/css/bootstrap.min.css">
 
     <!-- General CSS del ico -->
-    <link rel="shortcut icon" href="../../img/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../../../img/favicon.ico" type="image/x-icon">
 
     <!-- General CSS sweetalert2 -->
     
     <!-- General CSS font-awesome -->
-    <link rel="stylesheet" href="../../modules/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="../../../modules/font-awesome/css/font-awesome.css">
 
     <!-- General CSS datatables -->
-    <link rel="stylesheet" href="../../modules/datatables/datatables.min.css">
+    <link rel="stylesheet" href="../../../modules/datatables/datatables.min.css">
     <!-- General CSS select2 -->
-    <link rel="stylesheet" href="../../modules/select2/css/select2.min.css">
+    <link rel="stylesheet" href="../../../modules/select2/css/select2.min.css">
 
 
     <!-- Template CSS -->
-    <link rel="stylesheet" href="../../css/main.css">
+    <link rel="stylesheet" href="../../../css/main.css">
 
     <!-- Start GA imprime las etiquetas que contenga la variable header -->
 
@@ -47,21 +47,21 @@
         <ul class="nav-list">
 
             <li class="nav-item">
-                <a href="../../home.html" class="">
+                <a href="../../Home/home.html" class="">
                     <i class="fa fa-dashboard"></i>
                     <span class="link_name">Dashboard</span>
                 </a>
                 <span class="tooltip">DashBoard</span>
             </li>
             <li class="nav-item">
-                <a href="../../pacientes.html" class="">
+                <a href="../../Paciente/pacientes.html" class="">
                     <i class="fa fa-user "></i>
                     <span class="link_name">Pacientes</span>
                 </a>
                 <span class="tooltip">Pacientes</span>
             </li>
             <li class="nav-item">
-                <a href="../../facturacion.html" class="">
+                <a href="../../Facturacion/facturacion.html" class="">
                     <i class="fa fa-money "></i>
                     <span class="link_name">Facturación</span>
                 </a>
@@ -106,7 +106,7 @@
                     <li><i class="fa fa-home fa-lg"></i></li>
                     <li>Configuraciones</li>
                     <li>General</li>
-                    <li>Tipo_Ingreso</li>
+                    <li>Estado_Fact</li>
                 </ul>
             </div>
 
@@ -123,7 +123,7 @@
                         <i class="fa fa-globe icon"></i>Municipio
                     </a>
 
-                    <a href="tipo_ingreso.html" class="list-group-item list-group-item-action active disabled">
+                    <a href="tipo_ingreso.html" class="list-group-item list-group-item-action ">
                         <i class="fa fa-arrow-circle-right icon"></i>Tipo Ingreso
                     </a>
 
@@ -136,7 +136,7 @@
                     <a href="estado_civil.html" class="list-group-item list-group-item-action ">
                         <i class="fa fa-user icon"></i>Estado Civil
                     </a>
-                    <a href="estado_factura.html" class="list-group-item list-group-item-action ">
+                    <a href="estado_factura.html" class="list-group-item list-group-item-action active disabled">
                         <i class="fa fa-money icon"></i>Estado Facturación
                     </a>
                     <a href="facturador.html" class="list-group-item list-group-item-action ">
@@ -153,10 +153,10 @@
 
                 <div class=" col-md-10">
                     <div class="row d-flex justify-content-center tab-content">
-                        <div class="fix-card-size card col-md-12 show active tab-pane" role="tabpanel" id="Panel_Main">
+                        <div class="fix-card-size card col-md-12 show active  tab-pane" role="tabpanel" id="Panel_Main">
                             <div class="card-header">
-                                <h4><i class="fa fa-list-alt icon"></i> Lista Tipo Ingreso</h4>
-                                <a class="btn btn-primary btn-sm" onclick="frmTipo_Ingreso_onclick()" data-toggle="tab"
+                                <h4><i class="fa fa-list-alt icon"></i> Lista Estado_Fact</h4>
+                                <a class="btn btn-primary btn-sm" onclick="frmEstado_Fact_onclick()" data-toggle="tab"
                                     data-target="Panel_Form">
                                     <i class="fa fa-plus"></i>
                                 </a>
@@ -164,8 +164,7 @@
                             <div class="card-body">
                                 <!--class son datos de clases css que se le pasen y su id-->
 
-                                <table class="table compact hover dataTable" id="tbl_Tipo_Ingreso"
-                                    >
+                                <table class="table compact hover dataTable" id="tbl_Estado_Fact">
                                     
                                     <thead>
                                         <tr role="row">
@@ -178,10 +177,9 @@
                                             </th>
                                             <th scope="col" data-dt-column="1" rowspan="1" colspan="1"
                                                 class="dt-orderable-asc dt-orderable-desc"
-                                                aria-label="TIPO INGRESO: Activate to sort" tabindex="0">
-                                                <span class="dt-column-title" role="button">TIPO
-                                                    INGRESO</span><span class="dt-column-order"></span>
-                                            </th>
+                                                aria-label="ESTADO: Activate to sort" tabindex="0"><span
+                                                    class="dt-column-title" role="button">ESTADO</span><span
+                                                    class="dt-column-order"></span></th>
                                             <th scope="col" data-dt-column="2" rowspan="1" colspan="1"
                                                 class="dt-orderable-asc dt-orderable-desc"
                                                 aria-label=": Activate to sort" tabindex="0"><span
@@ -191,30 +189,75 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td class="dt-type-numeric sorting_1">2</td>
-                                            <td>AMBULANCIA</td>
+                                            <td class="dt-type-numeric sorting_1">6</td>
+                                            <td>FACTURADA</td>
                                             <td>
                                                 <div>
                                                     <button class="btn btn-warning btn-sm" type="button"
-                                                        onclick="btnEditarTipo_Ingreso_onclick(2);"><i
+                                                        onclick="btnEditarEstado_Fact_onclick(6);"><i
                                                             class="fa fa-pencil"></i></button>
                                                     <button class="btn btn-danger btn-sm" type="button"
-                                                        onclick="btnEliminarTipo_Ingreso_onclick(2);"><i
+                                                        onclick="btnEliminarEstado_Fact_onclick(6);"><i
                                                             class="fa fa-trash"></i></button>
                                                     <div></div>
                                                 </div>
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td class="dt-type-numeric sorting_1">1</td>
-                                            <td>ATENCION DE URGENCIA</td>
+                                            <td class="dt-type-numeric sorting_1">5</td>
+                                            <td>POR FACTURAR</td>
                                             <td>
                                                 <div>
                                                     <button class="btn btn-warning btn-sm" type="button"
-                                                        onclick="btnEditarTipo_Ingreso_onclick(1);"><i
+                                                        onclick="btnEditarEstado_Fact_onclick(5);"><i
                                                             class="fa fa-pencil"></i></button>
                                                     <button class="btn btn-danger btn-sm" type="button"
-                                                        onclick="btnEliminarTipo_Ingreso_onclick(1);"><i
+                                                        onclick="btnEliminarEstado_Fact_onclick(5);"><i
+                                                            class="fa fa-trash"></i></button>
+                                                    <div></div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="dt-type-numeric sorting_1">4</td>
+                                            <td>RADICADA</td>
+                                            <td>
+                                                <div>
+                                                    <button class="btn btn-warning btn-sm" type="button"
+                                                        onclick="btnEditarEstado_Fact_onclick(4);"><i
+                                                            class="fa fa-pencil"></i></button>
+                                                    <button class="btn btn-danger btn-sm" type="button"
+                                                        onclick="btnEliminarEstado_Fact_onclick(4);"><i
+                                                            class="fa fa-trash"></i></button>
+                                                    <div></div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="dt-type-numeric sorting_1">3</td>
+                                            <td>PAGADO</td>
+                                            <td>
+                                                <div>
+                                                    <button class="btn btn-warning btn-sm" type="button"
+                                                        onclick="btnEditarEstado_Fact_onclick(3);"><i
+                                                            class="fa fa-pencil"></i></button>
+                                                    <button class="btn btn-danger btn-sm" type="button"
+                                                        onclick="btnEliminarEstado_Fact_onclick(3);"><i
+                                                            class="fa fa-trash"></i></button>
+                                                    <div></div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="dt-type-numeric sorting_1">2</td>
+                                            <td>PAGADO PARCIAL</td>
+                                            <td>
+                                                <div>
+                                                    <button class="btn btn-warning btn-sm" type="button"
+                                                        onclick="btnEditarEstado_Fact_onclick(2);"><i
+                                                            class="fa fa-pencil"></i></button>
+                                                    <button class="btn btn-danger btn-sm" type="button"
+                                                        onclick="btnEliminarEstado_Fact_onclick(2);"><i
                                                             class="fa fa-trash"></i></button>
                                                     <div></div>
                                                 </div>
@@ -234,14 +277,13 @@
                                     <i class="fa fa-close"></i></a>
                             </div>
                             <div class="card-body ">
-                                <form method="post" id="frmTipo_Ingreso" class="needs-validation"
-                                    onsubmit="DataTipo_Ingreso_onclick(event);" novalidate="">
+                                <form method="post" id="frmEstado_Fact" class="needs-validation" novalidate=""
+                                    onsubmit="DataEstado_Fact_onclick(event);">
                                     <input type="hidden" id="id_form" name="id_form">
-
                                     <div class="form-floating mb-3">
-                                        <input id="TIPO" name="TIPO" class="form-control" type="text"
-                                            placeholder="Tipo Ingreso" required="">
-                                        <label for="TIPO" class="form-label">TIPO INGRESO</label>
+                                        <input required="" id="ESTADO" name="ESTADO" class="form-control" type="text"
+                                            placeholder="Estado Facturación">
+                                        <label class="form-label" for="ESTADO">ESTADO</label>
                                         <div class="invalid-feedback">
                                             Campo Requerido!!.
                                         </div>
@@ -289,19 +331,19 @@
         const base_url = "";
     </script>
     <!-- JS Libraies -->
-    <script src="../../modules/jquery.min.js"></script>
-    <script src="../../modules/nicescroll/jquery.nicescroll.min.js"></script>
-    <script src="../../modules/bootstrap/js/bootstrap.min.js"></script>
-    <script src="../../modules/sweetalert/sweetalert2.all.min.js"></script>
-    <script src="../../modules/select2/js/select2.full.min.js"></script>
-    <script src="../../modules/datatables/datatables.min.js"></script>
-    <script src="../../modules/pdfmake/pdfmake.min.js"></script>
+    <script src="../../../modules/jquery.min.js"></script>
+    <script src="../../../modules/nicescroll/jquery.nicescroll.min.js"></script>
+    <script src="../../../modules/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../../../modules/sweetalert/sweetalert2.all.min.js"></script>
+    <script src="../../../modules/select2/js/select2.full.min.js"></script>
+    <script src="../../../modules/datatables/datatables.min.js"></script>
+    <script src="../../../modules/pdfmake/pdfmake.min.js"></script>
 
     <!-- Page Specific JS File -->
-    <script src="../../js/Archivo.js"></script>
+    <script src="../../../js/Archivo.js"></script>
 
     <!-- Template JS File añade las etiquetas js que pasen en la variable $footer-->
-    <script src="../../js/page/Config.js"></script>
+    <script src="../../../js/page/Config.js"></script>
 
 
 

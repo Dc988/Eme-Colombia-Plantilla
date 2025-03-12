@@ -184,11 +184,6 @@ if (typeof frmPaciente !== "undefined") {
     Fecha_Na_2.addEventListener("change", (event) => { calcEdad(event) });
 }
 
-function btnPacienteViewData_onclick(id) {
-
-    show_tap_panel("Panel_Paciente_Data_View");
-}
-
 function calcEdad(e) {
 
     txt_fecha_na = e.target;
@@ -276,48 +271,23 @@ function go_to_panel_4_onclick() {
 
 function DataPaciente_onclick() {
 
-
     if (frmPaciente.checkValidity()) {
-        switch (btn_submit_form.textContent) {
-            case "Registrar":
-                save_paciente_data();
-                break;
-            case "Editar":
-                //edit_paciente_data();
-                break;
+        confirmationAlert("Desea guardar la información?", "", "info").then((result) => {
+            if (result.isConfirmed) {
+                animation_load();
 
-            default:
-                alertas('Error en el componente submit', 'warning');
-        }
+                setTimeout(function () {
+                    remove_animation_load();
+                    window.location = "../Facturacion/factura.html";
+                }, 500);
+            }
+        });
     } else {
         alertas("Oops, Hay Campos abligatorios", "warning");
     }
 }
 
-function save_paciente_data() {
-    confirmationAlert("Desea Guardar la información?", "", "info").then((result) => {
-        if (result.isConfirmed) {
-            animation_load();
 
-            /*let row = {};
-            id_form.value = (Object.keys(data).length + 1)
-            const items_form = frmPaciente.querySelectorAll("input, select");
-
-            items_form.forEach(item => {
-                row[item.id] = item.value;
-            });
-
-            data[id_form.value] = row;
-
-            addDataTable();*/
-
-            alertas("Datos Guardados!", "success");
-            window.location = "../pacientes.html";
-            remove_animation_load();
-
-        }
-    });
-}
 
 function edit_paciente_data() {
 
@@ -338,72 +308,17 @@ function addDataTable() {
             id: row.id_form,
             IDENTIFICACION: row.IDENTIFICACION,
             Nombre_Completo: `${row.Apellido_1} ${row.Apellido_2} ${row.Nombre_1} ${row.Nombre_2} `,
-            acciones: `<a href ="pacientes/paciente_view_data.html" class="btn btn-success btn-sm" onclick="btnPacienteViewData_onclick(${row.id_form});"><i class="fa fa-eye"></i></a>`
+            acciones: `<a href ="paciente_view_data.html" class="btn btn-success btn-sm" ><i class="fa fa-eye"></i></a>`
         };
 
         tbl_pacientes.row.add(nuevaFila).draw();
 
     });
 
-
-
-    // Agregar la fila a la tabla y redibujarla
-
 }
 
 
 addDataTable();
-
-$(function () {
-    $(".panel-body").niceScroll(sidebar_nicescroll_opts);
-});
-
-
-id_paciente.innerHTML = "1";
-nombre_paciente.innerHTML = "Fernández Torres Juan Pablo";
-edad_paciente.innerHTML = "29";
-fecha_nacimiento_paciente.innerHTML = "29/12/1986";
-estado_civil_paciente.innerHTML = "SOLTERO";
-identificacion_paciente.innerHTML = "22569986";
-telefono_paciente.innerHTML = "N/A";
-celular_paciente.innerHTML = "3022563652";
-ocupacion_paciente.innerHTML = "AMA DE CASA";
-sexo_paciente.innerHTML = "F";
-direccion_paciente.innerHTML = "CALLE 2 SUR 1 256";
-barrio_paciente.innerHTML = "LAS FLORES";
-
-function on_keydown_searck(e) {
-    if (e.keyCode === 13 && !e.shiftKey) {
-        e.preventDefault();
-        setData();
-    }
-}
-
-
-function setData() {
-    if (fecha_ingreso_search.value != "") {
-        animation_load();
-        //do something
-
-        setTimeout(function () {
-            remove_animation_load();
-        }, 500);
-    }
-}
-
-
-function goto_facturaFormat() {
-
-
-    if (fecha_ingreso_search.value != "" && id_ingreso.value != "-1") {
-        window.location = "../factura.html";
-    } else {
-        alertas("SIN REISTRO SELECCIONADO", "warning");
-    }
-}
-
-
-
 
 
 

@@ -4,7 +4,7 @@ function frmLogin(e) {
 
     if(frm.checkValidity()){
         animation_load();
-        window.location = "home.html";
+        window.location = "Vistas/Home/home.html";
     }
 
 

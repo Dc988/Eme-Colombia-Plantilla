@@ -1,0 +1,21 @@
+.container_main{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+.color{
+    background-color: rgb(23,42, 100);
+    display: flex;
+    justify-content: center;
+    width: 90%;
+    padding: 20;
+    margin: 20;
+    border-radius: 50px;
+}
+.color a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 40;
+}

@@ -1,5 +1,4 @@
 
-
 function printFormato(){
     window.print();
 }

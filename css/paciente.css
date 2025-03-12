@@ -88,3 +88,41 @@
     top: 325px;
     padding: 10px;    
 }
+
+.input_Disabled{
+    background-color: transparent;
+    outline: none;
+    border-color: transparent;
+    box-shadow: 0px 2px rgb(23,42, 100);
+    font-size: 20px;
+    width: 90%;
+}
+.input_Normal{
+    background-color: transparent;
+    outline: none;
+    border-color: transparent;
+    box-shadow: 0px 2px rgb(23,42, 100);
+    font-size: 20px;
+    width: 90%;
+}
+.containers_Info span{
+    position: relative;
+    padding: 0%;
+    margin-right: 3%;
+}
+.containers_Info{
+    margin-block: 3%;
+    width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.list_Info{
+    display: flex;
+    justify-content:space-between;
+    width: 80vw;
+    height: auto;
+    flex-wrap: wrap;
+}
+.none{
+    display: none;
+}

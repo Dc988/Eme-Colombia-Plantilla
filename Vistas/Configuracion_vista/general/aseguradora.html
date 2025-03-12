@@ -8,28 +8,24 @@
 
     <!-- General CSS Files -->
     <!-- General CSS bootstrap -->
-    <link rel="stylesheet" href="../../modules/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../modules/bootstrap/css/bootstrap.min.css">
 
     <!-- General CSS del ico -->
-    <link rel="shortcut icon" href="../../img/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../../../img/favicon.ico" type="image/x-icon">
 
     <!-- General CSS sweetalert2 -->
     
     <!-- General CSS font-awesome -->
-    <link rel="stylesheet" href="../../modules/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="../../../modules/font-awesome/css/font-awesome.css">
 
     <!-- General CSS datatables -->
-    <link rel="stylesheet" href="../../modules/datatables/datatables.min.css">
+    <link rel="stylesheet" href="../../../modules/datatables/datatables.min.css">
     <!-- General CSS select2 -->
-    <link rel="stylesheet" href="../../modules/select2/css/select2.min.css">
-
+    <link rel="stylesheet" href="../../../modules/select2/css/select2.min.css">
 
     <!-- Template CSS -->
-    <link rel="stylesheet" href="../../css/main.css">
-
-    <!-- Start GA imprime las etiquetas que contenga la variable header -->
-
-
+    <link rel="stylesheet" href="../../../css/main.css">
+    
 <body class="">
 
 
@@ -47,21 +43,21 @@
         <ul class="nav-list">
 
             <li class="nav-item">
-                <a href="../../home.html" class="">
+                <a href="../../Home/home.html" class="">
                     <i class="fa fa-dashboard"></i>
                     <span class="link_name">Dashboard</span>
                 </a>
                 <span class="tooltip">DashBoard</span>
             </li>
             <li class="nav-item">
-                <a href="../../pacientes.html" class="">
+                <a href="../../Paciente/pacientes.html" class="">
                     <i class="fa fa-user "></i>
                     <span class="link_name">Pacientes</span>
                 </a>
                 <span class="tooltip">Pacientes</span>
             </li>
             <li class="nav-item">
-                <a href="../../facturacion.html" class="">
+                <a href="../../Facturacion/facturacion.html" class="">
                     <i class="fa fa-money "></i>
                     <span class="link_name">Facturación</span>
                 </a>
@@ -106,16 +102,16 @@
                     <li><i class="fa fa-home fa-lg"></i></li>
                     <li>Configuraciones</li>
                     <li>General</li>
-                    <li>Condicion_Paciente</li>
+                    <li>Seguradora</li>
                 </ul>
             </div>
 
         </div>
-        <div class="body-content">
+        <div class="body-content " >
             <!--imprime el codigo html que se le pase en las variable-->
-            <div class="row">
+            <div class="row" >
 
-                <div class="list-group col-md-2">
+                <div class="list-group col-md-2" >
                     <a href="tipo_id.html" class="list-group-item list-group-item-action ">
                         <i class="fa fa-id-card icon"></i>Tipo Id
                     </a>
@@ -130,7 +126,7 @@
                     <a href="ocupacion.html" class="list-group-item list-group-item-action ">
                         <i class="fa fa-shopping-bag icon"></i>Ocupación
                     </a>
-                    <a href="condicion.html" class="list-group-item list-group-item-action active disabled">
+                    <a href="condicion.html" class="list-group-item list-group-item-action ">
                         <i class="fa fa-user-md icon"></i>Condicion Paciente
                     </a>
                     <a href="estado_civil.html" class="list-group-item list-group-item-action ">
@@ -145,28 +141,29 @@
                     <a href="colaborador.html" class="list-group-item list-group-item-action ">
                         <i class="fa fa-medium icon"></i>Colaborador
                     </a>
-                    <a href="aseguradora.html" class="list-group-item list-group-item-action ">
+                    <a href="aseguradora.html" class="list-group-item list-group-item-action active disabled">
                         <i class="fa fa-lock icon"></i> Seguradora
                     </a>
 
                 </div>
 
-                <div class=" col-md-10">
+                <div class=" col-md-10" style="overflow: hidden;">
                     <div class="row d-flex justify-content-center tab-content">
-                        <div class="fix-card-size card col-md-12 tab-pane active show" role="tabpanel" id="Panel_Main">
+                        <div class="fix-card-size card col-md-12 show active tab-pane" role="tabpanel" id="Panel_Main">
                             <div class="card-header">
-                                <h4><i class="fa fa-list-alt icon"></i> Lista Condición Paciente</h4>
-                                <a class="btn btn-primary btn-sm" onclick="frmCondicion_Paciente_onclick()"
-                                    data-toggle="tab" data-target="Panel_Form">
+                                <h4><i class="fa fa-list-alt icon"></i> Lista Seguradora</h4>
+                                <a class="btn btn-primary btn-sm" onclick="frmSeguradora_onclick()" data-toggle="tab"
+                                    data-target="Panel_Form">
                                     <i class="fa fa-plus"></i>
                                 </a>
                             </div>
                             <div class="card-body">
                                 <!--class son datos de clases css que se le pasen y su id-->
 
-                                <div id="tbl_Condicion_Paciente_wrapper" class="dt-container dt-empty-footer">
+                                <div id="tbl_Seguradora_wrapper" class="dt-container dt-empty-footer">
 
-                                    <table class="table compact hover dataTable" id="tbl_Condicion_Paciente">
+                                    <table class="table compact hover dataTable" id="tbl_Seguradora"
+                                        aria-describedby="tbl_Seguradora_info" style="width: 1057.66px;">
                                         
                                         <thead>
                                             <tr role="row">
@@ -179,9 +176,9 @@
                                                 </th>
                                                 <th scope="col" data-dt-column="1" rowspan="1" colspan="1"
                                                     class="dt-orderable-asc dt-orderable-desc"
-                                                    aria-label="CONDICIÓN PACIENTE: Activate to sort" tabindex="0"><span
-                                                        class="dt-column-title" role="button">CONDICIÓN
-                                                        PACIENTE</span><span class="dt-column-order"></span></th>
+                                                    aria-label="SEGURADORA: Activate to sort" tabindex="0"><span
+                                                        class="dt-column-title" role="button">SEGURADORA</span><span
+                                                        class="dt-column-order"></span></th>
                                                 <th scope="col" data-dt-column="2" rowspan="1" colspan="1"
                                                     class="dt-orderable-asc dt-orderable-desc"
                                                     aria-label=": Activate to sort" tabindex="0"><span
@@ -191,75 +188,75 @@
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td class="dt-type-numeric sorting_1">6</td>
-                                                <td>OTROS</td>
+                                                <td class="dt-type-numeric sorting_1">11</td>
+                                                <td>SEGUROS SURA</td>
                                                 <td>
                                                     <div>
                                                         <button class="btn btn-warning btn-sm" type="button"
-                                                            onclick="btnEditarCondicion_Paciente_onclick(6);"><i
+                                                            onclick="btnEditarSeguradora_onclick(11);"><i
                                                                 class="fa fa-pencil"></i></button>
                                                         <button class="btn btn-danger btn-sm" type="button"
-                                                            onclick="btnEliminarCondicion_Paciente_onclick(6);"><i
+                                                            onclick="btnEliminarSeguradora_onclick(11);"><i
                                                                 class="fa fa-trash"></i></button>
                                                         <div></div>
                                                     </div>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td class="dt-type-numeric sorting_1">5</td>
-                                                <td>USUARIO MOTOCICLETA</td>
+                                                <td class="dt-type-numeric sorting_1">10</td>
+                                                <td>LIBERTY SEGUROS</td>
                                                 <td>
                                                     <div>
                                                         <button class="btn btn-warning btn-sm" type="button"
-                                                            onclick="btnEditarCondicion_Paciente_onclick(5);"><i
+                                                            onclick="btnEditarSeguradora_onclick(10);"><i
                                                                 class="fa fa-pencil"></i></button>
                                                         <button class="btn btn-danger btn-sm" type="button"
-                                                            onclick="btnEliminarCondicion_Paciente_onclick(5);"><i
+                                                            onclick="btnEliminarSeguradora_onclick(10);"><i
                                                                 class="fa fa-trash"></i></button>
                                                         <div></div>
                                                     </div>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td class="dt-type-numeric sorting_1">4</td>
-                                                <td>CICLISTA</td>
+                                                <td class="dt-type-numeric sorting_1">9</td>
+                                                <td>SEGUROS MAPHRE</td>
                                                 <td>
                                                     <div>
                                                         <button class="btn btn-warning btn-sm" type="button"
-                                                            onclick="btnEditarCondicion_Paciente_onclick(4);"><i
+                                                            onclick="btnEditarSeguradora_onclick(9);"><i
                                                                 class="fa fa-pencil"></i></button>
                                                         <button class="btn btn-danger btn-sm" type="button"
-                                                            onclick="btnEliminarCondicion_Paciente_onclick(4);"><i
+                                                            onclick="btnEliminarSeguradora_onclick(9);"><i
                                                                 class="fa fa-trash"></i></button>
                                                         <div></div>
                                                     </div>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td class="dt-type-numeric sorting_1">3</td>
-                                                <td>PEATÓN</td>
+                                                <td class="dt-type-numeric sorting_1">8</td>
+                                                <td>SEGUROS LA EQUIDAD</td>
                                                 <td>
                                                     <div>
                                                         <button class="btn btn-warning btn-sm" type="button"
-                                                            onclick="btnEditarCondicion_Paciente_onclick(3);"><i
+                                                            onclick="btnEditarSeguradora_onclick(8);"><i
                                                                 class="fa fa-pencil"></i></button>
                                                         <button class="btn btn-danger btn-sm" type="button"
-                                                            onclick="btnEliminarCondicion_Paciente_onclick(3);"><i
+                                                            onclick="btnEliminarSeguradora_onclick(8);"><i
                                                                 class="fa fa-trash"></i></button>
                                                         <div></div>
                                                     </div>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td class="dt-type-numeric sorting_1">2</td>
-                                                <td>OCUPANTE</td>
+                                                <td class="dt-type-numeric sorting_1">7</td>
+                                                <td>SEGUROS ESTADO</td>
                                                 <td>
                                                     <div>
                                                         <button class="btn btn-warning btn-sm" type="button"
-                                                            onclick="btnEditarCondicion_Paciente_onclick(2);"><i
+                                                            onclick="btnEditarSeguradora_onclick(7);"><i
                                                                 class="fa fa-pencil"></i></button>
                                                         <button class="btn btn-danger btn-sm" type="button"
-                                                            onclick="btnEliminarCondicion_Paciente_onclick(2);"><i
+                                                            onclick="btnEliminarSeguradora_onclick(7);"><i
                                                                 class="fa fa-trash"></i></button>
                                                         <div></div>
                                                     </div>
@@ -280,17 +277,18 @@
                                     <i class="fa fa-close"></i></a>
                             </div>
                             <div class="card-body ">
-                                <form method="post" onsubmit="DataCondicion_Paciente_onclick(event);"
-                                    id="frmCondicion_Paciente" class="needs-validation" novalidate="">
+                                <form method="post" id="frmSeguradora" class="needs-validation"
+                                    onsubmit="DataSeguradora_onclick(event);" novalidate="">
                                     <input type="hidden" id="id_form" name="id_form">
                                     <div class="form-floating mb-3">
-                                        <input required="" id="CONDICION_PACIENTE" name="CONDICION_PACIENTE"
-                                            class="form-control" type="text" placeholder="Condición del Paciente">
-                                        <label class="form-label" for="CONDICION_PACIENTE">CONDICIÓN PACIENTE</label>
+                                        <input required="" id="SEGURADORA" name="SEGURADORA" class="form-control"
+                                            type="text" placeholder="Seguradora">
+                                        <label class="form-label" for="SEGURADORA">SEGURADORA</label>
                                         <div class="invalid-feedback">
                                             Campo Requerido!!.
                                         </div>
                                     </div>
+
                                     <div class="d-grid gap-2 mt-3">
                                         <div class="btn-group" role="group" aria-label="Basic example">
                                             <button class="btn btn-primary" type="submit"
@@ -301,7 +299,6 @@
                                     </div>
                                 </form>
                             </div>
-
                         </div>
                     </div>
                 </div>
@@ -335,19 +332,19 @@
         const base_url = "";
     </script>
     <!-- JS Libraies -->
-    <script src="../../modules/jquery.min.js"></script>
-    <script src="../../modules/nicescroll/jquery.nicescroll.min.js"></script>
-    <script src="../../modules/bootstrap/js/bootstrap.min.js"></script>
-    <script src="../../modules/sweetalert/sweetalert2.all.min.js"></script>
-    <script src="../../modules/select2/js/select2.full.min.js"></script>
-    <script src="../../modules/datatables/datatables.min.js"></script>
-    <script src="../../modules/pdfmake/pdfmake.min.js"></script>
+    <script src="../../../modules/jquery.min.js"></script>
+    <script src="../../../modules/nicescroll/jquery.nicescroll.min.js"></script>
+    <script src="../../../modules/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../../../modules/sweetalert/sweetalert2.all.min.js"></script>
+    <script src="../../../modules/select2/js/select2.full.min.js"></script>
+    <script src="../../../modules/datatables/datatables.min.js"></script>
+    <script src="../../../modules/pdfmake/pdfmake.min.js"></script>
 
     <!-- Page Specific JS File -->
-    <script src="../../js/Archivo.js"></script>
+    <script src="../../../js/Archivo.js"></script>
 
     <!-- Template JS File añade las etiquetas js que pasen en la variable $footer-->
-    <script src="../../js/page/Config.js"></script>
+    <script src="../../../js/page/Config.js"></script>
 
 
 

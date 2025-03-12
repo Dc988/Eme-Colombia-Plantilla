@@ -8,24 +8,24 @@
 
     <!-- General CSS Files -->
     <!-- General CSS bootstrap -->
-    <link rel="stylesheet" href="../modules/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../modules/bootstrap/css/bootstrap.min.css">
 
     <!-- General CSS del ico -->
-    <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../../img/favicon.ico" type="image/x-icon">
 
     <!-- General CSS font-awesome -->
-    <link rel="stylesheet" href="../modules/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="../../modules/font-awesome/css/font-awesome.css">
 
     <!-- General CSS datatables -->
-    <link rel="stylesheet" href="../modules/datatables/datatables.min.css">
+    <link rel="stylesheet" href="../../modules/datatables/datatables.min.css">
     <!-- General CSS select2 -->
-    <link rel="stylesheet" href="../modules/select2/css/select2.min.css">
+    <link rel="stylesheet" href="../../modules/select2/css/select2.min.css">
 
     <!-- Start GA imprime las etiquetas que contenga la variable header -->
-    <link rel="stylesheet" href="../css/paciente.css">
+    <link rel="stylesheet" href="../../css/paciente.css">
 
     <!-- Template CSS -->
-    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../../css/main.css">
 
 <body class="">
 
@@ -43,28 +43,28 @@
         <ul class="nav-list">
 
             <li class="nav-item">
-                <a href="../home.html" class="">
+                <a href="../Home/home.html" class="">
                     <i class="fa fa-dashboard"></i>
                     <span class="link_name">Dashboard</span>
                 </a>
                 <span class="tooltip">DashBoard</span>
             </li>
             <li class="nav-item">
-                <a href="../pacientes.html" class="active">
+                <a href="pacientes.html" class="active">
                     <i class="fa fa-user "></i>
                     <span class="link_name">Pacientes</span>
                 </a>
                 <span class="tooltip">Pacientes</span>
             </li>
             <li class="nav-item">
-                <a href="../facturacion.html" class="">
+                <a href="../Facturacion/facturacion.html" class="">
                     <i class="fa fa-money "></i>
                     <span class="link_name">Facturación</span>
                 </a>
                 <span class="tooltip">Facturación</span>
             </li>
             <li class="nav-item">
-                <a href="../configuraciones.html" class="">
+                <a href="../Configuracion_vista/configuraciones.html" class="">
                     <i class="fa fa-cog"></i>
                     <span class="link_name">Configuraciones</span>
                 </a>
@@ -116,29 +116,32 @@
                         <div class="info-paciente row">
 
                             <div class="img-paciente col-md-3">
-                                <img src="../img/img-paciente.png" alt="imagen del paciente">
+                                <img src="../../img/img-paciente.png" alt="imagen del paciente">
                             </div>
 
                             <div class="row-information col-md-3">
                                 <h6 class="item-information"> FOLIO: <span id="id_paciente"></span></h6>
                                 <h6 class="item-information"> NOMBRE PACIENTE: <span id="nombre_paciente"></span></h6>
                                 <h6 class="item-information">EDAD: <span id="edad_paciente"></span></h6>
-                                <h6 class="item-information"> FECHA DE NACIMIENTO:<span id="fecha_nacimiento_paciente"></span></h6>
+                                <h6 class="item-information"> FECHA DE NACIMIENTO:<span
+                                        id="fecha_nacimiento_paciente"></span></h6>
                             </div>
                             <div class="row-information col-md-3">
                                 <h6 class="item-information">ESTADO CIVIL: <span id="estado_civil_paciente"></span></h6>
-                                <h6 class="item-information">IDENTIFICACION: <span id="identificacion_paciente"></span></h6>
+                                <h6 class="item-information">IDENTIFICACION: <span id="identificacion_paciente"></span>
+                                </h6>
                                 <h6 class="item-information">TELEFONO: <span id="telefono_paciente"></span></h6>
                                 <h6 class="item-information">CELULAR: <span id="celular_paciente"></span></h6>
                             </div>
                             <div class="row-information col-md-3">
-                                <h6 class="item-information">PROFESION U OCUPACION: <span id="ocupacion_paciente"></span></h6>
+                                <h6 class="item-information">PROFESION U OCUPACION: <span
+                                        id="ocupacion_paciente"></span></h6>
                                 <h6 class="item-information">SEXO: <span id="sexo_paciente"></span></h6>
                                 <h6 class="item-information">DIRECCION: <span id="direccion_paciente"></span></h6>
                                 <h6 class="item-information">BARRIO: <span id="barrio_paciente"></span></h6>
                             </div>
                             <div class="row-btns">
-                                <a class="btn btn-danger btn-sm" href="../pacientes.html">
+                                <a class="btn btn-danger btn-sm" href="pacientes.html">
                                     <i class="fa fa-close"></i>
                                 </a>
                                 <a class="btn btn-primary btn-sm">
@@ -147,16 +150,16 @@
                                 <a class="btn btn-success btn-sm" onclick="goto_facturaFormat()">
                                     <i class="fa fa-print"></i>
                                 </a>
-                                <a class="btn btn-warning btn-sm">
+                                <a class="btn btn-warning btn-sm" onclick="paciente_show_form_edit()">
                                     <i class="fa fa-pencil"></i>
                                 </a>
-                                
+
                             </div>
                         </div>
                         <div class="opcines">
                             <div class="opcion_search">
                                 <input class="btn btn-option " type="date" name="fecha_ingreso_search"
-                                    id="fecha_ingreso_search" onkeypress="on_keydown_searck(event)" >  
+                                    id="fecha_ingreso_search" onkeypress="on_keydown_searck(event)">
                             </div>
                             <a class="btn btn-option" href="#Panel_1">1. DATOS DE LA VICTIMA DEL ACCIDENTE DE
                                 TRANSITO</a>
@@ -589,8 +592,95 @@
                         </div>
                     </div>
                 </div>
-                <div class="tab-pane" role="tabpanel" id="Panel_form">
-                    <h2>prueba</h2>
+
+                <div class="card tab-pane " role="tabpanel" id="Panel_form">
+                    <div class="card-header">
+                        <div class="info-paciente ">
+
+                            <h5>1. DATOS DE LA VICTIMA DEL ACCIDENTE DE TRANSITO</h5>
+                        </div>
+                        <div class="opcines">
+                            <button class="btn btn-primary btn_modificar" onclick="habilitar_input()">Modificar</button>
+                            <button class="btn btn-primary btn_guardar none"
+                                onclick="deshabilitar_input()">Guardar</button>
+                            <a class="btn btn-danger btn-sm" data-toggle="tab" data-target="Panel_Main">
+                                <i class="fa fa-close"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="card-body list_Info">
+                        <div class="containers_Info">
+                            <span>TIPO DE IDENTIFICACION</span>
+                            <Input class="input_Disabled" id="input_Disabled" placeholder="Hola" disabled></Input>
+                        </div>
+                        <div class="containers_Info">
+                            <span>NUMERO DE IDENTIFICACION</span>
+                            <Input class="input_Disabled" id="input_Disabled" placeholder="Hola" disabled></Input>
+                        </div>
+                        <div class="containers_Info">
+                            <span>PRIMER APELLIDO</span>
+                            <Input class="input_Disabled" id="input_Disabled" placeholder="Hola" disabled></Input>
+                        </div>
+                        <div class="containers_Info">
+                            <span>SEGUNDO APELLIDO</span>
+                            <Input class="input_Disabled" id="input_Disabled" placeholder="Hola" disabled></Input>
+                        </div>
+                        <div class="containers_Info">
+                            <span>PRIMER NOMBRE</span>
+                            <Input class="input_Disabled" id="input_Disabled" placeholder="Hola" disabled></Input>
+                        </div>
+                        <div class="containers_Info">
+                            <span>SEGUNDO NOMBRE</span>
+                            <Input class="input_Disabled" id="input_Disabled" placeholder="Hola" disabled></Input>
+                        </div>
+                        <div class="containers_Info">
+                            <span>FECHA DE NACIMIENTO</span>
+                            <Input class="input_Normal" id="input_Normal" placeholder="Hola" disabled></Input>
+                        </div>
+                        <div class="containers_Info">
+                            <span>EDAD</span>
+                            <Input class="input_Normal" id="input_Normal" placeholder="Hola" disabled></Input>
+                        </div>
+                        <div class="containers_Info">
+                            <span>CONDICION DE VICTIMA</span>
+                            <Input class="input_Disabled" id="input_Disabled" placeholder="Hola" disabled></Input>
+                        </div>
+                        <div class="containers_Info">
+                            <span>SEXO AL MOMENTO DE NACER</span>
+                            <Input class="input_Disabled" id="input_Disabled" placeholder="Hola" disabled></Input>
+                        </div>
+                        <div class="containers_Info">
+                            <span>DIRECCION</span>
+                            <Input class="input_Disabled" id="input_Disabled" placeholder="Hola" disabled></Input>
+                        </div>
+                        <div class="containers_Info">
+                            <span>BARRIO</span>
+                            <Input class="input_Disabled" id="input_Disabled" placeholder="Hola" disabled></Input>
+                        </div>
+                        <div class="containers_Info">
+                            <span>TELEFONO</span>
+                            <Input class="input_Disabled" id="input_Disabled" placeholder="Hola" disabled></Input>
+                        </div>
+                        <div class="containers_Info">
+                            <span>CELULAR</span>
+                            <Input class="input_Disabled" id="input_Disabled" placeholder="Hola" disabled></Input>
+                        </div>
+                        <div class="containers_Info">
+                            <span>ESTADO CIVIL</span>
+                            <Input class="input_Disabled" id="input_Disabled" placeholder="Hola" disabled></Input>
+                        </div>
+                        <div class="containers_Info">
+                            <span>PROFESION U OCUPACION</span>
+                            <Input class="input_Disabled" placeholder="Hola" disabled></Input>
+                        </div>
+                        <div class="card-footer d-flex justify-content-between">
+                            <button class="btn btn-primary" type="submit" onclick="DataPaciente_onclick()"
+                                id="btnAccion">Registros</button>
+                        </div>
+                    </div>
+                    
+
                 </div>
             </div>
         </div>
@@ -619,19 +709,19 @@
 
 
     <!-- JS Libraies -->
-    <script src="../modules/jquery.min.js"></script>
-    <script src="../modules/nicescroll/jquery.nicescroll.min.js"></script>
-    <script src="../modules/bootstrap/js/bootstrap.min.js"></script>
-    <script src="../modules/sweetalert/sweetalert2.all.min.js"></script>
-    <script src="../modules/select2/js/select2.full.min.js"></script>
-    <script src="../modules/datatables/datatables.min.js"></script>
-    <script src="../modules/pdfmake/pdfmake.min.js"></script>
+    <script src="../../modules/jquery.min.js"></script>
+    <script src="../../modules/nicescroll/jquery.nicescroll.min.js"></script>
+    <script src="../../modules/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../../modules/sweetalert/sweetalert2.all.min.js"></script>
+    <script src="../../modules/select2/js/select2.full.min.js"></script>
+    <script src="../../modules/datatables/datatables.min.js"></script>
+    <script src="../../modules/pdfmake/pdfmake.min.js"></script>
 
     <!-- Page Specific JS File -->
-    <script src="../js/Archivo.js"></script>
+    <script src="../../js/Archivo.js"></script>
 
     <!-- Template JS File añade las etiquetas js que pasen en la variable $footer-->
-    <script src="../js/page/Pacientes.js"></script>
+    <script src="../../js/page/paciente_view_data.js"></script>
 
 
 

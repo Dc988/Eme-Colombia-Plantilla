@@ -8,29 +8,27 @@
 
     <!-- General CSS Files -->
     <!-- General CSS bootstrap -->
-    <link rel="stylesheet" href="modules/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../modules/bootstrap/css/bootstrap.min.css">
 
     <!-- General CSS del ico -->
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
 
-    <!-- General CSS sweetalert2 -->
-
     <!-- General CSS font-awesome -->
-    <link rel="stylesheet" href="modules/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="../../modules/font-awesome/css/font-awesome.css">
 
     <!-- General CSS datatables -->
-    <link rel="stylesheet" href="modules/datatables/datatables.min.css">
+    <link rel="stylesheet" href="../../modules/datatables/datatables.min.css">
     <!-- General CSS select2 -->
-    <link rel="stylesheet" href="modules/select2/css/select2.min.css">
-
-
-    <!-- Template CSS -->
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="../../modules/select2/css/select2.min.css">
 
     <!-- Start GA imprime las etiquetas que contenga la variable header -->
+    <link rel="stylesheet" href="../../css/paciente.css">
+
+    <!-- Template CSS -->
+    <link rel="stylesheet" href="../../css/main.css">
+
 
 <body class="">
-
 
     <!--Llama al componente menu-->
 
@@ -46,28 +44,28 @@
         <ul class="nav-list">
 
             <li class="nav-item">
-                <a href="home.html" class="active">
+                <a href="../Home/home.html" class="">
                     <i class="fa fa-dashboard"></i>
                     <span class="link_name">Dashboard</span>
                 </a>
                 <span class="tooltip">DashBoard</span>
             </li>
             <li class="nav-item">
-                <a href="pacientes.html" class="">
+                <a href="../Paciente/pacientes.html" class="active">
                     <i class="fa fa-user "></i>
                     <span class="link_name">Pacientes</span>
                 </a>
                 <span class="tooltip">Pacientes</span>
             </li>
             <li class="nav-item">
-                <a href="facturacion.html" class="">
+                <a href="../Facturacion/facturacion.html" class="">
                     <i class="fa fa-money "></i>
                     <span class="link_name">Facturación</span>
                 </a>
                 <span class="tooltip">Facturación</span>
             </li>
             <li class="nav-item">
-                <a href="configuraciones.html" class="">
+                <a href="../Configuracion_vista/configuraciones.html" class="">
                     <i class="fa fa-cog"></i>
                     <span class="link_name">Configuraciones</span>
                 </a>
@@ -95,7 +93,7 @@
             <div>
                 <!--Muestra en pantalla el icono y el titulo que se le pase en las variables-->
 
-                <h1><i class="icon fa fa-dashboard"></i> Dashboard</h1>
+                <h1><i class="icon fa fa-user"></i> Pacientes</h1>
                 <p></p>
             </div>
             <div>
@@ -103,75 +101,58 @@
                     <!--imprime el breadcrumb que es como la navegacion, que se le pase en las variable-->
 
                     <li><i class="fa fa-home fa-lg"></i></li>
-                    <li>Dashboard</li>
+                    <li>Pacientes</li>
                 </ul>
             </div>
 
         </div>
         <div class="body-content">
             <!--imprime el codigo html que se le pase en las variable-->
-            <div class="card fix-card-size">
-                <div class="row">
-                    <div class="col-lg-4">
-                        <div class="widget-small primary coloured-icon">
-                            <i class="icon">
-                                <h2>0</h2>
-                            </i>
-                            <div class="info">
-                                <h4>CICLISTA</h4>
-                            </div>
-                        </div>
+
+            <div class="card item fix-card-size" role="tabpanel" id="Panel_Main">
+                <div class="card-header">
+                    <h4><i class="fa fa-list-alt icon"></i> Lista de Pacientes</h4>
+                    <div class="card-header-action">
+                        <a class="btn btn-primary btn-sm" href="paciente_form.html">
+                            <i class="fa fa-lg fa-plus"></i>
+                        </a>
+
                     </div>
-                    <div class="col-lg-4">
-                        <div class="widget-small primary coloured-icon">
-                            <i class="icon">
-                                <h2>0</h2>
-                            </i>
-                            <div class="info">
-                                <h4>CONDUCTOR</h4>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="widget-small primary coloured-icon">
-                            <i class="icon">
-                                <h2>0</h2>
-                            </i>
-                            <div class="info">
-                                <h4>OCUPANTE</h4>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="widget-small primary coloured-icon">
-                            <i class="icon">
-                                <h2>1</h2>
-                            </i>
-                            <div class="info">
-                                <h4>OTROS</h4>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="widget-small primary coloured-icon">
-                            <i class="icon">
-                                <h2>0</h2>
-                            </i>
-                            <div class="info">
-                                <h4>PEATÓN</h4>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="widget-small primary coloured-icon">
-                            <i class="icon">
-                                <h2>0</h2>
-                            </i>
-                            <div class="info">
-                                <h4>USUARIO MOTOCICLETA</h4>
-                            </div>
-                        </div>
-                    </div>
+                </div>
+
+                <div class="card-body">
+
+
+                    <table class="table compact hover dataTable" id="tbl_Pacientes">
+
+                        <thead>
+                            <tr role="row">
+                                <th scope="col" data-dt-column="0" rowspan="1" colspan="1"
+                                    class="dt-orderable-asc dt-orderable-desc dt-type-numeric dt-ordering-desc"
+                                    aria-sort="descending" aria-label="#: Activate to remove sorting" tabindex="0">
+                                    <span class="dt-column-title" role="button">#</span><span
+                                        class="dt-column-order"></span>
+                                </th>
+                                <th scope="col" data-dt-column="1" rowspan="1" colspan="1"
+                                    class="dt-orderable-asc dt-orderable-desc dt-type-numeric"
+                                    aria-label="ID: Activate to sort" tabindex="0"><span class="dt-column-title"
+                                        role="button">ID</span><span class="dt-column-order"></span></th>
+                                <th scope="col" data-dt-column="2" rowspan="1" colspan="1"
+                                    class="dt-orderable-asc dt-orderable-desc"
+                                    aria-label="NOMBRE COMPLETO: Activate to sort" tabindex="0"><span
+                                        class="dt-column-title" role="button">NOMBRE
+                                        COMPLETO</span><span class="dt-column-order"></span></th>
+                                <th scope="col" data-dt-column="3" rowspan="1" colspan="1"
+                                    class="dt-orderable-asc dt-orderable-desc" aria-label=": Activate to sort"
+                                    tabindex="0"><span class="dt-column-title" role="button"></span><span
+                                        class="dt-column-order"></span></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                        <tfoot></tfoot>
+                    </table>
 
                 </div>
             </div>
@@ -199,22 +180,25 @@
     </div>
     <!-- General JS Scripts -->
 
-    <script>
-        const base_url = "";
-    </script>
+    
     <!-- JS Libraies -->
-    <script src="modules/jquery.min.js"></script>
-    <script src="modules/nicescroll/jquery.nicescroll.min.js"></script>
-    <script src="modules/bootstrap/js/bootstrap.min.js"></script>
-    <script src="modules/sweetalert/sweetalert2.all.min.js"></script>
-    <script src="modules/select2/js/select2.full.min.js"></script>
-    <script src="modules/datatables/datatables.min.js"></script>
-    <script src="modules/pdfmake/pdfmake.min.js"></script>
+    <script src="../../modules/jquery.min.js"></script>
+    <script src="../../modules/nicescroll/jquery.nicescroll.min.js"></script>
+    <script src="../../modules/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../../modules/sweetalert/sweetalert2.all.min.js"></script>
+    <script src="../../modules/select2/js/select2.full.min.js"></script>
+    <script src="../../modules/datatables/datatables.min.js"></script>
+    <script src="../../modules/pdfmake/pdfmake.min.js"></script>
 
     <!-- Page Specific JS File -->
-    <script src="js/Archivo.js"></script>
+    <script src="../../js/Archivo.js"></script>
 
     <!-- Template JS File añade las etiquetas js que pasen en la variable $footer-->
+    <script src="../../js/page/Pacientes.js"></script>
+
+
+
+
 
 
 </body>
