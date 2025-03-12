@@ -644,12 +644,7 @@ div.dt-container {
     min-height: 460px;
 }
 
-div.dt-container div.d-flex.justify-content-between{
-    position: absolute;
-    width: 100%;
-    bottom: 0;
-    left: 0;
-}
+
 
 div.dt-container div.dt-layout-row {
     display: table;
@@ -707,21 +702,23 @@ div.dt-container .dt-input {
     border: 2px solid var(--default);
     background: var(--grey-soft);;
     border-radius: 25px;
-    padding: 2px 8px;
+    padding: 0px 8px;
     margin-bottom: 10px;
+    height: 27px;
+
 }
 
 .dt-search .input-search{
-    padding: 10px;
+    background-color: red;
     border: none;
     border-radius: 0px;
     transition: border-bottom-color 0.5s;
-    font-size: 14px;
+    font-size: 12px;
     color: var(--text-primary-2);
     background-color: transparent;
     box-shadow: none;
     outline: none;
-    padding: 4px
+    height: 10px;
     
 }
 

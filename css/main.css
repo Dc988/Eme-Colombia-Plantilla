@@ -997,6 +997,17 @@ body {
     width: 100%;
 }
 
+/*table*/
+
+div.dt-container div.d-flex.justify-content-between{
+    background:#fff;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    border-top: 2px solid var(--default);
+    padding: 0 15px;
+}
 
 
 

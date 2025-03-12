@@ -71,7 +71,7 @@ const sidebar = document.querySelector(".sidebar"),
         'lengthMenu': 'Mostrar  _MENU_  Entradas',
         'loadingRecords': 'Cargando...',
         'processing': 'Procesando...',
-        'search': '<i class="fa fa-search fa-lg me-2"></i>',
+        'search': '<i class="fa fa-search me-2"></i>',
         'zeroRecords': 'Sin resultados encontrados',
         'paginate': {
             'first': '<i class="fa fa-angle-double-left"></i>',
@@ -183,8 +183,8 @@ function createDataTable(table, url, columns) {
         bDestroy: true,
 
         lengthMenu: [
-            [5, 10, 15, 20, 25, 50, -1],
-            [5, 10, 15, 20, 25, 50, 'All']
+            [ 8,10, 15, 20, 25, 50, -1],
+            [ 8,10, 15, 20, 25, 50, 'All']
         ]
         ,
         order: [
@@ -295,9 +295,9 @@ function setDataCombobox(table, combobox) {
 }
 
 
-$(document).ready(function() {
-    $(".body-content").niceScroll(sidebar_nicescroll_opts);
-});
+
+
+
 
 
 

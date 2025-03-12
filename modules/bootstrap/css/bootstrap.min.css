@@ -5973,7 +5973,7 @@ fieldset:disabled .btn {
 }
 
 .modal {
-    --bs-modal-zindex: 1055;
+    --bs-modal-zindex: 999;
     --bs-modal-width: 500px;
     --bs-modal-padding: 1rem;
     --bs-modal-margin: 0.5rem;
@@ -6107,6 +6107,7 @@ fieldset:disabled .btn {
 }
 
 .modal-body {
+    z-index: 1000;
     position: relative;
     flex: 1 1 auto;
     padding: var(--bs-modal-padding)

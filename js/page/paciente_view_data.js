@@ -1,8 +1,4 @@
 
-$(function () {
-    $(".panel-body").niceScroll(sidebar_nicescroll_opts);
-});
-
 
 // page paciente
 
