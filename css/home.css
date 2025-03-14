@@ -17,5 +17,6 @@
 .color a{
     text-decoration: none;
     color: #fff;
-    font-size: 40;
+    font-size: 40px;
+    padding: 4%;
 }
