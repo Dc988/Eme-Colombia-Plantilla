@@ -111,486 +111,694 @@
             <!--imprime el codigo html que se le pase en las variable-->
             <div class="tab-content">
                 <div class="data_paciente tab-pane active" role="tabpanel" id="Panel_Main">
-                    <div class="header">
+                    <form method="post" id="frmPaciente_view" onsubmit="" class="needs-validation" novalidate="">
+                        <div class="header">
 
-                        <div class="info-paciente row">
+                            <div class="info-paciente row">
 
-                            <div class="img-paciente col-md-3">
-                                <img src="../../img/img-paciente.png" alt="imagen del paciente">
+                                <div class="img-paciente col-md-3">
+                                    <img src="../../img/img-paciente.png" alt="imagen del paciente">
+                                </div>
+
+                                <div class="row-information col-md-3">
+                                    <h6 class="item-information"> FOLIO: <span id="id_paciente"></span></h6>
+                                    <h6 class="item-information"> NOMBRE PACIENTE: <span id="nombre_paciente"></span>
+                                    </h6>
+                                    <h6 class="item-information">EDAD: <span id="edad_paciente"></span></h6>
+                                    <h6 class="item-information"> FECHA DE NACIMIENTO:<span
+                                            id="fecha_nacimiento_paciente"></span></h6>
+                                </div>
+                                <div class="row-information col-md-3">
+                                    <h6 class="item-information">ESTADO CIVIL: <span id="estado_civil_paciente"></span>
+                                    </h6>
+                                    <h6 class="item-information">IDENTIFICACION: <span
+                                            id="identificacion_paciente"></span>
+                                    </h6>
+                                    <h6 class="item-information">TELEFONO: <span id="telefono_paciente"></span></h6>
+                                    <h6 class="item-information">CELULAR: <span id="celular_paciente"></span></h6>
+                                </div>
+                                <div class="row-information col-md-3">
+                                    <h6 class="item-information">PROFESION U OCUPACION: <span
+                                            id="ocupacion_paciente"></span></h6>
+                                    <h6 class="item-information">SEXO: <span id="sexo_paciente"></span></h6>
+                                    <h6 class="item-information">DIRECCION: <span id="direccion_paciente"></span></h6>
+                                    <h6 class="item-information">BARRIO: <span id="barrio_paciente"></span></h6>
+                                </div>
+                                <div class="row-btns">
+                                    <a class="btn btn-danger btn-sm" href="pacientes.html">
+                                        <i class="fa fa-close"></i>
+                                    </a>
+                                    <button class="btn btn-primary btn-sm" type="submit" onclick="DataPaciente_view_onclick();" >
+                                        <i class="fa fa-save"></i>
+                                    </button>
+
+                                    <a class="btn btn-success btn-sm" onclick="goto_facturaFormat()">
+                                        <i class="fa fa-print"></i>
+                                    </a>
+                                    
+                                    <a class="btn btn-warning btn-sm" onclick="paciente_show_form_edit()">
+                                        <i class="fa fa-pencil"></i>
+                                    </a>
+
+                                </div>
+                            </div>
+                            <div class="opcines">
+                                <div class="opcion_search">
+                                    <input class="btn btn-option " type="date" name="fecha_ingreso_search"
+                                        id="fecha_ingreso_search" onkeypress="on_keydown_searck(event)">
+                                </div>
+                                <a class="btn btn-option" href="#Panel_1">1. DATOS DE LA VICTIMA DEL ACCIDENTE DE
+                                    TRANSITO</a>
+                                <a class="btn btn-option" href="#Panel_2">2. TIPO INGRESO</a>
+                                <a class="btn btn-option" href="#Panel_3">3. DATOS DEL ACCIDENTE</a>
+                                <a class="btn btn-option" href="#Panel_4">4. DATOS DEL CONDUCTOR</a>
+
                             </div>
 
-                            <div class="row-information col-md-3">
-                                <h6 class="item-information"> FOLIO: <span id="id_paciente"></span></h6>
-                                <h6 class="item-information"> NOMBRE PACIENTE: <span id="nombre_paciente"></span></h6>
-                                <h6 class="item-information">EDAD: <span id="edad_paciente"></span></h6>
-                                <h6 class="item-information"> FECHA DE NACIMIENTO:<span
-                                        id="fecha_nacimiento_paciente"></span></h6>
-                            </div>
-                            <div class="row-information col-md-3">
-                                <h6 class="item-information">ESTADO CIVIL: <span id="estado_civil_paciente"></span></h6>
-                                <h6 class="item-information">IDENTIFICACION: <span id="identificacion_paciente"></span>
-                                </h6>
-                                <h6 class="item-information">TELEFONO: <span id="telefono_paciente"></span></h6>
-                                <h6 class="item-information">CELULAR: <span id="celular_paciente"></span></h6>
-                            </div>
-                            <div class="row-information col-md-3">
-                                <h6 class="item-information">PROFESION U OCUPACION: <span
-                                        id="ocupacion_paciente"></span></h6>
-                                <h6 class="item-information">SEXO: <span id="sexo_paciente"></span></h6>
-                                <h6 class="item-information">DIRECCION: <span id="direccion_paciente"></span></h6>
-                                <h6 class="item-information">BARRIO: <span id="barrio_paciente"></span></h6>
-                            </div>
-                            <div class="row-btns">
-                                <a class="btn btn-danger btn-sm" href="pacientes.html">
-                                    <i class="fa fa-close"></i>
-                                </a>
-                                <a class="btn btn-primary btn-sm">
-                                    <i class="fa fa-save"></i>
-                                </a>
-                                <a class="btn btn-success btn-sm" onclick="goto_facturaFormat()">
-                                    <i class="fa fa-print"></i>
-                                </a>
-                                <a class="btn btn-warning btn-sm" onclick="paciente_show_form_edit()">
-                                    <i class="fa fa-pencil"></i>
-                                </a>
+                        </div>
+                        <div class="panel-body" id="data_p">
+                            <div class="card mb-3" id="Panel_1">
+                                <div class="card-header">
+                                    <h5 class="title text-center" id="title">1. DATOS DE LA VICTIMA DEL ACCIDENTE DE
+                                        TRANSITO</h5>
+                                </div>
+                                <div class="row card-body d-flex justify-content-center">
+                                    <div class="form-floating col-md-5 mb-3">
 
+                                        <select id="tipo_pac_FK_2" name="tipo_pac_FK_2" class="form-control "
+                                            required="">
+                                            <option selected="" disabled="" value="">-- Seleccione --</option>
+                                            <option value="4">CICLISTA</option>
+                                            <option value="1">CONDUCTOR</option>
+                                            <option value="2">OCUPANTE</option>
+                                            <option value="6">OTROS</option>
+                                            <option value="3">PEATÓN</option>
+                                            <option value="5">USUARIO MOTOCICLETA</option>
+                                        </select>
+                                        <label class="form-label" for="tipo_pac_FK_2">CONDICION DE VICTIMA</label>
+
+                                        <div class="invalid-feedback">
+                                            Campo Requerido!!.
+                                        </div>
+                                    </div>
+
+                                    <div class="form-floating col-md-5 mb-3 ms-md-5">
+
+                                        <select id="Colaborador_FK" name="Colaborador_FK" class="form-control "
+                                            required="">
+                                            <option selected="" disabled="" value="">-- Seleccione --</option>
+                                            <option value="1">ANTONIO </option>
+                                            <option value="2">ANDREA</option>
+                                            <option value="3">JANETH</option>
+                                            <option value="4">PEPE</option>
+                                            <option value="5">AMBULANCIA 010</option>
+                                            <option value="6">PROPIO</option>
+                                            <option value="7">ALVARO</option>
+                                            <option value="8">EVELIO</option>
+                                            <option value="9">DINAMISOL</option>
+                                            <option value="10">PROACTIVA</option>
+                                            <option value="11">AMBULANCIA 020</option>
+                                        </select>
+                                        <label class="form-label" for="Colaborador_FK">CODIGO</label>
+
+                                        <div class="invalid-feedback">
+                                            Campo Requerido!!.
+                                        </div>
+                                    </div>
+
+                                    <div class="form-floating col-md-5 mb-3">
+
+                                        <select id="Aseguradora_FK" name="Aseguradora_FK" class="form-control "
+                                            required="">
+                                            <option selected="" disabled="" value="">-- Seleccione --</option>
+                                            <option value="3">ADRES</option>
+                                            <option value="1">ASEGURADORA SOLIDARIA DE COLOMBIA</option>
+                                            <option value="2">AXA COLPATRIA</option>
+                                            <option value="4">COMPAÑÍA MUNDIAL DE SEGUROS</option>
+                                            <option value="5">LA PREVISORA COMPAÑÍA DE SEGUROS</option>
+                                            <option value="10">LIBERTY SEGUROS</option>
+                                            <option value="6">SEGUROS BOLIVAR</option>
+                                            <option value="7">SEGUROS ESTADO</option>
+                                            <option value="8">SEGUROS LA EQUIDAD</option>
+                                            <option value="9">SEGUROS MAPHRE</option>
+                                            <option value="11">SEGUROS SURA</option>
+                                        </select>
+                                        <label class="form-label" for="Aseguradora_FK">ASEGURADORA</label>
+
+                                        <div class="invalid-feedback">
+                                            Campo Requerido!!.
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-5 mb-3 ms-md-5"></div>
+                                </div>
+                            </div>
+                            <div class="card mb-3" id="Panel_2">
+                                <div class="card-header">
+                                    <h5 class="title text-center" id="title">2. TIPO DE INGRESO A LOS SERVICIOS DE SALUD
+                                    </h5>
+                                </div>
+                                <div class="row card-body d-flex justify-content-center">
+                                    <input type="hidden" id="MES_ACCIDENTE" name="MES_ACCIDENTE" value="1">
+                                    <input type="hidden" id="id_ingreso" name="id_ingreso" value="1">
+
+                                    <div class="form-floating col-md-5 mb-3">
+
+                                        <select id="Tipo_ingreso_FK" name="Tipo_ingreso_FK" class="form-control "
+                                            required="">
+                                            <option selected="" disabled="" value="">-- Seleccione --</option>
+                                            <option value="2">AMBULANCIA</option>
+                                            <option value="1">ATENCION DE URGENCIA</option>
+                                        </select>
+                                        <label class="form-label" for="Tipo_ingreso_FK">TIPO DE INGRESO</label>
+
+                                        <div class="invalid-feedback">
+                                            Campo Requerido!!.
+                                        </div>
+                                    </div>
+                                    <div class="form-floating col-md-5 mb-3 ms-md-5">
+
+                                        <select id="Triage" name="Triage" class="form-control " required="">
+                                            <option selected="" disabled="" value="">-- Seleccione --</option>
+                                            <option value="I">I</option>
+                                            <option value="II">II</option>
+                                        </select>
+                                        <label class="form-label" for="Triage">CLASIFICACION DEL TRIAGE</label>
+
+                                        <div class="invalid-feedback">
+                                            Campo Requerido!!.
+                                        </div>
+                                    </div>
+                                    <div class="form-floating col-md-5 mb-3">
+                                        <input required="" name="Fecha_Ingreso" id="Fecha_Ingreso" class="form-control "
+                                            type="date">
+                                        <label class="form-label" for="Fecha_Ingreso">FECHA DE INGRESO</label>
+                                        <div class="invalid-feedback">
+                                            Campo Requerido!!.
+                                        </div>
+                                    </div>
+                                    <div class="form-floating col-md-5 mb-3 ms-md-5">
+                                        <input required="" name="Hora_Ingreso" id="Hora_Ingreso" class="form-control "
+                                            type="text">
+                                        <label class="form-label" for="Hora_Ingreso"> HORA DE INGRESO </label>
+                                        <div class="invalid-feedback">
+                                            Campo Requerido!!.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card mb-3" id="Panel_3">
+                                <div class="card-header">
+                                    <h5 class="title text-center" id="title">3. DATOS DEL ACCIDENTE</h5>
+                                </div>
+                                <div class="row card-body d-flex justify-content-center">
+                                    <div class="form-floating col-md-5 mb-3">
+                                        <input required="" name="Fecha_evento" id="Fecha_evento" class="form-control "
+                                            type="date">
+                                        <label class="form-label" for="Fecha_evento">FECHA DEL EVENTO</label>
+                                        <div class="invalid-feedback">
+                                            Campo Requerido!!.
+                                        </div>
+                                    </div>
+                                    <div class="form-floating col-md-5 mb-3 ms-md-5">
+                                        <input required="" name="Hora_evento" id="Hora_evento" class="form-control "
+                                            type="text">
+                                        <label class="form-label" for="Hora_evento"> HORA DEL EVENTO </label>
+                                        <div class="invalid-feedback">
+                                            Campo Requerido!!.
+                                        </div>
+                                    </div>
+                                    <div class="form-floating col-md-5 mb-3">
+
+                                        <select id="Departamento" name="Departamento" class="form-control " required="">
+                                            <option selected="" disabled="" value="">-- Seleccione --</option>
+                                            <option value="Atlántico">Atlántico</option>
+                                        </select>
+                                        <label class="form-label" for="Departamento">DEPARTAMENTO</label>
+
+                                        <div class="invalid-feedback">
+                                            Campo Requerido!!.
+                                        </div>
+                                    </div>
+
+                                    <div class="form-floating col-md-5 mb-3 ms-md-5">
+
+                                        <select id="Municipio_fk" name="Municipio_fk" class="form-control " required="">
+                                            <option selected="" disabled="" value="">-- Seleccione --</option>
+                                            <option value="5">BARANOA</option>
+                                            <option value="1">BARRANQUILLA</option>
+                                            <option value="14">CAMPO DE LA CRUZ</option>
+                                            <option value="17">CANDELARIA</option>
+                                            <option value="6">GALAPA</option>
+                                            <option value="15">JUAN DE ACOSTA</option>
+                                            <option value="11">LURUACO</option>
+                                            <option value="3">MALAMBO</option>
+                                            <option value="22">MANATÍ</option>
+                                            <option value="10">PALMAR DE VARELA</option>
+                                            <option value="20">PIOJÓ</option>
+                                            <option value="21">POLONUEVO</option>
+                                            <option value="13">PONEDERA</option>
+                                            <option value="7">PUERTO COLOMBIA</option>
+                                            <option value="12">REPELÓN</option>
+                                            <option value="8">SABANAGRANDE</option>
+                                            <option value="4">SABANALARGA</option>
+                                            <option value="16">SANTA LUCÍA</option>
+                                            <option value="9">SANTO TOMÁS</option>
+                                            <option value="2">SOLEDAD</option>
+                                            <option value="19">SUÁN</option>
+                                            <option value="18">TUBARÁ</option>
+                                            <option value="23">USIACURÍ</option>
+                                        </select>
+                                        <label class="form-label" for="Municipio_fk">MUNICIPIO</label>
+
+                                        <div class="invalid-feedback">
+                                            Campo Requerido!!.
+                                        </div>
+                                    </div>
+                                    <div class="form-floating col-md-5 mb-3">
+                                        <input required="" name="Direccion_evento" id="Direccion_evento"
+                                            class="form-control " type="text">
+                                        <label class="form-label" for="Direccion_evento"> DIRECCION DEL ACCIDENTE
+                                        </label>
+                                        <div class="invalid-feedback">
+                                            Campo Requerido!!.
+                                        </div>
+                                    </div>
+                                    <div class="form-floating col-md-5 mb-3 ms-md-5">
+                                        <input required="" name="Marca" id="Marca" class="form-control " type="text">
+                                        <label class="form-label" for="Marca"> MARCA </label>
+                                        <div class="invalid-feedback">
+                                            Campo Requerido!!.
+                                        </div>
+                                    </div>
+                                    <div class="form-floating col-md-5 mb-3">
+                                        <input required="" name="Tipo_Vehiculo" id="Tipo_Vehiculo" class="form-control "
+                                            type="text">
+                                        <label class="form-label" for="Tipo_Vehiculo"> TIPO DE VEHICULO </label>
+                                        <div class="invalid-feedback">
+                                            Campo Requerido!!.
+                                        </div>
+                                    </div>
+                                    <div class="form-floating col-md-5 mb-3 ms-md-5">
+                                        <input required="" name="Placa" id="Placa" class="form-control " type="text">
+                                        <label class="form-label" for="Placa"> PLACA </label>
+                                        <div class="invalid-feedback">
+                                            Campo Requerido!!.
+                                        </div>
+                                    </div>
+                                    <div class="form-floating col-md-5 mb-3">
+                                        <input required="" name="apellido_prop_vehiculo" id="apellido_prop_vehiculo"
+                                            class="form-control " type="text">
+                                        <label class="form-label" for="apellido_prop_vehiculo"> APELLIDOS PROPIETARIO
+                                        </label>
+                                        <div class="invalid-feedback">
+                                            Campo Requerido!!.
+                                        </div>
+                                    </div>
+                                    <div class="form-floating col-md-5 mb-3 ms-md-5">
+                                        <input required="" name="Nombre_prop_vehiculo" id="Nombre_prop_vehiculo"
+                                            class="form-control " type="text">
+                                        <label class="form-label" for="Nombre_prop_vehiculo"> NOMBRE PROPIETARIO
+                                        </label>
+                                        <div class="invalid-feedback">
+                                            Campo Requerido!!.
+                                        </div>
+                                    </div>
+                                    <div class="form-floating col-md-5 mb-3">
+                                        <input required="" name="Poliza" id="Poliza" class="form-control "
+                                            type="number">
+                                        <label class="form-label" for="Poliza"> POLIZA </label>
+                                        <div class="invalid-feedback">
+                                            Campo Requerido!!.
+                                        </div>
+                                    </div>
+
+                                    <div class="form-floating col-md-5 mb-3 ms-md-5">
+                                        <input required="" name="Identificacion_prop_vehiculo"
+                                            id="Identificacion_prop_vehiculo" class="form-control " type="number">
+                                        <label class="form-label" for="Identificacion_prop_vehiculo"> IDENTIFICACION
+                                            PROPIETARIO </label>
+                                        <div class="invalid-feedback">
+                                            Campo Requerido!!.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card" id="Panel_4">
+                                <div class="card-header">
+                                    <h5 class="title text-center" id="title">4. DATOS DEL CONDUCTOR DEL VEHICULO
+                                        INVOLUCRADO EN EL ACCIDENTE DE TRANSITO</h5>
+                                </div>
+                                <div class="row card-body d-flex justify-content-center">
+                                    <input type="hidden" id="Id_2" name="Id_2" value="">
+
+                                    <div class="form-floating mb-3 col-md-5">
+
+                                        <select id="Tipo_ID_FK_2" name="Tipo_ID_FK_2" class="form-control " required="">
+                                            <option selected="" disabled="" value="">-- Seleccione --</option>
+                                            <option value="17">aaa</option>
+                                            <option value="1">ACTA</option>
+                                            <option value="2">ADULTO SIN IDENTIFICACION</option>
+                                            <option value="3">CARNE DIPLOMATICO</option>
+                                            <option value="4">CEDULA DE CIUDADANIA</option>
+                                            <option value="5">CEDULA DE EXTRANJERIA</option>
+                                            <option value="6">CERTIFICADO DE NACIDO VIVO</option>
+                                            <option value="7">DOCUMENTO EXTRANJERO</option>
+                                            <option value="8">MENOR SIN IDENTIFICACION</option>
+                                            <option value="9">NIT</option>
+                                            <option value="10">PASAPORTE</option>
+                                            <option value="11">PERMISO ESPECIAL DE PERMANENCIA</option>
+                                            <option value="15">PERMISO TEMPORAL DE PERMANENCIA</option>
+                                            <option value="12">REGISTRO CIVIL</option>
+                                            <option value="13">SALVOCONDUCTO</option>
+                                            <option value="14">TARJETA DE IDENTIDAD</option>
+                                        </select>
+                                        <label class="form-label" for="Tipo_ID_FK_2">TIPO DE IDENTIFICACION</label>
+
+                                        <div class="invalid-feedback">
+                                            Campo Requerido!!.
+                                        </div>
+                                    </div>
+                                    <div class="form-floating mb-3 ms-md-5 col-md-5">
+                                        <input required="" name="IDENTIFICACION_2" id="IDENTIFICACION_2"
+                                            class="form-control " type="number">
+                                        <label class="form-label" for="IDENTIFICACION_2"> NUMERO DE IDENTIFICACION
+                                        </label>
+                                        <div class="invalid-feedback">
+                                            Campo Requerido!!.
+                                        </div>
+                                    </div>
+                                    <div class="form-floating mb-3 col-md-5">
+                                        <input required="" name="Apellido_1_2" id="Apellido_1_2" class="form-control "
+                                            type="text">
+                                        <label class="form-label" for="Apellido_1_2"> PRIMER APELLIDO </label>
+                                        <div class="invalid-feedback">
+                                            Campo Requerido!!.
+                                        </div>
+                                    </div>
+                                    <div class="form-floating mb-3 ms-md-5 col-md-5">
+                                        <input required="" name="Apellido_2_2" id="Apellido_2_2" class="form-control "
+                                            type="text">
+                                        <label class="form-label" for="Apellido_2_2"> SEGUNDO APELLIDO </label>
+                                        <div class="invalid-feedback">
+                                            Campo Requerido!!.
+                                        </div>
+                                    </div>
+                                    <div class="form-floating mb-3 col-md-5">
+                                        <input required="" name="Nombre_1_2" id="Nombre_1_2" class="form-control "
+                                            type="text">
+                                        <label class="form-label" for="Nombre_1_2"> PRIMER NOMBRE </label>
+                                        <div class="invalid-feedback">
+                                            Campo Requerido!!.
+                                        </div>
+                                    </div>
+                                    <div class="form-floating mb-3 ms-md-5 col-md-5">
+                                        <input required="" name="Nombre_2_2" id="Nombre_2_2" class="form-control "
+                                            type="text">
+                                        <label class="form-label" for="Nombre_2_2"> SEGUNDO NOMBRE </label>
+                                        <div class="invalid-feedback">
+                                            Campo Requerido!!.
+                                        </div>
+                                    </div>
+                                    <div class="form-floating col-md-5 mb-3">
+                                        <input required="" name="Fecha_Na_2" id="Fecha_Na_2" class="form-control "
+                                            type="date" target="Edad_2">
+                                        <label class="form-label" for="Fecha_Na_2">FECHA DE NACIMIENTO</label>
+                                        <div class="invalid-feedback">
+                                            Campo Requerido!!.
+                                        </div>
+                                    </div>
+
+                                    <div class="form-floating col-md-5 ms-md-5 mb-3">
+                                        <input required="" name="Edad_2" id="Edad_2" class="form-control "
+                                            type="number">
+                                        <label class="form-label" for="Edad_2"> EDAD </label>
+                                        <div class="invalid-feedback">
+                                            Campo Requerido!!.
+                                        </div>
+                                    </div>
+                                    <div class="form-floating col-md-5 mb-3">
+
+                                        <select id="tipo_pac_FK_2" name="tipo_pac_FK_2" class="form-control "
+                                            required="">
+                                            <option selected="" disabled="" value="">-- Seleccione --</option>
+                                            <option value="4">CICLISTA</option>
+                                            <option value="1">CONDUCTOR</option>
+                                            <option value="2">OCUPANTE</option>
+                                            <option value="6">OTROS</option>
+                                            <option value="3">PEATÓN</option>
+                                            <option value="5">USUARIO MOTOCICLETA</option>
+                                        </select>
+                                        <label class="form-label" for="tipo_pac_FK_2">CONDICION DE VICTIMA</label>
+
+                                        <div class="invalid-feedback">
+                                            Campo Requerido!!.
+                                        </div>
+                                    </div>
+                                    <div class="form-floating col-md-5 mb-3 ms-md-5">
+
+                                        <select id="Sexo_2" name="Sexo_2" class="form-control " required="">
+                                            <option selected="" disabled="" value="">-- Seleccione --</option>
+                                            <option value="F">F</option>
+                                            <option value="M">M</option>
+                                            <option value="NO RESPONDE">NO RESPONDE</option>
+                                        </select>
+                                        <label class="form-label" for="Sexo_2">SEXO AL MOMENTO DE NACER</label>
+
+                                        <div class="invalid-feedback">
+                                            Campo Requerido!!.
+                                        </div>
+                                    </div>
+                                    <div class="form-floating col-md-5 mb-3">
+                                        <input required="" name="Direccion_2" id="Direccion_2" class="form-control "
+                                            type="text">
+                                        <label class="form-label" for="Direccion_2"> DIRECCION </label>
+                                        <div class="invalid-feedback">
+                                            Campo Requerido!!.
+                                        </div>
+                                    </div>
+                                    <div class="form-floating col-md-5 mb-3 ms-md-5">
+                                        <input required="" name="Barrio_2" id="Barrio_2" class="form-control "
+                                            type="text">
+                                        <label class="form-label" for="Barrio_2"> BARRIO </label>
+                                        <div class="invalid-feedback">
+                                            Campo Requerido!!.
+                                        </div>
+                                    </div>
+                                    <div class="form-floating col-md-5 mb-3">
+                                        <input required="" name="Telefono_2" id="Telefono_2" class="form-control "
+                                            type="number">
+                                        <label class="form-label" for="Telefono_2"> TELEFONO </label>
+                                        <div class="invalid-feedback">
+                                            Campo Requerido!!.
+                                        </div>
+                                    </div>
+                                    <div class="form-floating col-md-5 mb-3 ms-md-5">
+                                        <input required="" name="Celular_2" id="Celular_2" class="form-control "
+                                            type="number">
+                                        <label class="form-label" for="Celular_2"> CELULAR </label>
+                                        <div class="invalid-feedback">
+                                            Campo Requerido!!.
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="opcines">
-                            <div class="opcion_search">
-                                <input class="btn btn-option " type="date" name="fecha_ingreso_search"
-                                    id="fecha_ingreso_search" onkeypress="on_keydown_searck(event)">
-                            </div>
-                            <a class="btn btn-option" href="#Panel_1">1. DATOS DE LA VICTIMA DEL ACCIDENTE DE
-                                TRANSITO</a>
-                            <a class="btn btn-option" href="#Panel_2">2. TIPO INGRESO</a>
-                            <a class="btn btn-option" href="#Panel_3">3. DATOS DEL ACCIDENTE</a>
-                            <a class="btn btn-option" href="#Panel_4">4. DATOS DEL CONDUCTOR</a>
+                    </form>
+                </div>
+                <div class="tab-pane fix-card-size card "  role="tabpanel" id="Panel_form">
+                    <form method="post" id="frmPaciente_data" onsubmit="" class="needs-validation" novalidate="">
+                        <input type="hidden" id="id_paciente" name="Id" value="">
 
+                        <div class="card-header">
+                            <h5 class="title text-center" id="title">1. DATOS DE LA VICTIMA DEL ACCIDENTE DE
+                                TRANSITO</h5>
+                            <a class="btn btn-danger " onclick="gotoMain()">
+                                <i class="fa fa-close"></i>
+                            </a>
                         </div>
+                        <div class="row card-body d-flex justify-content-center mb-3">
+                            <div class="form-floating mb-3 col-md-5">
 
-                    </div>
-                    <div class="panel-body">
-                        <div class="card mb-3" id="Panel_1">
-                            <div class="card-header">
-                                <h5 class="title text-center" id="title">1. DATOS DE LA VICTIMA DEL ACCIDENTE DE
-                                    TRANSITO</h5>
-                            </div>
-                            <div class="row card-body d-flex justify-content-center">
-                                <div class="form-floating col-md-5 mb-3">
+                                <select id="Tipo_ID_FK" name="Tipo_ID_FK" class="form-control " required="">
+                                    <option selected="" disabled="" value="">-- Seleccione --</option>
+                                    <option value="1">ACTA</option>
+                                    <option value="2">ADULTO SIN IDENTIFICACION</option>
+                                    <option value="3">CARNE DIPLOMATICO</option>
+                                    <option value="4">CEDULA DE CIUDADANIA</option>
+                                    <option value="5">CEDULA DE EXTRANJERIA</option>
+                                    <option value="6">CERTIFICADO DE NACIDO VIVO</option>
+                                    <option value="7">DOCUMENTO EXTRANJERO</option>
+                                    <option value="8">MENOR SIN IDENTIFICACION</option>
+                                    <option value="9">NIT</option>
+                                    <option value="10">PASAPORTE</option>
+                                    <option value="11">PERMISO ESPECIAL DE PERMANENCIA</option>
+                                    <option value="15">PERMISO TEMPORAL DE PERMANENCIA</option>
+                                    <option value="12">REGISTRO CIVIL</option>
+                                    <option value="13">SALVOCONDUCTO</option>
+                                    <option value="14">TARJETA DE IDENTIDAD</option>
+                                </select>
+                                <label class="form-label" for="Tipo_ID_FK">TIPO DE IDENTIFICACION</label>
 
-                                    <select id="tipo_pac_FK_2" name="tipo_pac_FK_2" class="form-control " required="">
-                                        <option selected="" disabled="" value="">-- Seleccione --</option>
-                                        <option value="4">CICLISTA</option>
-                                        <option value="1">CONDUCTOR</option>
-                                        <option value="2">OCUPANTE</option>
-                                        <option value="6">OTROS</option>
-                                        <option value="3">PEATÓN</option>
-                                        <option value="5">USUARIO MOTOCICLETA</option>
-                                    </select>
-                                    <label class="form-label" for="tipo_pac_FK_2">CONDICION DE VICTIMA</label>
-
-                                    <div class="invalid-feedback">
-                                        Campo Requerido!!.
-                                    </div>
-                                </div>
-
-                                <div class="form-floating col-md-5 mb-3 ms-md-5">
-
-                                    <select id="Colaborador_FK" name="Colaborador_FK" class="form-control " required="">
-                                        <option selected="" disabled="" value="">-- Seleccione --</option>
-                                        <option value="1">ANTONIO </option>
-                                        <option value="2">ANDREA</option>
-                                        <option value="3">JANETH</option>
-                                        <option value="4">PEPE</option>
-                                        <option value="5">AMBULANCIA 010</option>
-                                        <option value="6">PROPIO</option>
-                                        <option value="7">ALVARO</option>
-                                        <option value="8">EVELIO</option>
-                                        <option value="9">DINAMISOL</option>
-                                        <option value="10">PROACTIVA</option>
-                                        <option value="11">AMBULANCIA 020</option>
-                                    </select>
-                                    <label class="form-label" for="Colaborador_FK">CODIGO</label>
-
-                                    <div class="invalid-feedback">
-                                        Campo Requerido!!.
-                                    </div>
-                                </div>
-
-                                <div class="form-floating col-md-5 mb-3">
-
-                                    <select id="Aseguradora_FK" name="Aseguradora_FK" class="form-control " required="">
-                                        <option selected="" disabled="" value="">-- Seleccione --</option>
-                                        <option value="3">ADRES</option>
-                                        <option value="1">ASEGURADORA SOLIDARIA DE COLOMBIA</option>
-                                        <option value="2">AXA COLPATRIA</option>
-                                        <option value="4">COMPAÑÍA MUNDIAL DE SEGUROS</option>
-                                        <option value="5">LA PREVISORA COMPAÑÍA DE SEGUROS</option>
-                                        <option value="10">LIBERTY SEGUROS</option>
-                                        <option value="6">SEGUROS BOLIVAR</option>
-                                        <option value="7">SEGUROS ESTADO</option>
-                                        <option value="8">SEGUROS LA EQUIDAD</option>
-                                        <option value="9">SEGUROS MAPHRE</option>
-                                        <option value="11">SEGUROS SURA</option>
-                                    </select>
-                                    <label class="form-label" for="Aseguradora_FK">ASEGURADORA</label>
-
-                                    <div class="invalid-feedback">
-                                        Campo Requerido!!.
-                                    </div>
-                                </div>
-
-                                <div class="col-md-5 mb-3 ms-md-5"></div>
-                            </div>
-                        </div>
-                        <div class="card mb-3" id="Panel_2">
-                            <div class="card-header">
-                                <h5 class="title text-center" id="title">2. TIPO DE INGRESO A LOS SERVICIOS DE SALUD
-                                </h5>
-                            </div>
-                            <div class="row card-body d-flex justify-content-center">
-                                <input type="hidden" id="MES_ACCIDENTE" name="MES_ACCIDENTE" value="1">
-                                <input type="hidden" id="id_ingreso" name="id_ingreso" value="1">
-
-                                <div class="form-floating col-md-5 mb-3">
-
-                                    <select id="Tipo_ingreso_FK" name="Tipo_ingreso_FK" class="form-control "
-                                        required="">
-                                        <option selected="" disabled="" value="">-- Seleccione --</option>
-                                        <option value="2">AMBULANCIA</option>
-                                        <option value="1">ATENCION DE URGENCIA</option>
-                                    </select>
-                                    <label class="form-label" for="Tipo_ingreso_FK">TIPO DE INGRESO</label>
-
-                                    <div class="invalid-feedback">
-                                        Campo Requerido!!.
-                                    </div>
-                                </div>
-                                <div class="form-floating col-md-5 mb-3 ms-md-5">
-
-                                    <select id="Triage" name="Triage" class="form-control " required="">
-                                        <option selected="" disabled="" value="">-- Seleccione --</option>
-                                        <option value="I">I</option>
-                                        <option value="II">II</option>
-                                    </select>
-                                    <label class="form-label" for="Triage">CLASIFICACION DEL TRIAGE</label>
-
-                                    <div class="invalid-feedback">
-                                        Campo Requerido!!.
-                                    </div>
-                                </div>
-                                <div class="form-floating col-md-5 mb-3">
-                                    <input required="" name="Fecha_Ingreso" id="Fecha_Ingreso" class="form-control "
-                                        type="date">
-                                    <label class="form-label" for="Fecha_Ingreso">FECHA DE INGRESO</label>
-                                    <div class="invalid-feedback">
-                                        Campo Requerido!!.
-                                    </div>
-                                </div>
-                                <div class="form-floating col-md-5 mb-3 ms-md-5">
-                                    <input required="" name="Hora_Ingreso" id="Hora_Ingreso" class="form-control "
-                                        type="text">
-                                    <label class="form-label" for="Hora_Ingreso"> HORA DE INGRESO </label>
-                                    <div class="invalid-feedback">
-                                        Campo Requerido!!.
-                                    </div>
+                                <div class="invalid-feedback">
+                                    Campo Requerido!!.
                                 </div>
                             </div>
-                        </div>
-                        <div class="card mb-3" id="Panel_3">
-                            <div class="card-header">
-                                <h5 class="title text-center" id="title">3. DATOS DEL ACCIDENTE</h5>
+                            <div class="form-floating mb-3 ms-md-5 col-md-5">
+                                <input required="" name="IDENTIFICACION" id="IDENTIFICACION" class="form-control "
+                                    type="number">
+                                <label class="form-label" for="IDENTIFICACION"> NUMERO DE IDENTIFICACION
+                                </label>
+                                <div class="invalid-feedback">
+                                    Campo Requerido!!.
+                                </div>
                             </div>
-                            <div class="row card-body d-flex justify-content-center">
-                                <div class="form-floating col-md-5 mb-3">
-                                    <input required="" name="Fecha_evento" id="Fecha_evento" class="form-control "
-                                        type="date">
-                                    <label class="form-label" for="Fecha_evento">FECHA DEL EVENTO</label>
-                                    <div class="invalid-feedback">
-                                        Campo Requerido!!.
-                                    </div>
-                                </div>
-                                <div class="form-floating col-md-5 mb-3 ms-md-5">
-                                    <input required="" name="Hora_evento" id="Hora_evento" class="form-control "
-                                        type="text">
-                                    <label class="form-label" for="Hora_evento"> HORA DEL EVENTO </label>
-                                    <div class="invalid-feedback">
-                                        Campo Requerido!!.
-                                    </div>
-                                </div>
-                                <div class="form-floating col-md-5 mb-3">
 
-                                    <select id="Departamento" name="Departamento" class="form-control " required="">
-                                        <option selected="" disabled="" value="">-- Seleccione --</option>
-                                        <option value="Atlántico">Atlántico</option>
-                                    </select>
-                                    <label class="form-label" for="Departamento">DEPARTAMENTO</label>
+                            <div class="form-floating mb-3 col-md-5">
+                                <input required="" name="Apellido_1" id="Apellido_1" class="form-control " type="text">
+                                <label class="form-label" for="Apellido_1"> PRIMER APELLIDO </label>
+                                <div class="invalid-feedback">
+                                    Campo Requerido!!.
+                                </div>
+                            </div>
 
-                                    <div class="invalid-feedback">
-                                        Campo Requerido!!.
-                                    </div>
+                            <div class="form-floating mb-3 ms-md-5 col-md-5">
+                                <input required="" name="Apellido_2" id="Apellido_2" class="form-control " type="text">
+                                <label class="form-label" for="Apellido_2"> SEGUNDO APELLIDO </label>
+                                <div class="invalid-feedback">
+                                    Campo Requerido!!.
                                 </div>
+                            </div>
 
-                                <div class="form-floating col-md-5 mb-3 ms-md-5">
+                            <div class="form-floating mb-3 col-md-5">
+                                <input required="" name="Nombre_1" id="Nombre_1" class="form-control " type="text">
+                                <label class="form-label" for="Nombre_1"> PRIMER NOMBRE </label>
+                                <div class="invalid-feedback">
+                                    Campo Requerido!!.
+                                </div>
+                            </div>
+                            <div class="form-floating mb-3 ms-md-5 col-md-5">
+                                <input required="" name="Nombre_2" id="Nombre_2" class="form-control " type="text">
+                                <label class="form-label" for="Nombre_2"> SEGUNDO NOMBRE </label>
+                                <div class="invalid-feedback">
+                                    Campo Requerido!!.
+                                </div>
+                            </div>
+                            <div class="form-floating col-md-5 mb-3">
+                                <input required="" name="Fecha_Na" id="Fecha_Na" class="form-control " type="date"
+                                    target="Edad">
+                                <label class="form-label" for="Fecha_Na">FECHA DE NACIMIENTO</label>
+                                <div class="invalid-feedback">
+                                    Campo Requerido!!.
+                                </div>
+                            </div>
+                            <div class="form-floating col-md-5 ms-md-5 mb-3">
+                                <input required="" name="Edad" id="Edad" class="form-control " type="number">
+                                <label class="form-label" for="Edad"> EDAD </label>
+                                <div class="invalid-feedback">
+                                    Campo Requerido!!.
+                                </div>
+                            </div>
+                            <div class="form-floating col-md-5 mb-3">
 
-                                    <select id="Municipio_fk" name="Municipio_fk" class="form-control " required="">
-                                        <option selected="" disabled="" value="">-- Seleccione --</option>
-                                        <option value="5">BARANOA</option>
-                                        <option value="1">BARRANQUILLA</option>
-                                        <option value="14">CAMPO DE LA CRUZ</option>
-                                        <option value="17">CANDELARIA</option>
-                                        <option value="6">GALAPA</option>
-                                        <option value="15">JUAN DE ACOSTA</option>
-                                        <option value="11">LURUACO</option>
-                                        <option value="3">MALAMBO</option>
-                                        <option value="22">MANATÍ</option>
-                                        <option value="10">PALMAR DE VARELA</option>
-                                        <option value="20">PIOJÓ</option>
-                                        <option value="21">POLONUEVO</option>
-                                        <option value="13">PONEDERA</option>
-                                        <option value="7">PUERTO COLOMBIA</option>
-                                        <option value="12">REPELÓN</option>
-                                        <option value="8">SABANAGRANDE</option>
-                                        <option value="4">SABANALARGA</option>
-                                        <option value="16">SANTA LUCÍA</option>
-                                        <option value="9">SANTO TOMÁS</option>
-                                        <option value="2">SOLEDAD</option>
-                                        <option value="19">SUÁN</option>
-                                        <option value="18">TUBARÁ</option>
-                                        <option value="23">USIACURÍ</option>
-                                    </select>
-                                    <label class="form-label" for="Municipio_fk">MUNICIPIO</label>
+                                <select id="tipo_pac_FK" name="tipo_pac_FK" class="form-control " required="">
+                                    <option selected="" disabled="" value="">-- Seleccione --</option>
+                                    <option value="4">CICLISTA</option>
+                                    <option value="1">CONDUCTOR</option>
+                                    <option value="2">OCUPANTE</option>
+                                    <option value="6">OTROS</option>
+                                    <option value="3">PEATÓN</option>
+                                    <option value="5">USUARIO MOTOCICLETA</option>
+                                </select>
+                                <label class="form-label" for="tipo_pac_FK">CONDICION DE VICTIMA</label>
 
-                                    <div class="invalid-feedback">
-                                        Campo Requerido!!.
-                                    </div>
+                                <div class="invalid-feedback">
+                                    Campo Requerido!!.
                                 </div>
-                                <div class="form-floating col-md-5 mb-3">
-                                    <input required="" name="Direccion_evento" id="Direccion_evento"
-                                        class="form-control " type="text">
-                                    <label class="form-label" for="Direccion_evento"> DIRECCION DEL ACCIDENTE
-                                    </label>
-                                    <div class="invalid-feedback">
-                                        Campo Requerido!!.
-                                    </div>
-                                </div>
-                                <div class="form-floating col-md-5 mb-3 ms-md-5">
-                                    <input required="" name="Marca" id="Marca" class="form-control " type="text">
-                                    <label class="form-label" for="Marca"> MARCA </label>
-                                    <div class="invalid-feedback">
-                                        Campo Requerido!!.
-                                    </div>
-                                </div>
-                                <div class="form-floating col-md-5 mb-3">
-                                    <input required="" name="Tipo_Vehiculo" id="Tipo_Vehiculo" class="form-control "
-                                        type="text">
-                                    <label class="form-label" for="Tipo_Vehiculo"> TIPO DE VEHICULO </label>
-                                    <div class="invalid-feedback">
-                                        Campo Requerido!!.
-                                    </div>
-                                </div>
-                                <div class="form-floating col-md-5 mb-3 ms-md-5">
-                                    <input required="" name="Placa" id="Placa" class="form-control " type="text">
-                                    <label class="form-label" for="Placa"> PLACA </label>
-                                    <div class="invalid-feedback">
-                                        Campo Requerido!!.
-                                    </div>
-                                </div>
-                                <div class="form-floating col-md-5 mb-3">
-                                    <input required="" name="apellido_prop_vehiculo" id="apellido_prop_vehiculo"
-                                        class="form-control " type="text">
-                                    <label class="form-label" for="apellido_prop_vehiculo"> APELLIDOS PROPIETARIO
-                                    </label>
-                                    <div class="invalid-feedback">
-                                        Campo Requerido!!.
-                                    </div>
-                                </div>
-                                <div class="form-floating col-md-5 mb-3 ms-md-5">
-                                    <input required="" name="Nombre_prop_vehiculo" id="Nombre_prop_vehiculo"
-                                        class="form-control " type="text">
-                                    <label class="form-label" for="Nombre_prop_vehiculo"> NOMBRE PROPIETARIO
-                                    </label>
-                                    <div class="invalid-feedback">
-                                        Campo Requerido!!.
-                                    </div>
-                                </div>
-                                <div class="form-floating col-md-5 mb-3">
-                                    <input required="" name="Poliza" id="Poliza" class="form-control " type="number">
-                                    <label class="form-label" for="Poliza"> POLIZA </label>
-                                    <div class="invalid-feedback">
-                                        Campo Requerido!!.
-                                    </div>
-                                </div>
+                            </div>
+                            <div class="form-floating col-md-5 mb-3 ms-md-5">
 
-                                <div class="form-floating col-md-5 mb-3 ms-md-5">
-                                    <input required="" name="Identificacion_prop_vehiculo"
-                                        id="Identificacion_prop_vehiculo" class="form-control " type="number">
-                                    <label class="form-label" for="Identificacion_prop_vehiculo"> IDENTIFICACION
-                                        PROPIETARIO </label>
-                                    <div class="invalid-feedback">
-                                        Campo Requerido!!.
-                                    </div>
+                                <select id="Sexo" name="Sexo" class="form-control " required="">
+                                    <option selected="" disabled="" value="">-- Seleccione --</option>
+                                    <option value="F">F</option>
+                                    <option value="M">M</option>
+                                    <option value="NO RESPONDE">NO RESPONDE</option>
+                                </select>
+                                <label class="form-label" for="Sexo">SEXO AL MOMENTO DE NACER</label>
+
+                                <div class="invalid-feedback">
+                                    Campo Requerido!!.
+                                </div>
+                            </div>
+
+                            <div class="form-floating col-md-5 mb-3">
+                                <input required="" name="Direccion" id="Direccion" class="form-control " type="text">
+                                <label class="form-label" for="Direccion"> DIRECCION </label>
+                                <div class="invalid-feedback">
+                                    Campo Requerido!!.
+                                </div>
+                            </div>
+                            <div class="form-floating col-md-5 mb-3 ms-md-5">
+                                <input required="" name="Barrio" id="Barrio" class="form-control " type="text">
+                                <label class="form-label" for="Barrio"> BARRIO </label>
+                                <div class="invalid-feedback">
+                                    Campo Requerido!!.
+                                </div>
+                            </div>
+
+                            <div class="form-floating col-md-5 mb-3">
+                                <input required="" name="Telefono" id="Telefono" class="form-control " type="number">
+                                <label class="form-label" for="Telefono"> TELEFONO </label>
+                                <div class="invalid-feedback">
+                                    Campo Requerido!!.
+                                </div>
+                            </div>
+
+                            <div class="form-floating col-md-5 mb-3 ms-md-5">
+                                <input required="" name="Celular" id="Celular" class="form-control " type="number">
+                                <label class="form-label" for="Celular"> CELULAR </label>
+                                <div class="invalid-feedback">
+                                    Campo Requerido!!.
+                                </div>
+                            </div>
+
+                            <div class="form-floating col-md-5 mb-3">
+
+                                <select id="Estado_Civil_FK" name="Estado_Civil_FK" class="form-control " required="">
+                                    <option selected="" disabled="" value="">-- Seleccione --</option>
+                                    <option value="2">CASADO</option>
+                                    <option value="3">SEPARADO</option>
+                                    <option value="4">SOLTERO</option>
+                                    <option value="1">UNIÓN LIBRE </option>
+                                    <option value="5">VIUDO</option>
+                                </select>
+                                <label class="form-label" for="Estado_Civil_FK">ESTADO CIVIL</label>
+
+                                <div class="invalid-feedback">
+                                    Campo Requerido!!.
+                                </div>
+                            </div>
+                            <div class="form-floating col-md-5 mb-3 ms-md-5">
+
+                                <select id="Ocupacion_FK" name="Ocupacion_FK" class="form-control " required="">
+                                    <option selected="" disabled="" value="">-- Seleccione --</option>
+                                    <option value="3">AMA DE CASA</option>
+                                    <option value="1">ESTUDIANTE</option>
+                                    <option value="2">INDEPENDIENTE</option>
+                                    <option value="5">MOTOTAXISTA</option>
+                                    <option value="4">TAXISTA</option>
+                                </select>
+                                <label class="form-label" for="Ocupacion_FK">PROFESION U OCUPACION</label>
+
+                                <div class="invalid-feedback">
+                                    Campo Requerido!!.
                                 </div>
                             </div>
                         </div>
-                        <div class="card" id="Panel_4">
-                            <div class="card-header">
-                                <h5 class="title text-center" id="title">4. DATOS DEL CONDUCTOR DEL VEHICULO
-                                    INVOLUCRADO EN EL ACCIDENTE DE TRANSITO</h5>
-                            </div>
-                            <div class="row card-body d-flex justify-content-center">
-                                <input type="hidden" id="Id_2" name="Id_2" value="">
-
-                                <div class="form-floating mb-3 col-md-5">
-
-                                    <select id="Tipo_ID_FK_2" name="Tipo_ID_FK_2" class="form-control " required="">
-                                        <option selected="" disabled="" value="">-- Seleccione --</option>
-                                        <option value="17">aaa</option>
-                                        <option value="1">ACTA</option>
-                                        <option value="2">ADULTO SIN IDENTIFICACION</option>
-                                        <option value="3">CARNE DIPLOMATICO</option>
-                                        <option value="4">CEDULA DE CIUDADANIA</option>
-                                        <option value="5">CEDULA DE EXTRANJERIA</option>
-                                        <option value="6">CERTIFICADO DE NACIDO VIVO</option>
-                                        <option value="7">DOCUMENTO EXTRANJERO</option>
-                                        <option value="8">MENOR SIN IDENTIFICACION</option>
-                                        <option value="9">NIT</option>
-                                        <option value="10">PASAPORTE</option>
-                                        <option value="11">PERMISO ESPECIAL DE PERMANENCIA</option>
-                                        <option value="15">PERMISO TEMPORAL DE PERMANENCIA</option>
-                                        <option value="12">REGISTRO CIVIL</option>
-                                        <option value="13">SALVOCONDUCTO</option>
-                                        <option value="14">TARJETA DE IDENTIDAD</option>
-                                    </select>
-                                    <label class="form-label" for="Tipo_ID_FK_2">TIPO DE IDENTIFICACION</label>
-
-                                    <div class="invalid-feedback">
-                                        Campo Requerido!!.
-                                    </div>
-                                </div>
-                                <div class="form-floating mb-3 ms-md-5 col-md-5">
-                                    <input required="" name="IDENTIFICACION_2" id="IDENTIFICACION_2"
-                                        class="form-control " type="number">
-                                    <label class="form-label" for="IDENTIFICACION_2"> NUMERO DE IDENTIFICACION
-                                    </label>
-                                    <div class="invalid-feedback">
-                                        Campo Requerido!!.
-                                    </div>
-                                </div>
-                                <div class="form-floating mb-3 col-md-5">
-                                    <input required="" name="Apellido_1_2" id="Apellido_1_2" class="form-control "
-                                        type="text">
-                                    <label class="form-label" for="Apellido_1_2"> PRIMER APELLIDO </label>
-                                    <div class="invalid-feedback">
-                                        Campo Requerido!!.
-                                    </div>
-                                </div>
-                                <div class="form-floating mb-3 ms-md-5 col-md-5">
-                                    <input required="" name="Apellido_2_2" id="Apellido_2_2" class="form-control "
-                                        type="text">
-                                    <label class="form-label" for="Apellido_2_2"> SEGUNDO APELLIDO </label>
-                                    <div class="invalid-feedback">
-                                        Campo Requerido!!.
-                                    </div>
-                                </div>
-                                <div class="form-floating mb-3 col-md-5">
-                                    <input required="" name="Nombre_1_2" id="Nombre_1_2" class="form-control "
-                                        type="text">
-                                    <label class="form-label" for="Nombre_1_2"> PRIMER NOMBRE </label>
-                                    <div class="invalid-feedback">
-                                        Campo Requerido!!.
-                                    </div>
-                                </div>
-                                <div class="form-floating mb-3 ms-md-5 col-md-5">
-                                    <input required="" name="Nombre_2_2" id="Nombre_2_2" class="form-control "
-                                        type="text">
-                                    <label class="form-label" for="Nombre_2_2"> SEGUNDO NOMBRE </label>
-                                    <div class="invalid-feedback">
-                                        Campo Requerido!!.
-                                    </div>
-                                </div>
-                                <div class="form-floating col-md-5 mb-3">
-                                    <input required="" name="Fecha_Na_2" id="Fecha_Na_2" class="form-control "
-                                        type="date" target="Edad_2">
-                                    <label class="form-label" for="Fecha_Na_2">FECHA DE NACIMIENTO</label>
-                                    <div class="invalid-feedback">
-                                        Campo Requerido!!.
-                                    </div>
-                                </div>
-
-                                <div class="form-floating col-md-5 ms-md-5 mb-3">
-                                    <input required="" name="Edad_2" id="Edad_2" class="form-control " type="number">
-                                    <label class="form-label" for="Edad_2"> EDAD </label>
-                                    <div class="invalid-feedback">
-                                        Campo Requerido!!.
-                                    </div>
-                                </div>
-                                <div class="form-floating col-md-5 mb-3">
-
-                                    <select id="tipo_pac_FK_2" name="tipo_pac_FK_2" class="form-control " required="">
-                                        <option selected="" disabled="" value="">-- Seleccione --</option>
-                                        <option value="4">CICLISTA</option>
-                                        <option value="1">CONDUCTOR</option>
-                                        <option value="2">OCUPANTE</option>
-                                        <option value="6">OTROS</option>
-                                        <option value="3">PEATÓN</option>
-                                        <option value="5">USUARIO MOTOCICLETA</option>
-                                    </select>
-                                    <label class="form-label" for="tipo_pac_FK_2">CONDICION DE VICTIMA</label>
-
-                                    <div class="invalid-feedback">
-                                        Campo Requerido!!.
-                                    </div>
-                                </div>
-                                <div class="form-floating col-md-5 mb-3 ms-md-5">
-
-                                    <select id="Sexo_2" name="Sexo_2" class="form-control " required="">
-                                        <option selected="" disabled="" value="">-- Seleccione --</option>
-                                        <option value="F">F</option>
-                                        <option value="M">M</option>
-                                        <option value="NO RESPONDE">NO RESPONDE</option>
-                                    </select>
-                                    <label class="form-label" for="Sexo_2">SEXO AL MOMENTO DE NACER</label>
-
-                                    <div class="invalid-feedback">
-                                        Campo Requerido!!.
-                                    </div>
-                                </div>
-                                <div class="form-floating col-md-5 mb-3">
-                                    <input required="" name="Direccion_2" id="Direccion_2" class="form-control "
-                                        type="text">
-                                    <label class="form-label" for="Direccion_2"> DIRECCION </label>
-                                    <div class="invalid-feedback">
-                                        Campo Requerido!!.
-                                    </div>
-                                </div>
-                                <div class="form-floating col-md-5 mb-3 ms-md-5">
-                                    <input required="" name="Barrio_2" id="Barrio_2" class="form-control " type="text">
-                                    <label class="form-label" for="Barrio_2"> BARRIO </label>
-                                    <div class="invalid-feedback">
-                                        Campo Requerido!!.
-                                    </div>
-                                </div>
-                                <div class="form-floating col-md-5 mb-3">
-                                    <input required="" name="Telefono_2" id="Telefono_2" class="form-control "
-                                        type="number">
-                                    <label class="form-label" for="Telefono_2"> TELEFONO </label>
-                                    <div class="invalid-feedback">
-                                        Campo Requerido!!.
-                                    </div>
-                                </div>
-                                <div class="form-floating col-md-5 mb-3 ms-md-5">
-                                    <input required="" name="Celular_2" id="Celular_2" class="form-control "
-                                        type="number">
-                                    <label class="form-label" for="Celular_2"> CELULAR </label>
-                                    <div class="invalid-feedback">
-                                        Campo Requerido!!.
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="card-footer d-flex justify-content-end">
+                            <button class="btn btn-primary" type="submit" onclick="DataPaciente_data_onclick();" >Guardar Cambios</button>
                         </div>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>

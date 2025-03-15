@@ -35,8 +35,13 @@ function setData() {
 }
 function paciente_show_form_edit(){
     show_tap_panel("Panel_form");
+    changeScroll(".panel-body","#frmPaciente_data");
 }
 
+function gotoMain(){
+    show_tap_panel("Panel_Main");
+    changeScroll("#frmPaciente_data",".panel-body");
+}
 
 function goto_facturaFormat() {
 
@@ -47,24 +52,13 @@ function goto_facturaFormat() {
     }
 }
 
-function habilitar_input(){
-    var input =document.querySelectorAll(".input_Disabled");
-    for (let i = 0; i < input.length; i++) {
-        input [i].removeAttribute("disabled");
-        console.log(input[i]);
-    }
-    document.querySelector(".btn_guardar").classList.remove("none");
-    document.querySelector(".btn_modificar").classList.add("none");
+function changeScroll(panel_1,panel_2){
+    $(panel_1).getNiceScroll().remove();
+    $(panel_2).niceScroll(sidebar_nicescroll_opts);
 }
 
-function deshabilitar_input(){ 
-    var input =document.querySelectorAll(".input_Disabled");
-    for (let i = 0; i < input.length; i++) {
-        input [i].setAttribute("disabled","true");
-        console.log(input[i]);
-    }
-    document.querySelector(".btn_modificar").classList.remove("none");
-    document.querySelector(".btn_guardar").classList.add("none");
-}
+$(document).ready(function () {
+    changeScroll("#frmPaciente_data",".panel-body");
+});
 
 

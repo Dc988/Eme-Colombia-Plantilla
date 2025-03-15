@@ -3,5 +3,6 @@ function printFormato(){
     window.print();
 }
 
-printFormato();
-
+$(document).ready(function () {
+    printFormato();
+});

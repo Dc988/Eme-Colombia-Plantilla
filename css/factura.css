@@ -1,10 +1,9 @@
 
-
 .data {
     width: 787px;
     height: 815px;
     position: absolute;
-    top: 300px;
+    top: 304px;
     left: 433px;
 }
 
@@ -57,19 +56,19 @@
 /*SECCION 2*/
 #seccion_2 {
     position: relative;
-    top: 253px;
+    top: 249px;
 }
 
 /*SECCION 3*/
 #seccion_3 {
     position: relative;
-    top: 343px;
+    top: 339px;
 }
 
 /*SECCION 4*/
 #seccion_4 {
     position: relative;
-    top: 526px;
+    top: 522px;
 }
 
 @media print {

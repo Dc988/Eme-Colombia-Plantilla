@@ -1,3 +1,9 @@
+#frmPaciente_data{
+    overflow-y: auto;    /* Habilita solo el scroll vertical */
+    overflow-x: hidden;  /* Oculta el scroll horizontal */
+    max-height: 75vh;   /* Ajusta según sea necesario */
+}
+
 .data_paciente {
     width: 100%;
     height: 85vh;

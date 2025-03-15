@@ -46,6 +46,7 @@ class httpRequest {
 }
 
 let sidebar_nicescroll_opts = {
+    horizrailenabled: false,
     cursorcolor: "var(--default)",  // Rojo
     cursorwidth: "5px",
     cursorborder: "none",
