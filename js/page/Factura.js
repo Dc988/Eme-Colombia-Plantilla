@@ -9,14 +9,9 @@ if(!(typeof tbl_Facturacion === 'undefined')){
     );
 }
 
-
-
-
-
 function btnEditarFact_onclick(id) {
     show_tap_panel("Panel_Form");
 }
-
 
 function setInicialState() {
 

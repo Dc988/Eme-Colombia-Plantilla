@@ -297,6 +297,9 @@ function setDataCombobox(table, combobox) {
 
 
 
+$(document).ready(function () {
+    $("#loading-modal-2").modal("show");
+});
 
 
 
